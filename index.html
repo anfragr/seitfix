@@ -753,12 +753,7 @@
       box-shadow: var(--shadow);
     }
 
-    /* NETLIFY FORMS: Zum Aktivieren entfernen Sie den Kommentar-Hinweis
-       und ergänzen Sie am <form>-Tag:
-       data-netlify="true" name="kontakt"
-       und fügen Sie hinzu:
-       <input type="hidden" name="form-name" value="kontakt" />
-    */
+
 
     .form-group { margin-bottom: 18px; }
     .form-group label {
@@ -811,6 +806,37 @@
       font-size: 12px;
       color: var(--muted);
     }
+
+    .form-consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      background: var(--off-white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .form-consent input[type="checkbox"] {
+      width: 17px; height: 17px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .form-consent label {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 400;
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+    .form-consent label a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .form-consent label a:hover { color: var(--accent-dk); }
 
     /* ─── Footer ─────────────────────────────────────────────── */
     .footer {
@@ -1360,12 +1386,18 @@
               <label for="nachricht">Nachricht</label>
               <textarea id="nachricht" name="nachricht" placeholder="Kurze Info zu Ihrem Betrieb und was Sie sich wünschen..."></textarea>
             </div>
+            <div class="form-consent">
+              <input type="checkbox" id="datenschutz" name="datenschutz" required />
+              <label for="datenschutz">
+                Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Einwilligung kann jederzeit widerrufen werden.
+              </label>
+            </div>
             <button type="submit" class="btn btn-primary form-submit">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               Anfrage senden
             </button>
           </form>
-          <p class="form-note">Kein Spam. Keine Weitergabe Ihrer Daten an Dritte.</p>
+          <p class="form-note">Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
         </div>
       </div>
     </div>
