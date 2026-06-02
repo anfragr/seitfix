@@ -126,10 +126,13 @@
     }
     .footer-inner {
       max-width: var(--max); margin: 0 auto; padding: 0 24px;
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
     }
     .footer-logo { font-family: var(--font-head); font-size: 18px; color: white; }
     .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.4); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: white; }
     .footer-copy { font-size: 12px; color: rgba(255,255,255,.3); }
     @media (max-width: 600px) {
       .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
@@ -191,6 +194,10 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">Seit<span>fix</span></div>
+      <ul class="footer-links">
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+      </ul>
       <div class="footer-copy">© 2026 Seitfix · Österreich</div>
     </div>
   </footer>
