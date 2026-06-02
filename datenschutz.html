@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz – Seitfix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff; --off-white: #f7f7f5; --border: #e2e2dd;
+      --text: #1a1a18; --muted: #6b6b67; --accent: #2563eb; --accent-lt: #eff4ff;
+      --font-head: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 10px; --nav-h: 68px; --max: 1100px;
+    }
+    html { -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky; top: 0;
+      height: var(--nav-h);
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--font-head); font-size: 22px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 500; color: var(--muted);
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--text); }
+    .nav-back svg { width: 16px; height: 16px; }
+
+    .page { padding: 72px 0 96px; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    .tag {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-lt);
+      border-radius: 20px; padding: 4px 14px; margin-bottom: 20px;
+    }
+    h1 {
+      font-family: var(--font-head);
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.18; margin-bottom: 48px;
+    }
+
+    .legal-section { margin-bottom: 36px; }
+    .legal-section h2 {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-bottom: 10px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-section p {
+      font-size: 15px; color: var(--muted); line-height: 1.8;
+    }
+
+    footer {
+      background: #1a1a18; color: rgba(255,255,255,.5);
+      padding: 36px 0;
+    }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { font-family: var(--font-head); font-size: 20px; color: white; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.4); transition: color .15s; }
+    .footer-links a:hover { color: white; }
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">Seit<span>fix</span></a>
+      <a href="/index.html" class="nav-back">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Zurück zur Startseite
+      </a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <span class="tag">Rechtliches</span>
+      <h1>Datenschutzerklärung</h1>
+
+      <div class="legal-section">
+        <h2>1. Verantwortlicher</h2>
+        <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist Seitfix, [Vorname Nachname], [Adresse], Österreich. Kontakt: <a href="mailto:hallo@seitfix.at" style="color:var(--accent);">hallo@seitfix.at</a></p>
+      </div>
+
+      <div class="legal-section">
+        <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+        <p>Personenbezogene Daten werden auf dieser Website nur erhoben, wenn Sie uns diese im Rahmen des Kontaktformulars freiwillig mitteilen (Name, Firmenname, E-Mail-Adresse, optionale Website, Nachricht). Diese Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>3. Speicherdauer</h2>
+        <p>Ihre Daten werden nach abschließender Bearbeitung Ihrer Anfrage gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>4. Weitergabe von Daten</h2>
+        <p>Ihre personenbezogenen Daten werden nicht an Dritte weitergegeben. Ausnahme: Das Kontaktformular wird über Netlify (Netlify, Inc., USA) verarbeitet. Netlify speichert Formulardaten auf seinen Servern. Weitere Informationen finden Sie in der Datenschutzerklärung von Netlify unter <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener" style="color:var(--accent);">netlify.com/privacy</a>.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>5. Hosting</h2>
+        <p>Diese Website wird über Netlify gehostet. Beim Aufruf der Website können technische Daten (IP-Adresse, Browsertyp, Uhrzeit) in Server-Logs gespeichert werden. Diese Daten werden nicht zur Identifikation von Personen verwendet.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>6. Cookies</h2>
+        <p>Diese Website verwendet keine Cookies zu Tracking- oder Werbezwecken.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>7. Ihre Rechte</h2>
+        <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO. Für Anfragen wenden Sie sich bitte an: <a href="mailto:hallo@seitfix.at" style="color:var(--accent);">hallo@seitfix.at</a></p>
+      </div>
+
+      <div class="legal-section">
+        <h2>8. Beschwerderecht</h2>
+        <p>Sie haben das Recht, sich bei der österreichischen Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener" style="color:var(--accent);">dsb.gv.at</a>) zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen die DSGVO verstößt.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Seit<span>fix</span></div>
+      <ul class="footer-links">
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

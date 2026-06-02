@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Seitfix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff; --off-white: #f7f7f5; --border: #e2e2dd;
+      --text: #1a1a18; --muted: #6b6b67; --accent: #2563eb; --accent-lt: #eff4ff;
+      --font-head: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 10px; --nav-h: 68px; --max: 1100px;
+    }
+    html { -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky; top: 0;
+      height: var(--nav-h);
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--font-head); font-size: 22px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 500; color: var(--muted);
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--text); }
+    .nav-back svg { width: 16px; height: 16px; }
+
+    .page { padding: 72px 0 96px; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    .tag {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-lt);
+      border-radius: 20px; padding: 4px 14px; margin-bottom: 20px;
+    }
+    h1 {
+      font-family: var(--font-head);
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.18; margin-bottom: 48px;
+    }
+
+    .legal-section { margin-bottom: 36px; }
+    .legal-section h2 {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-bottom: 10px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-section p, .legal-section address {
+      font-size: 15px; color: var(--muted); line-height: 1.8;
+      font-style: normal;
+    }
+
+    footer {
+      background: #1a1a18; color: rgba(255,255,255,.5);
+      padding: 36px 0; margin-top: 0;
+    }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { font-family: var(--font-head); font-size: 20px; color: white; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.4); transition: color .15s; }
+    .footer-links a:hover { color: white; }
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">Seit<span>fix</span></a>
+      <a href="/index.html" class="nav-back">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Zurück zur Startseite
+      </a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <span class="tag">Rechtliches</span>
+      <h1>Impressum</h1>
+
+      <div class="legal-section">
+        <h2>Angaben gemäß § 5 ECG (Österreich)</h2>
+        <address>
+          Seitfix<br />
+          [Vorname Nachname]<br />
+          [Straße und Hausnummer]<br />
+          [PLZ Ort], Österreich
+        </address>
+      </div>
+
+      <div class="legal-section">
+        <h2>Kontakt</h2>
+        <p>E-Mail: <a href="mailto:hallo@seitfix.at" style="color:var(--accent);">hallo@seitfix.at</a></p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Unternehmensgegenstand</h2>
+        <p>Erstellung von Websites und digitalen Dienstleistungen für Unternehmen.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Mitgliedschaft bei der Wirtschaftskammer</h2>
+        <p>
+          Mitglied der Wirtschaftskammer Österreich (WKO)<br />
+          Fachgruppe: Unternehmensberatung, Buchhaltung und Informationstechnologie
+        </p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Haftungsausschluss</h2>
+        <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Seit<span>fix</span></div>
+      <ul class="footer-links">
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

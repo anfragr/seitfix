@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danke für Ihre Anfrage – Seitfix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff; --off-white: #f7f7f5; --border: #e2e2dd;
+      --text: #1a1a18; --muted: #6b6b67; --accent: #2563eb; --accent-lt: #eff4ff;
+      --accent-dk: #1d4ed8;
+      --font-head: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 10px; --nav-h: 68px; --max: 1100px;
+    }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body); color: var(--text);
+      background: var(--white); font-size: 16px; line-height: 1.65;
+      min-height: 100vh; display: flex; flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      height: var(--nav-h);
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center;
+    }
+    .nav-logo { font-family: var(--font-head); font-size: 22px; }
+    .nav-logo span { color: var(--accent); }
+
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .card {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .icon-wrap {
+      width: 80px; height: 80px;
+      background: #dcfce7;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 32px;
+    }
+    .icon-wrap svg { width: 38px; height: 38px; color: #16a34a; }
+
+    .card h1 {
+      font-family: var(--font-head);
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .next-steps {
+      margin: 36px 0;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 28px;
+      text-align: left;
+    }
+    .next-steps h2 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border: none; }
+    .step-num {
+      width: 28px; height: 28px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 600; color: white;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .step div strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .step div p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 500;
+      padding: 13px 28px; border-radius: var(--radius);
+      cursor: pointer; border: none; transition: all .18s ease;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent-dk); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,.3); }
+
+    footer {
+      background: #1a1a18; color: rgba(255,255,255,.5);
+      padding: 28px 0;
+    }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { font-family: var(--font-head); font-size: 18px; color: white; }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.3); }
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">Seit<span>fix</span></a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="card">
+      <div class="icon-wrap">
+        <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+
+      <h1>Danke für Ihre Anfrage!</h1>
+      <p>Ihre Nachricht ist bei uns eingegangen. Wir melden uns <strong>innerhalb von 24 Stunden</strong> bei Ihnen.</p>
+
+      <div class="next-steps">
+        <h2>Wie geht es weiter?</h2>
+        <div class="step">
+          <span class="step-num">1</span>
+          <div>
+            <strong>Wir prüfen Ihre Anfrage</strong>
+            <p>Wir schauen uns Ihre Angaben an und bereiten uns auf das Gespräch vor.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <div>
+            <strong>Wir melden uns per E-Mail</strong>
+            <p>Sie erhalten von uns eine kurze Rückmeldung mit dem nächsten Schritt.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <div>
+            <strong>Ihr Onepager nimmt Form an</strong>
+            <p>Nach kurzer Abstimmung starten wir mit der Umsetzung Ihrer Website.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="/index.html" class="btn btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Zurück zur Startseite
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Seit<span>fix</span></div>
+      <div class="footer-copy">© 2026 Seitfix · Österreich</div>
+    </div>
+  </footer>
+
+</body>
+</html>
