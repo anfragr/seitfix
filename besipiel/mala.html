@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mala – Ihr Malerbetrieb in Wien</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --serif: Georgia, serif;
+      --max: 1080px;
+
+      --red:    #E8391A;
+      --blue:   #1A6EF0;
+      --green:  #0FAD5C;
+      --yellow: #F5B800;
+      --purple: #7C3AED;
+      --pink:   #E02060;
+
+      --dark:   #16130F;
+      --mid:    #6B5D52;
+      --muted:  #A8978A;
+      --bg:     #FFFCF9;
+      --sand:   #F5EDE0;
+      --border: #E8DDD0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+
+    /* ── NAV ── */
+    nav {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-row {
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-family: var(--serif); font-size: 28px; font-weight: 700; }
+    .logo span { color: var(--red); }
+    .nav-r { display: flex; align-items: center; gap: 20px; }
+    .nav-tel {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 15px; font-weight: 700;
+    }
+    .tel-bubble {
+      background: #FFF0EC; border: 1px solid rgba(232,57,26,0.2);
+      border-radius: 50%; width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center; font-size: 15px;
+    }
+    .nav-cta {
+      background: var(--red); color: #fff;
+      font-weight: 700; font-size: 14px;
+      padding: 9px 22px; border-radius: 50px;
+      transition: opacity .15s;
+    }
+    .nav-cta:hover { opacity: .85; }
+
+    /* ── HERO ── */
+    .hero {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-photo {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 54%;
+      object-fit: cover;
+      display: block;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.6) 28%, black 55%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.6) 28%, black 55%);
+    }
+    .rainbow-bar {
+      height: 7px;
+      background: linear-gradient(90deg,
+        var(--red) 0%, var(--red) 16.6%,
+        var(--yellow) 16.6%, var(--yellow) 33.3%,
+        var(--green) 33.3%, var(--green) 50%,
+        var(--blue) 50%, var(--blue) 66.6%,
+        var(--purple) 66.6%, var(--purple) 83.3%,
+        var(--pink) 83.3%, var(--pink) 100%);
+    }
+    .hero-body {
+      position: relative; z-index: 2;
+      padding: 80px 0 72px;
+      max-width: 560px;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #FFF0EC; border: 1px solid rgba(232,57,26,.2);
+      color: var(--red); font-size: 13px; font-weight: 600;
+      padding: 5px 14px; border-radius: 50px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.5vw, 62px);
+      font-weight: 700; line-height: 1.08; letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+    .hero h1 mark {
+      background: none;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(135deg, var(--red), var(--yellow));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .hero-sub {
+      font-size: 17px; color: var(--mid); line-height: 1.75;
+      max-width: 470px; margin-bottom: 34px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-red {
+      background: var(--red); color: #fff; font-weight: 700;
+      font-size: 15px; padding: 13px 30px; border-radius: 50px;
+      display: inline-block; transition: opacity .15s;
+    }
+    .btn-red:hover { opacity: .85; }
+    .btn-outline {
+      color: var(--dark); font-size: 15px; padding: 12px 24px;
+      border: 2px solid var(--border); border-radius: 50px;
+      display: inline-block; transition: border-color .15s, color .15s;
+    }
+    .btn-outline:hover { border-color: var(--red); color: var(--red); }
+    .hero-checks {
+      display: flex; flex-direction: column; gap: 9px; margin-top: 30px;
+    }
+    .hc { display: flex; align-items: center; gap: 9px; font-size: 14px; color: var(--mid); }
+    .hc-ok {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: #E8F7F0; color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 900; flex-shrink: 0;
+    }
+
+
+    /* ── ÜBER ── */
+    .ueber {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 72px 0;
+    }
+    .u-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .eyebrow {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--red); margin-bottom: 12px;
+    }
+    h2.sh {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.2vw, 38px); font-weight: 700;
+      letter-spacing: -.6px; line-height: 1.18; margin-bottom: 18px;
+    }
+    p.sp { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 14px; }
+
+    .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 32px; }
+    .num-box {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px 14px; text-align: center;
+    }
+    .num-box .n {
+      font-family: var(--serif); font-size: 34px; font-weight: 700;
+      color: var(--red); line-height: 1; letter-spacing: -1px;
+    }
+    .num-box .l { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    .photo-card {
+      border-radius: 20px; overflow: hidden;
+      position: relative; min-height: 440px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .photo-bg {
+      position: absolute; inset: 0;
+    }
+    .photo-bg img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .photo-overlay {
+      position: relative; z-index: 2;
+      background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.1) 100%);
+      padding: 32px;
+    }
+    .q-text {
+      font-family: var(--serif); font-size: 19px; font-style: italic;
+      line-height: 1.6; color: #fff; margin-bottom: 14px;
+    }
+    .q-name { font-size: 13px; color: rgba(255,255,255,.6); }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .badge {
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50px; padding: 5px 12px; font-size: 12px; color: rgba(255,255,255,.85);
+      backdrop-filter: blur(4px);
+    }
+
+    /* ── LEISTUNGEN ── */
+    .leistungen {
+      padding: 72px 0;
+      background: var(--sand);
+      border-bottom: 1px solid var(--border);
+    }
+    .l-head { margin-bottom: 40px; }
+    .l-head .eyebrow { color: var(--red); }
+    .l-head h2.sh { color: var(--dark); margin-bottom: 0; }
+
+    .l-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 14px;
+    }
+
+    /* Jede Karte: Farbblock oben + weißer Bereich unten */
+    .lk {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .lk:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,.25); }
+
+    .lk-top {
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+    }
+    .lk-photo {
+      width: 100%; height: 180px; object-fit: cover; display: block;
+    }
+    .lk-tint {
+      position: absolute; inset: 0;
+    }
+    .lk-num {
+      font-family: var(--serif); font-size: 64px; font-weight: 700;
+      color: rgba(255,255,255,.22); line-height: 1;
+      position: absolute; right: 14px; bottom: -6px;
+    }
+
+    .lk-bot { padding: 18px 22px 22px; }
+    .lk-bot h3 { font-size: 16px; font-weight: 700; margin-bottom: 5px; color: var(--dark); }
+    .lk-bot p  { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+    .lk-red    .lk-tint { background: rgba(232,57,26,.60); }
+    .lk-blue   .lk-tint { background: rgba(26,110,240,.60); }
+    .lk-green  .lk-tint { background: rgba(15,173,92,.60); }
+    .lk-yellow .lk-tint { background: rgba(245,184,0,.65); }
+    .lk-purple .lk-tint { background: rgba(124,58,237,.60); }
+    .lk-pink   .lk-tint { background: rgba(224,32,96,.60); }
+
+    /* ── VORTEILE ── */
+    .vorteile {
+      padding: 72px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .v-head { text-align: center; margin-bottom: 44px; }
+    .v-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    }
+    .v-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 18px; padding: 28px 20px; text-align: center;
+      transition: border-color .15s, transform .15s;
+    }
+    .v-card:hover { border-color: var(--red); transform: translateY(-2px); }
+    .v-icon {
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin: 0 auto 14px;
+      border: 2px solid transparent;
+    }
+    .v-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 7px; }
+    .v-card p  { font-size: 13px; color: var(--mid); line-height: 1.65; }
+
+    /* ── BEWERTUNGEN ── */
+    .bewertungen {
+      padding: 72px 0;
+      background: var(--sand);
+      border-bottom: 1px solid var(--border);
+    }
+    .b-head { margin-bottom: 36px; }
+    .b-score {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 50px; padding: 8px 20px 8px 10px; margin-top: 12px;
+    }
+    .b-num {
+      font-family: var(--serif); font-size: 30px; font-weight: 700;
+      color: var(--dark); line-height: 1;
+    }
+    .b-stars { color: var(--yellow); font-size: 18px; letter-spacing: 2px; }
+    .b-ct    { font-size: 13px; color: var(--muted); }
+    .revs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .rev {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px;
+    }
+    .rev-top { display: flex; justify-content: space-between; margin-bottom: 12px; }
+    .rev-av {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: #fff;
+    }
+    .rev-stars { color: var(--yellow); font-size: 14px; letter-spacing: 2px; }
+    .rev-text {
+      font-size: 14px; color: var(--mid); line-height: 1.75;
+      font-style: italic; margin-bottom: 14px;
+    }
+    .rev-name { font-size: 13px; font-weight: 700; }
+    .rev-loc  { font-size: 12px; color: var(--muted); }
+
+    /* ── KONTAKT ── */
+    .kontakt { padding: 80px 0; background: var(--dark); }
+    .k-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .k-eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--yellow); margin-bottom: 12px; }
+    .k-grid h2.sh { color: #fff; }
+    .k-grid p.sp  { color: rgba(255,255,255,.45); margin-bottom: 32px; }
+    .k-infos { display: flex; flex-direction: column; gap: 14px; }
+    .k-info { display: flex; align-items: center; gap: 12px; }
+    .k-ico {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 19px; flex-shrink: 0;
+    }
+    .k-lbl { font-size: 11px; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: .5px; }
+    .k-val { font-size: 16px; font-weight: 600; color: #fff; }
+
+    .kform { background: #fff; border-radius: 20px; padding: 34px 30px; }
+    .kf-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .ff { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+    .ff label { font-size: 12px; font-weight: 600; color: var(--mid); letter-spacing: .3px; }
+    .ff input, .ff select, .ff textarea {
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 10px; padding: 10px 14px;
+      font-size: 14px; font-family: var(--sans); color: var(--dark);
+      outline: none; transition: border-color .15s; width: 100%;
+    }
+    .ff input:focus, .ff select:focus, .ff textarea:focus { border-color: var(--red); }
+    .ff textarea { resize: none; }
+    .kf-btn {
+      width: 100%; background: var(--red); color: #fff;
+      font-size: 15px; font-weight: 700; padding: 13px;
+      border-radius: 50px; border: none; cursor: pointer;
+      font-family: var(--sans); transition: opacity .15s; margin-top: 4px;
+    }
+    .kf-btn:hover { opacity: .85; }
+    .kf-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px; }
+
+    /* ── FOOTER ── */
+    footer { background: #0F0C09; padding: 28px 0; }
+    .foot-row {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .flogo { font-family: var(--serif); font-size: 20px; font-weight: 700; color: #fff; }
+    .flogo span { color: var(--red); }
+    .flinks { display: flex; gap: 20px; }
+    .flinks a { font-size: 13px; color: rgba(255,255,255,.25); transition: color .15s; }
+    .flinks a:hover { color: var(--yellow); }
+    .fcopy { font-size: 12px; color: rgba(255,255,255,.15); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .hero-photo { width: 0; }
+      .u-grid, .k-grid { grid-template-columns: 1fr; gap: 40px; }
+      .l-grid { grid-template-columns: 1fr 1fr; }
+      .v-row  { grid-template-columns: 1fr 1fr; }
+      .revs   { grid-template-columns: 1fr; }
+      nav .nav-cta { display: none; }
+    }
+    @media (max-width: 580px) {
+      .l-grid { grid-template-columns: 1fr; }
+      .nums   { grid-template-columns: repeat(3, 1fr); }
+      .frow   { grid-template-columns: 1fr; }
+      .foot-row { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="nav-row">
+      <div class="logo">Mal<span>a</span></div>
+      <div class="nav-r">
+        <div class="nav-tel">
+          <div class="tel-bubble">📞</div>
+          +43 660 123 456 78
+        </div>
+        <a href="#kontakt" class="nav-cta">Jetzt anfragen</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="rainbow-bar"></div>
+  <img class="hero-photo" src="https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop" alt="Maler bei der Arbeit" />
+  <div class="wrap">
+    <div class="hero-body">
+      <div>
+        <div class="hero-tag">🎨 Malerbetrieb Wien · Familienbetrieb seit 2014</div>
+        <h1>Farbe, Qualität<br>und <mark>echtes</mark><br>Handwerk.</h1>
+        <p class="hero-sub">Als Malerbetrieb aus Wien stehen wir für saubere Arbeit, persönliche Beratung und Ergebnisse, auf die wir stolz sind — von der ersten Farbe bis zur letzten Ecke.</p>
+        <div class="hero-btns">
+          <a href="#kontakt" class="btn-red">Kostenlos anfragen</a>
+          <a href="#leistungen" class="btn-outline">Unsere Leistungen</a>
+        </div>
+        <div class="hero-checks">
+          <div class="hc"><div class="hc-ok">✓</div> Kostenloser Kostenvoranschlag</div>
+          <div class="hc"><div class="hc-ok">✓</div> Eigenes Team — kein Untervergeben</div>
+          <div class="hc"><div class="hc-ok">✓</div> 2 Jahre Gewährleistung</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section class="ueber" id="ueber">
+  <div class="wrap">
+    <div class="u-grid">
+      <div>
+        <div class="eyebrow">Über Mala</div>
+        <h2 class="sh">Ein Betrieb, dem<br>Handwerk wichtig ist.</h2>
+        <p class="sp">Mala ist ein Wiener Malerbetrieb — kein großes Unternehmen, sondern ein Team das seine Arbeit wirklich ernst nimmt. Wir erscheinen pünktlich, erklären was wir tun, arbeiten sauber und gehen erst wenn alles sitzt.</p>
+        <p class="sp">Keine Fremdvergabe. Keine leeren Versprechen. Nur ehrliches Handwerk von Leuten, die wissen, was sie tun.</p>
+        <div class="nums">
+          <div class="num-box"><div class="n">10+</div><div class="l">Jahre Erfahrung</div></div>
+          <div class="num-box"><div class="n">120+</div><div class="l">Projekte</div></div>
+          <div class="num-box"><div class="n">4.9★</div><div class="l">Bewertung</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="photo-card">
+          <div class="photo-bg">
+            <img src="https://images.pexels.com/photos/6474123/pexels-photo-6474123.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop" alt="Malerin bei der Arbeit" />
+          </div>
+          <div class="photo-overlay">
+            <p class="q-text">„Jede Wand, die wir streichen, könnte auch die unserer eigenen Wohnung sein. Deshalb machen wir keine Abstriche."</p>
+            <div class="q-name">— Mala, Inhaber & Malermeister, Wien</div>
+            <div class="badges">
+              <div class="badge">✅ Gewerbeschein</div>
+              <div class="badge">🛡️ Vollversichert</div>
+              <div class="badge">📋 WKO Mitglied</div>
+              <div class="badge">🎓 Meisterbetrieb</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="leistungen" id="leistungen">
+  <div class="wrap">
+    <div class="l-head">
+      <div class="eyebrow">Was wir machen</div>
+      <h2 class="sh">Unsere Leistungen</h2>
+    </div>
+    <div class="l-grid">
+      <div class="lk lk-red">
+        <div class="lk-top">
+          <img class="lk-photo" src="https://images.pexels.com/photos/7217975/pexels-photo-7217975.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Innenmalerei" />
+          <div class="lk-tint"></div>
+          <div class="lk-num">01</div>
+        </div>
+        <div class="lk-bot">
+          <h3>Innenmalerei</h3>
+          <p>Wände, Decken, Nischen — sauber abgeklebt, deckend gestrichen, perfekte Kanten ohne Nacharbeit.</p>
+        </div>
+      </div>
+      <div class="lk lk-blue">
+        <div class="lk-top">
+          <img class="lk-photo" src="https://images.pexels.com/photos/26918635/pexels-photo-26918635.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Fassadenmalerei" />
+          <div class="lk-tint"></div>
+          <div class="lk-num">02</div>
+        </div>
+        <div class="lk-bot">
+          <h3>Fassadenmalerei</h3>
+          <p>Wetterfeste Beschichtungen fürs Außenhaus. Schützend, langlebig und professionell ausgeführt.</p>
+        </div>
+      </div>
+      <div class="lk lk-green">
+        <div class="lk-top">
+          <img class="lk-photo" src="https://images.pexels.com/photos/10397040/pexels-photo-10397040.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Tapezieren" />
+          <div class="lk-tint"></div>
+          <div class="lk-num">03</div>
+        </div>
+        <div class="lk-bot">
+          <h3>Tapezieren</h3>
+          <p>Klassisch oder modern — präzise verlegt, absolut fugenfrei, kein Blasen, kein Verrutschen.</p>
+        </div>
+      </div>
+      <div class="lk lk-yellow">
+        <div class="lk-top">
+          <img class="lk-photo" src="https://images.pexels.com/photos/5493655/pexels-photo-5493655.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Spachteln und Schleifen" />
+          <div class="lk-tint"></div>
+          <div class="lk-num">04</div>
+        </div>
+        <div class="lk-bot">
+          <h3>Spachteln & Schleifen</h3>
+          <p>Risse, Unebenheiten, alte Tapetenmuster — wir machen Flächen glatt als Grundlage für perfekte Ergebnisse.</p>
+        </div>
+      </div>
+      <div class="lk lk-purple">
+        <div class="lk-top">
+          <img class="lk-photo" src="https://images.pexels.com/photos/5583116/pexels-photo-5583116.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Fenster und Türen lackieren" />
+          <div class="lk-tint"></div>
+          <div class="lk-num">05</div>
+        </div>
+        <div class="lk-bot">
+          <h3>Fenster & Türen</h3>
+          <p>Zargen, Türen, Heizkörper, Fensterrahmen — fachgerecht lackiert für dauerhaften Schutz und frischen Look.</p>
+        </div>
+      </div>
+      <div class="lk lk-pink">
+        <div class="lk-top">
+          <img class="lk-photo" src="https://images.pexels.com/photos/9492923/pexels-photo-9492923.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Farbberatung" />
+          <div class="lk-tint"></div>
+          <div class="lk-num">06</div>
+        </div>
+        <div class="lk-bot">
+          <h3>Farbberatung</h3>
+          <p>Noch keine Farbe im Kopf? Wir helfen Ihnen beim Auswählen — kostenlos und ohne Druck.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VORTEILE -->
+<section class="vorteile">
+  <div class="wrap">
+    <div class="v-head">
+      <div class="eyebrow" style="justify-content:center;display:block;text-align:center;">Warum Mala</div>
+      <h2 class="sh" style="text-align:center;margin-top:8px;">Unser Versprechen</h2>
+    </div>
+    <div class="v-row">
+      <div class="v-card">
+        <div class="v-icon" style="background:#FFF0EC;border-color:rgba(232,57,26,.2);">🤝</div>
+        <h4>Nur eigenes Team</h4>
+        <p>Alle Arbeiten durch unsere Mitarbeiter. Kein Untervergeben, keine unbekannten Gesichter.</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon" style="background:#E8F7F0;border-color:rgba(15,173,92,.2);">📋</div>
+        <h4>Klare Preise</h4>
+        <p>Was im Angebot steht, wird bezahlt. Keine Nachforderungen, keine Überraschungen danach.</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon" style="background:#EBF3FF;border-color:rgba(26,110,240,.2);">⏱️</div>
+        <h4>Pünktlich & sauber</h4>
+        <p>Wir erscheinen wann vereinbart, arbeiten ordentlich und räumen nach uns vollständig auf.</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon" style="background:#F5EFF8;border-color:rgba(124,58,237,.2);">🛡️</div>
+        <h4>2 Jahre Gewähr</h4>
+        <p>Falls etwas nicht stimmt, kommen wir zurück und bessern nach — ohne jede Diskussion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEWERTUNGEN -->
+<section class="bewertungen" id="bewertungen">
+  <div class="wrap">
+    <div class="b-head">
+      <div class="eyebrow">Das sagen unsere Kunden</div>
+      <h2 class="sh" style="margin-bottom:10px;">Kundenstimmen</h2>
+      <div class="b-score">
+        <div class="b-num">4.9</div>
+        <div>
+          <div class="b-stars">★★★★★</div>
+          <div class="b-ct">auf Google · 47 Bewertungen</div>
+        </div>
+      </div>
+    </div>
+    <div class="revs">
+      <div class="rev">
+        <div class="rev-top">
+          <div class="rev-av" style="background:var(--red);">MK</div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <p class="rev-text">„Wir haben die komplette Wohnung neu streichen lassen — absolut sauber, pünktlich fertig und das Ergebnis ist genau so, wie wir uns das vorgestellt hatten. Man merkt, dass denen die Arbeit wichtig ist."</p>
+        <div class="rev-name">M. Kowalski</div>
+        <div class="rev-loc">Wien, 10. Bezirk</div>
+      </div>
+      <div class="rev">
+        <div class="rev-top">
+          <div class="rev-av" style="background:var(--blue);">SB</div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <p class="rev-text">„Hätte nicht gedacht, dass das so unkompliziert läuft. Klare Kommunikation, fairer Preis, top Ergebnis. Die haben uns sogar bei der Farbwahl beraten. Sehr empfehlenswert!"</p>
+        <div class="rev-name">S. Berger</div>
+        <div class="rev-loc">Wien, 15. Bezirk</div>
+      </div>
+      <div class="rev">
+        <div class="rev-top">
+          <div class="rev-av" style="background:var(--green);">TH</div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <p class="rev-text">„Fassade und Treppenhaus komplett renoviert. Das Team war freundlich, professionell und termingerecht. Sehr zufrieden, wir werden auf jeden Fall wieder anfragen."</p>
+        <div class="rev-name">T. Huber</div>
+        <div class="rev-loc">Wien, 13. Bezirk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="k-grid">
+      <div>
+        <div class="k-eyebrow">Kontakt & Anfrage</div>
+        <h2 class="sh">Rufen Sie uns an<br>oder schreiben Sie.</h2>
+        <p class="sp">Wir melden uns innerhalb von 24 Stunden. Der Kostenvoranschlag ist für Sie immer kostenlos und unverbindlich.</p>
+        <div class="k-infos">
+          <div class="k-info">
+            <div class="k-ico">📞</div>
+            <div><div class="k-lbl">Telefon</div><div class="k-val">+43 660 123 456 78</div></div>
+          </div>
+          <div class="k-info">
+            <div class="k-ico">✉️</div>
+            <div><div class="k-lbl">E-Mail</div><div class="k-val">office@mala-malerei.at</div></div>
+          </div>
+          <div class="k-info">
+            <div class="k-ico">📍</div>
+            <div><div class="k-lbl">Einsatzgebiet</div><div class="k-val">Wien & Umgebung</div></div>
+          </div>
+          <div class="k-info">
+            <div class="k-ico">🕐</div>
+            <div><div class="k-lbl">Erreichbar</div><div class="k-val">Mo–Fr, 7:00–18:00 Uhr</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="kform">
+          <div class="kf-title">🎨 Kostenlosen KV anfragen</div>
+          <div class="frow">
+            <div class="ff"><label>Name</label><input type="text" placeholder="Max Mustermann" /></div>
+            <div class="ff"><label>Telefon</label><input type="tel" placeholder="+43 …" /></div>
+          </div>
+          <div class="ff">
+            <label>Was soll gemacht werden?</label>
+            <select>
+              <option value="">Bitte wählen …</option>
+              <option>Innenmalerei</option>
+              <option>Fassadenmalerei</option>
+              <option>Tapezieren</option>
+              <option>Spachteln & Schleifen</option>
+              <option>Fenster & Türen lackieren</option>
+              <option>Komplettrenovierung</option>
+            </select>
+          </div>
+          <div class="ff">
+            <label>Nachricht (optional)</label>
+            <textarea rows="3" placeholder="Raumgröße, Zustand, Wunschtermin …"></textarea>
+          </div>
+          <button class="kf-btn">Anfrage abschicken →</button>
+          <p class="kf-note">Kostenloser KV · Keine Verpflichtung · Antwort in 24h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="flogo">Mal<span>a</span></div>
+      <div class="flinks">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+      <div class="fcopy">© 2025 Mala Malerei · Wien</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
