@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="de" data-schema="1" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elektrotechnik — Installation, Photovoltaik & Smart Home | Onepager-Vorschau</title>
+<meta name="description" content="Elektrotechnik-Onepager: Installation, PV, Smart Home & E-Mobilität. Normgerecht, termintreu, 24/7-Notdienst.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Elektrotechnik — Strom, der sicher und effizient fließt">
+<meta property="og:description" content="Elektrotechnik-Onepager: Installation, PV, Smart Home & E-Mobilität. Normgerecht, termintreu, 24/7-Notdienst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   seitfix Baukasten — Elektrotechnik
+   Design-System über CSS Custom Properties + [data-schema]
+   ============================================================ */
+:root{
+  --accent:#0e63d6;
+  --accent-2:#3d8bff;
+  --text:#141a22;
+  --muted:#5c6773;
+  --bg:#f4f7fb;
+  --surface:#ffffff;
+  --border:#e0e7f0;
+  --font-head:'Manrope', system-ui, sans-serif;
+  --font-body:'Inter', system-ui, sans-serif;
+  --radius:16px;
+  --radius-sm:10px;
+  --btn-radius:12px;
+  --card-bd:1px solid var(--border);
+  --card-shadow:0 10px 30px -18px rgba(10,20,40,.35);
+  --card-bg:var(--surface);
+  --space:20px;
+  --sp-section:96px;
+  --h1:clamp(2.4rem,6vw,4.2rem);
+  --h1-lh:1.05;
+  --h1-ls:-0.02em;
+  --h1-weight:800;
+  --head-transform:none;
+  --head-ls:-0.01em;
+  --hero-align:left;
+  --hero-pad:72px;
+  --btn-transform:none;
+  --btn-weight:600;
+  --bar-bg:rgba(255,255,255,.85);
+  --bar-text:#141a22;
+  --ring:0 0 0 3px color-mix(in srgb, var(--accent) 40%, transparent);
+  --maxw:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font-body);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-head);letter-spacing:var(--head-ls);line-height:1.12;margin:0 0 .4em;text-transform:var(--head-transform)}
+h1{font-size:var(--h1);line-height:var(--h1-lh);letter-spacing:var(--h1-ls);font-weight:var(--h1-weight)}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0 0 1em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+:focus-visible{outline:none;box-shadow:var(--ring);border-radius:6px}
+.btn{
+  display:inline-flex;align-items:center;gap:.5em;cursor:pointer;border:none;
+  font-family:var(--font-head);font-weight:var(--btn-weight);text-transform:var(--btn-transform);
+  font-size:1rem;padding:14px 26px;border-radius:var(--btn-radius);
+  background:var(--accent);color:#fff;transition:transform .15s ease,filter .15s ease,box-shadow .15s ease;
+  letter-spacing:.01em;
+}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn.ghost{background:transparent;color:var(--text);border:2px solid var(--border)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent);filter:none}
+.btn.sm{padding:9px 16px;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+
+/* ---------- Baukasten-Leiste ---------- */
+.builder{position:sticky;top:0;z-index:50;background:var(--bar-bg);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--border);color:var(--bar-text)}
+.builder .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:9px 18px}
+.builder .row+.row{border-top:1px dashed var(--border)}
+.builder .lbl{font-family:var(--font-head);font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.chips{display:flex;gap:7px;flex-wrap:wrap;flex:1}
+.chip{cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:600;font-family:var(--font-head);display:inline-flex;align-items:center;gap:6px;transition:all .14s ease;white-space:nowrap}
+.chip .num{font-size:.7rem;opacity:.6;font-variant-numeric:tabular-nums}
+.chip:hover{border-color:var(--accent);transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.chip[aria-pressed="true"] .num{opacity:.85;color:#fff}
+.ctrl{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--muted);font-weight:500}
+.ctrl input[type=color]{width:30px;height:30px;border:1px solid var(--border);border-radius:8px;background:none;padding:2px;cursor:pointer}
+.ctrl select{font:inherit;font-size:.82rem;padding:7px 9px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);cursor:pointer}
+.spacer{flex:1}
+.langtoggle{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden}
+.langtoggle button{border:none;background:var(--surface);color:var(--muted);font-family:var(--font-head);font-weight:700;font-size:.78rem;padding:7px 12px;cursor:pointer}
+.langtoggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.builder .btn{padding:10px 20px;font-size:.9rem}
+
+/* ---------- Sektionen ---------- */
+header.site{padding:22px 0}
+.nav{display:flex;align-items:center;gap:20px}
+.logo{font-family:var(--font-head);font-weight:800;font-size:1.25rem;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+.logo .dot{width:14px;height:14px;border-radius:5px;background:var(--accent);display:inline-block}
+.nav .links{display:flex;gap:22px;margin-left:8px}
+.nav .links a{color:var(--muted);font-weight:500;font-size:.95rem}
+.nav .links a:hover{color:var(--accent)}
+.nav .right{margin-left:auto;display:flex;align-items:center;gap:12px}
+@media(max-width:780px){.nav .links{display:none}}
+
+.hero{padding:var(--hero-pad) 0}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero.center .grid{grid-template-columns:1fr;text-align:center;max-width:820px;margin:0 auto}
+.hero .eyebrow{display:inline-block;font-family:var(--font-head);font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.hero p.sub{font-size:1.15rem;color:var(--muted);max-width:52ch}
+.hero.center p.sub{margin-left:auto;margin-right:auto}
+.hero .cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.hero.center .cta{justify-content:center}
+.hero .media{position:relative}
+.hero .media img{width:100%;height:440px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--card-shadow);border:var(--card-bd)}
+.hero .badge{position:absolute;left:-14px;bottom:-14px;background:var(--surface);border:var(--card-bd);border-radius:var(--radius-sm);box-shadow:var(--card-shadow);padding:12px 16px;font-family:var(--font-head);font-weight:700;font-size:.9rem}
+.hero .badge b{color:var(--accent);font-size:1.3rem;display:block}
+@media(max-width:860px){.hero .grid{grid-template-columns:1fr;text-align:left}.hero .media img{height:300px}}
+
+section{padding:var(--sp-section) 0}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.eyebrow-2{font-family:var(--font-head);font-weight:700;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.lead{color:var(--muted);font-size:1.08rem}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space)}
+.card{background:var(--card-bg);border:var(--card-bd);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:26px;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-4px)}
+.card .ic{width:46px;height:46px;border-radius:12px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px}
+.card h3{margin-bottom:.35em}
+.card p{color:var(--muted);font-size:.96rem;margin:0}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space)}
+.shot{position:relative;border-radius:var(--radius);overflow:hidden;border:var(--card-bd);box-shadow:var(--card-shadow)}
+.shot img{width:100%;height:230px;object-fit:cover;transition:transform .4s ease}
+.shot:hover img{transform:scale(1.05)}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;color:#fff;font-family:var(--font-head);font-weight:600;font-size:.95rem;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+@media(prefers-reduced-motion:reduce){.shot img{transition:none}.card{transition:none}}
+
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.about .media img{width:100%;height:380px;object-fit:cover;border-radius:var(--radius);border:var(--card-bd);box-shadow:var(--card-shadow)}
+.timeline{list-style:none;margin:24px 0 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--border)}
+.timeline li{position:relative;padding:0 0 22px 34px}
+.timeline li:before{content:"";position:absolute;left:2px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+.timeline .yr{font-family:var(--font-head);font-weight:700;color:var(--accent);font-size:.9rem}
+.timeline h3{font-size:1.05rem;margin:.1em 0 .2em}
+.timeline p{color:var(--muted);font-size:.95rem;margin:0}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+.contact .info p{color:var(--muted)}
+.contact .info .line{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.contact .info .line .ic{color:var(--accent);font-size:1.15rem}
+form.cf{background:var(--card-bg);border:var(--card-bd);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:28px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--font-head);font-weight:600;font-size:.85rem;margin-bottom:6px}
+.field input,.field textarea{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text)}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--accent);outline:none;box-shadow:var(--ring)}
+
+footer.site{background:var(--surface);border-top:1px solid var(--border);padding:52px 0 30px}
+.foot{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+.foot .muted{color:var(--muted);font-size:.9rem;max-width:36ch}
+.foot .cols{display:flex;gap:56px;flex-wrap:wrap}
+.foot h4{font-family:var(--font-head);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.foot a{display:block;color:var(--text);font-size:.95rem;margin-bottom:8px}
+.foot a:hover{color:var(--accent)}
+.copyright{margin-top:36px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;background:rgba(10,15,25,.5);padding:20px}
+.modal.open{display:grid}
+.modal .box{background:var(--surface);border-radius:var(--radius);box-shadow:0 40px 90px -30px rgba(0,0,0,.5);max-width:460px;width:100%;padding:30px;border:var(--card-bd)}
+.modal h3{font-size:1.4rem}
+.modal p{color:var(--muted)}
+.modal .field select{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text)}
+.modal .actions{display:flex;gap:12px;margin-top:22px}
+.modal .actions .btn{flex:1;justify-content:center}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:14px 22px;border-radius:999px;font-family:var(--font-head);font-weight:600;box-shadow:0 20px 40px -18px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:all .3s ease;z-index:120}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.round2{display:none;background:color-mix(in srgb,var(--accent) 8%,var(--surface));border-bottom:1px solid var(--border);padding:12px 18px;align-items:center;gap:14px;flex-wrap:wrap}
+body[data-round="2"] .round2{display:flex}
+body[data-round="2"] .builder .row.r-schema .chip[data-schema-hidden]{display:none}
+.round2 .lbl{color:var(--accent)}
+
+/* ===== 10 LAYOUT-SCHEMAS ===== */
+[data-schema="1"]{--accent:#1f5fc8;--accent-2:#4a86e8;--text:#0f1b2d;--muted:#5a6b82;--bg:#f4f7fc;--surface:#ffffff;--border:#d8e2f2;--font-head:'Space Grotesk',sans-serif;--font-body:'IBM Plex Sans',sans-serif;--radius:4px;--radius-sm:3px;--btn-radius:3px;--h1-weight:700;--head-ls:-.01em;--card-shadow:none;--card-bd:1px solid var(--border);--sp-section:88px}
+[data-schema="1"] .card,[data-schema="1"] .shot,[data-schema="1"] .hero .media img{background-image:linear-gradient(color-mix(in srgb,var(--accent) 6%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 6%,transparent) 1px,transparent 1px);background-size:22px 22px}
+[data-schema="1"] .eyebrow{border-radius:3px}
+[data-schema="2"]{--accent:#f0450b;--accent-2:#ff7a3d;--text:#141414;--muted:#5c5651;--bg:#fffdf8;--surface:#ffffff;--border:#eee6d9;--font-head:'Archivo',sans-serif;--font-body:'Inter',sans-serif;--radius:14px;--btn-radius:999px;--h1:clamp(2.8rem,8vw,5.4rem);--h1-weight:800;--h1-ls:-.03em;--head-transform:uppercase;--head-ls:-.02em;--card-shadow:0 2px 0 var(--text);--card-bd:2px solid var(--text);--btn-transform:uppercase;--btn-weight:800;--sp-section:104px}
+[data-schema="2"] .btn{box-shadow:0 3px 0 var(--text)}
+[data-schema="3"]{--accent:#22d3aa;--accent-2:#38e0bd;--text:#e8f0f2;--muted:#8ba0a6;--bg:#0d1417;--surface:#151f24;--border:#243138;--font-head:'Sora',sans-serif;--font-body:'IBM Plex Sans',sans-serif;--radius:12px;--btn-radius:10px;--card-shadow:0 20px 50px -30px rgba(0,0,0,.8);--card-bd:1px solid var(--border);--bar-bg:rgba(13,20,23,.85);--bar-text:#e8f0f2;--h1-weight:700;--sp-section:92px}
+[data-schema="3"] .card .ic{background:color-mix(in srgb,var(--accent) 18%,transparent)}
+[data-schema="4"]{--accent:#b5622f;--accent-2:#d98b52;--text:#2b2119;--muted:#7a6a5c;--bg:#f3ece2;--surface:#fbf6ee;--border:#e3d6c5;--font-head:'Fraunces',serif;--font-body:'Lora',serif;--radius:22px;--radius-sm:14px;--btn-radius:14px;--card-shadow:0 14px 34px -20px rgba(90,60,30,.4);--h1-weight:600;--sp-section:100px}
+[data-schema="5"]{--accent:#e2b400;--accent-2:#ffcf2e;--text:#16181a;--muted:#5f666d;--bg:#e9ebed;--surface:#ffffff;--border:#c9ced3;--font-head:'Archivo',sans-serif;--font-body:'IBM Plex Sans',sans-serif;--radius:0px;--radius-sm:0px;--btn-radius:0px;--head-transform:uppercase;--head-ls:.02em;--h1-weight:800;--btn-transform:uppercase;--btn-weight:700;--card-shadow:none;--card-bd:2px solid var(--text);--sp-section:96px}
+[data-schema="5"] .btn{border:2px solid var(--text)}
+[data-schema="6"]{--accent:#111111;--accent-2:#444444;--text:#111111;--muted:#8a8a8a;--bg:#ffffff;--surface:#ffffff;--border:#ececec;--font-head:'Inter',sans-serif;--font-body:'Inter',sans-serif;--radius:8px;--btn-radius:8px;--h1:clamp(2.4rem,6vw,4rem);--h1-weight:600;--h1-ls:-.03em;--head-ls:-.02em;--card-shadow:none;--card-bd:1px solid var(--border);--sp-section:120px;--hero-pad:96px}
+[data-schema="7"]{--accent:#a9852f;--accent-2:#c9a955;--text:#efe8db;--muted:#a99f8c;--bg:#12100d;--surface:#1b1813;--border:#332d24;--font-head:'Playfair Display',serif;--font-body:'Source Serif 4',serif;--radius:6px;--btn-radius:4px;--h1-weight:700;--h1-ls:-.01em;--card-shadow:0 24px 60px -34px rgba(0,0,0,.8);--card-bd:1px solid var(--border);--bar-bg:rgba(18,16,13,.88);--bar-text:#efe8db;--sp-section:108px}
+[data-schema="8"]{--accent:#6d3bf5;--accent-2:#9a6bff;--text:#171528;--muted:#6b6789;--bg:#f7f6fd;--surface:#ffffff;--border:#e9e6f7;--font-head:'Sora',sans-serif;--font-body:'Manrope',sans-serif;--radius:20px;--btn-radius:14px;--h1-weight:700;--card-shadow:0 30px 60px -34px rgba(80,50,200,.4);--sp-section:100px}
+[data-schema="8"] .btn{background:linear-gradient(120deg,var(--accent),var(--accent-2))}
+[data-schema="8"] .hero .eyebrow{background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 14%,transparent),color-mix(in srgb,var(--accent-2) 14%,transparent))}
+[data-schema="9"]{--accent:#ff3d81;--accent-2:#ffb03d;--text:#241a2b;--muted:#7c6f86;--bg:#fff6fb;--surface:#ffffff;--border:#ffe1ef;--font-head:'Poppins',sans-serif;--font-body:'Poppins',sans-serif;--radius:28px;--radius-sm:18px;--btn-radius:999px;--h1-weight:800;--card-shadow:0 20px 44px -22px rgba(255,61,129,.4);--sp-section:96px}
+[data-schema="9"] .card:nth-child(2n) .ic{background:color-mix(in srgb,var(--accent-2) 22%,transparent);color:#b06a00}
+[data-schema="10"]{--accent:#12437e;--accent-2:#2e6bb8;--text:#12181f;--muted:#5b6570;--bg:#f5f7f9;--surface:#ffffff;--border:#dde3ea;--font-head:'Manrope',sans-serif;--font-body:'Inter',sans-serif;--radius:8px;--btn-radius:6px;--h1-weight:800;--h1-ls:-.02em;--card-shadow:0 12px 28px -20px rgba(20,40,70,.35);--sp-section:92px}
+
+/* ---- längere Vorlage: Zusatz-Komponenten ---- */
+.stats{background:var(--text);color:var(--bg);padding:44px 0}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats b{font-family:var(--font-head);font-size:clamp(1.9rem,3.4vw,2.5rem);display:block;line-height:1;color:var(--accent-2)}
+.stats span{opacity:.82;font-size:.9rem}
+@media(max-width:700px){.stats .grid{grid-template-columns:1fr 1fr;gap:26px}}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:20px 44px}
+.why .item{display:flex;gap:14px;align-items:flex-start}
+.why .tick{flex:none;width:32px;height:32px;border-radius:9px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);display:grid;place-items:center}
+.why h3{font-size:1.06rem;margin:.1em 0 .25em}
+.why p{color:var(--muted);font-size:.95rem;margin:0}
+@media(max-width:700px){.why{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.step .n{width:44px;height:44px;border-radius:12px;background:var(--accent);color:#fff;font-family:var(--font-head);font-weight:800;display:grid;place-items:center;font-size:1.25rem;margin-bottom:14px}
+.step h3{font-size:1.06rem;margin:0 0 .3em}
+.step p{color:var(--muted);font-size:.92rem;margin:0}
+@media(max-width:700px){.steps{grid-template-columns:1fr 1fr}}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quote{background:var(--card-bg);border:var(--card-bd);border-radius:var(--radius);box-shadow:var(--card-shadow);padding:26px}
+.quote .stars{color:var(--accent);letter-spacing:2px;margin-bottom:10px}
+.quote>p{font-size:1rem;margin:0 0 16px}
+.quote .who{display:flex;align-items:center;gap:12px}
+.quote .av{width:42px;height:42px;border-radius:50%;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);display:grid;place-items:center;font-family:var(--font-head);font-weight:800}
+.quote .who b{display:block;font-size:.95rem}.quote .who span{color:var(--muted);font-size:.85rem}
+@media(max-width:820px){.quotes{grid-template-columns:1fr}}
+.card .ic svg,.why .tick svg,.contact .info .line .ic svg{width:22px;height:22px}
+
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.member{margin:0}
+.member img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);border:var(--card-bd);box-shadow:var(--card-shadow)}
+.member figcaption{padding:14px 4px 0}
+.member figcaption b{display:block;font-family:var(--font-head);font-size:1.02rem}
+.member figcaption span{color:var(--muted);font-size:.9rem}
+@media(max-width:820px){.team{grid-template-columns:1fr 1fr}}
+
+/* ===== Agentur-Feinschliff (schema-agnostisch, nutzt Design-Tokens) ===== */
+html{scroll-padding-top:132px}
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-30%;right:-12%;width:55%;height:130%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 9%,transparent),transparent 72%);pointer-events:none}
+.hero .wrap{position:relative}
+.btn{box-shadow:0 12px 24px -14px color-mix(in srgb,var(--accent) 60%,transparent)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{box-shadow:none}
+.card{will-change:transform}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 32%,var(--border));
+  box-shadow:0 20px 44px -22px color-mix(in srgb,var(--accent) 28%,rgba(0,0,0,.35))}
+.eyebrow-2{display:flex;align-items:center;gap:10px}
+.eyebrow-2::before{content:"";width:26px;height:2px;background:var(--accent);flex:none}
+.sec-head.center .eyebrow-2{justify-content:center}
+.quote{transition:transform .18s ease,box-shadow .18s ease}
+.quote:hover{transform:translateY(-4px)}
+.member img{transition:transform .35s ease}
+.member:hover img{transform:scale(1.03)}
+.foot a{transition:color .15s ease,transform .15s ease}
+/* Scroll-Reveal */
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)}
+[data-reveal].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+/* Mobile-Navigation */
+header.site{position:relative}
+.navburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.navburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+header.site.open .navburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+header.site.open .navburger span:nth-child(2){opacity:0}
+header.site.open .navburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:780px){
+  .navburger{display:flex}
+  header.site.open .links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;
+    background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px 20px;gap:4px;z-index:40;
+    box-shadow:0 28px 44px -26px rgba(0,0,0,.35)}
+  header.site.open .links a{padding:10px 0;font-size:1.05rem;border-bottom:1px solid var(--border)}
+  header.site.open .links a:last-child{border-bottom:0}
+  :root{--sp-section:64px}
+  .hero{padding-top:20px}
+}
+
+/* ===== Branchen-eigene Sektions-Reihenfolge ===== */
+main{display:flex;flex-direction:column}
+#hero{order:1}
+.stats{order:2}
+#leistungen{order:3}
+#vorteile{order:4}
+#projekte{order:6}
+#ablauf{order:7}
+#ueber{order:8}
+#team{order:9}
+#bewertungen{order:5}
+#kontakt{order:10}
+footer.site{order:99}
+
+/* ===== ELEKTRIKER: technisch / Datenblatt ===== */
+[data-branch="elektriker"] #leistungen .cards{gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+[data-branch="elektriker"] #leistungen .card{border-radius:0;box-shadow:none;border:0;background:var(--surface);padding:30px 26px}
+[data-branch="elektriker"] #leistungen .card:hover{transform:none;background:color-mix(in srgb,var(--accent) 6%,var(--surface))}
+[data-branch="elektriker"] #leistungen .card .ic{border-radius:7px;width:40px;height:40px}
+[data-branch="elektriker"] .eyebrow-2{font-family:var(--font-body);letter-spacing:.18em;font-size:.72rem}
+[data-branch="elektriker"] #projekte .shot figcaption{font-family:var(--font-body);letter-spacing:.03em;font-size:.85rem}
+[data-branch="elektriker"] #bewertungen .quote{border-top:3px solid var(--accent)}
+[data-branch="elektriker"] #bewertungen .quote .stars{font-size:.9rem}
+</style>
+</head>
+<body data-round="1" data-branch="elektriker">
+
+<div class="builder" role="region" aria-label="Baukasten">
+  <div class="row r-schema">
+    <span class="lbl" data-i18n="b_layout">Layout-Schema</span>
+    <div class="chips" id="schemaChips" role="group" aria-label="Layout-Schema wählen"></div>
+  </div>
+  <div class="row">
+    <span class="lbl" data-i18n="b_customize">Anpassen</span>
+    <label class="ctrl"><span data-i18n="b_accent">Akzent</span><input type="color" id="cAccent" value="#0e63d6"></label>
+    <label class="ctrl"><span data-i18n="b_text">Text</span><input type="color" id="cText" value="#141a22"></label>
+    <label class="ctrl"><span data-i18n="b_muted">Nebentext</span><input type="color" id="cMuted" value="#5c6773"></label>
+    <label class="ctrl"><span data-i18n="b_headfont">Überschrift</span><select id="fHead"></select></label>
+    <label class="ctrl"><span data-i18n="b_bodyfont">Fließtext</span><select id="fBody"></select></label>
+    <span class="spacer"></span>
+    <div class="langtoggle" role="group" aria-label="Sprache">
+      <button id="langDe" aria-pressed="true">DE</button>
+      <button id="langEn" aria-pressed="false">EN</button>
+    </div>
+    <button class="btn" id="btnSubmit" data-i18n="b_submit">Absenden</button>
+  </div>
+  <div class="round2" role="region" aria-label="Runde 2">
+    <span class="lbl" data-i18n="r2_pick">Finale Wahl — 1 von 3 Schemas wählen &amp; bestätigen</span>
+    <span class="spacer"></span>
+    <button class="btn" id="btnFinal" data-i18n="r2_confirm">Finale Wahl bestätigen</button>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="dot"></span><span data-field="firmenname">Elektrotechnik Musterbetrieb</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="#leistungen" data-i18n="nav_services">Leistungen</a>
+      <a href="#projekte" data-i18n="nav_projects">Projekte</a>
+      <a href="#ueber" data-i18n="nav_about">Über uns</a>
+      <a href="#kontakt" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+    <div class="right"><a class="btn ghost sm" href="#kontakt" data-i18n="nav_cta">Angebot anfragen</a>
+      <button class="navburger" type="button" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero" style="padding-top:0">
+  <div class="wrap grid">
+    <div class="copy">
+      <span class="eyebrow" data-field="hero_eyebrow">Konzessionierter Betrieb</span>
+      <h1 data-field="hero_titel">Strom, der sicher und effizient fließt</h1>
+      <p class="sub" data-field="hero_subtitel">Elektroinstallation, Photovoltaik und Smart Home aus einer Hand — normgerecht, sauber und pünktlich. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+      <div class="cta">
+        <a class="btn" href="#kontakt" data-i18n="hero_cta1">Kostenlos anfragen</a>
+        <a class="btn ghost" href="#projekte" data-i18n="hero_cta2">Projekte ansehen</a>
+      </div>
+    </div>
+    <div class="media">
+      <img decoding="async" data-field-src="hero_bild" src="https://loremflickr.com/900/720/electrician,installation?lock=11" alt="Elektriker installiert eine moderne Schaltanlage" width="900" height="720" loading="eager">
+      <div class="badge"><b data-field="hero_badge_zahl">24/7</b><span data-field="hero_badge_text">Notdienst verfügbar</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats"><div class="wrap"><div class="grid"><div><b data-i18n="st1n">15+</b><span data-i18n="st1l">15+</span></div><div><b data-i18n="st2n">500+</b><span data-i18n="st2l">500+</span></div><div><b data-i18n="st3n">4.9★</b><span data-i18n="st3l">4.9★</span></div><div><b data-i18n="st4n">24/7</b><span data-i18n="st4l">24/7</span></div></div></div></section>
+
+<section id="leistungen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-2" data-i18n="services_eyebrow">Leistungen</div>
+      <h2 data-field="leistungen_titel">Elektrotechnik für Haus & Gewerbe</h2>
+      <p class="lead" data-field="leistungen_text">Von der Steckdose bis zur PV-Anlage — ein Team für alle Gewerke. Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div><h3 data-field="leistung_1_titel">Elektroinstallation</h3><p data-field="leistung_1_text">Neubau, Sanierung und Erweiterung nach aktueller Norm. Lorem ipsum dolor sit amet consectetur adipiscing.</p></article>
+      <article class="card"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><h3 data-field="leistung_2_titel">Photovoltaik</h3><p data-field="leistung_2_text">Planung, Montage und Speicher für Ihre eigene Energie. Ut labore et dolore magna aliqua.</p></article>
+      <article class="card"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></div><h3 data-field="leistung_3_titel">Smart Home</h3><p data-field="leistung_3_text">Licht, Beschattung und Sicherheit intelligent vernetzt. Quis nostrud exercitation ullamco laboris.</p></article>
+      <article class="card"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6"/><path d="M7 8h10v3a5 5 0 0 1-10 0z"/><path d="M12 16v6"/></svg></div><h3 data-field="leistung_4_titel">E-Ladelösungen</h3><p data-field="leistung_4_text">Wallboxen für Zuhause und Betrieb, förderfähig installiert. Duis aute irure dolor in reprehenderit.</p></article><article class="card"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 2Z"/></svg></div><h3 data-field="leistung_5_titel">Beleuchtungskonzepte</h3><p data-field="leistung_5_text">LED, Steuerung und Lichtplanung für Effizienz und Atmosphäre.</p></article><article class="card"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></div><h3 data-field="leistung_6_titel">24/7-Notdienst</h3><p data-field="leistung_6_text">Bei Störungen schnell zur Stelle — auch am Wochenende.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- WARUM -->
+<section id="vorteile"><div class="wrap"><div class="sec-head"><div class="eyebrow-2" data-i18n="why_eyebrow">Warum wir</div><h2 data-i18n="why_titel">Sicher, normgerecht, verlässlich</h2><p class="lead" data-i18n="why_lead">Elektrotechnik, auf die Sie sich verlassen können.</p></div><div class="why"><div class="item"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></span><div><h3 data-i18n="why1h">Normgerecht & sicher</h3><p data-i18n="why1p">Jede Installation nach ÖVE/ÖNORM — geprüft und dokumentiert.</p></div></div><div class="item"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></span><div><h3 data-i18n="why2h">Förderungen inklusive</h3><p data-i18n="why2p">Wir kümmern uns um die Anträge für PV, Wallbox & Co.</p></div></div><div class="item"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></span><div><h3 data-i18n="why3h">Termintreu & sauber</h3><p data-i18n="why3p">Fixe Termine, sauberer Abschluss, transparente Abrechnung.</p></div></div><div class="item"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></span><div><h3 data-i18n="why4h">Notdienst rund um die Uhr</h3><p data-i18n="why4p">Im Störfall schnell erreichbar und schnell vor Ort.</p></div></div></div></div></section>
+
+<section id="projekte" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-2" data-i18n="projects_eyebrow">Referenzen</div>
+      <h2 data-field="projekte_titel">Ausgewählte Projekte</h2>
+      <p class="lead" data-field="projekte_text">Ein Einblick in unsere Arbeit. Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot"><img decoding="async" data-field-src="referenz_1_bild" src="https://loremflickr.com/640/480/wiring,cables?lock=17" alt="Sauber verdrahteter Sicherungsverteiler" width="640" height="480" loading="lazy"><figcaption data-field="referenz_1_titel">Verteilerbau, Wien</figcaption></figure>
+      <figure class="shot"><img decoding="async" data-field-src="referenz_2_bild" src="https://loremflickr.com/640/480/solar,panel?lock=19" alt="Photovoltaik-Anlage auf einem Dach" width="640" height="480" loading="lazy"><figcaption data-field="referenz_2_titel">PV-Anlage, Graz</figcaption></figure>
+      <figure class="shot"><img decoding="async" data-field-src="referenz_3_bild" src="https://loremflickr.com/640/480/fusebox,electric?lock=14" alt="Moderne Schaltschrank-Installation" width="640" height="480" loading="lazy"><figcaption data-field="referenz_3_titel">Gewerbebau, Linz</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section id="ablauf" style="background:var(--surface)"><div class="wrap"><div class="sec-head"><div class="eyebrow-2" data-i18n="ablauf_eyebrow">Ablauf</div><h2 data-i18n="ablauf_titel">In vier Schritten zur fertigen Anlage</h2><p class="lead" data-i18n="ablauf_lead">Von der Anfrage bis zur geprüften Übergabe.</p></div><div class="steps"><div class="step"><div class="n">1</div><h3 data-i18n="ab1h">Anfrage</h3><p data-i18n="ab1p">Sie schildern Ihr Vorhaben — Neubau, Sanierung oder Störung.</p></div><div class="step"><div class="n">2</div><h3 data-i18n="ab2h">Aufmaß & Beratung</h3><p data-i18n="ab2p">Wir prüfen vor Ort und planen die beste Lösung.</p></div><div class="step"><div class="n">3</div><h3 data-i18n="ab3h">Fixpreis-Angebot</h3><p data-i18n="ab3p">Transparentes Angebot inklusive Förder-Check.</p></div><div class="step"><div class="n">4</div><h3 data-i18n="ab4h">Installation & Abnahme</h3><p data-i18n="ab4p">Fachgerecht montiert, geprüft und protokolliert.</p></div></div></div></section>
+
+<section id="ueber">
+  <div class="wrap about">
+    <div class="media"><img decoding="async" data-field-src="ueber_bild" src="https://loremflickr.com/720/760/electrician,work?lock=13" alt="Elektrotechnik-Team vor dem Firmenwagen" width="720" height="760" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow-2" data-i18n="about_eyebrow">Werdegang</div>
+      <h2 data-field="ueber_titel">Technik, auf die Verlass ist</h2>
+      <p class="lead" data-field="ueber_text">Geprüfte Qualität, transparente Preise und ein Team, das mitdenkt. Lorem ipsum dolor sit amet.</p>
+      <ul class="timeline">
+        <li><span class="yr" data-field="station_1_jahr">2004</span><h3 data-field="station_1_titel">Gründung</h3><p data-field="station_1_text">Start mit Fokus auf Wohnbau-Installation. Lorem ipsum dolor sit amet consectetur.</p></li>
+        <li><span class="yr" data-field="station_2_jahr">2015</span><h3 data-field="station_2_titel">Photovoltaik</h3><p data-field="station_2_text">Aufbau der PV- und Speicher-Sparte. Sed do eiusmod tempor incididunt.</p></li>
+        <li><span class="yr" data-field="station_3_jahr">2022</span><h3 data-field="station_3_titel">E-Mobilität</h3><p data-field="station_3_text">Zertifizierter Partner für Ladeinfrastruktur. Ut enim ad minim veniam.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNSER TEAM ============ -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head center"><div class="eyebrow-2" data-i18n="team_eyebrow">Unser Team</div><h2 data-i18n="team_titel">Die Menschen hinter der Anlage</h2><p class="lead" data-i18n="team_lead">Meister, Techniker und Büro — alles aus einer Hand.</p></div>
+    <div class="team"><figure class="member"><img decoding="async" src="https://loremflickr.com/400/400/portrait,man?lock=18" alt="Teammitglied" loading="lazy"><figcaption><b data-i18n="m1n">Martin Gruber</b><span data-i18n="m1r">Elektromeister & Inhaber</span></figcaption></figure><figure class="member"><img decoding="async" src="https://loremflickr.com/400/400/portrait,woman?lock=16" alt="Teammitglied" loading="lazy"><figcaption><b data-i18n="m2n">Kathrin Sonnleitner</b><span data-i18n="m2r">Projektleitung</span></figcaption></figure><figure class="member"><img decoding="async" src="https://loremflickr.com/400/400/man,professional?lock=15" alt="Teammitglied" loading="lazy"><figcaption><b data-i18n="m3n">David Kern</b><span data-i18n="m3r">Photovoltaik-Techniker</span></figcaption></figure><figure class="member"><img decoding="async" src="https://loremflickr.com/400/400/woman,professional?lock=12" alt="Teammitglied" loading="lazy"><figcaption><b data-i18n="m4n">Sabine Mayr</b><span data-i18n="m4r">Büro & Förderungen</span></figcaption></figure></div>
+  </div>
+</section>
+
+<!-- BEWERTUNGEN -->
+<section id="bewertungen"><div class="wrap"><div class="sec-head center"><div class="eyebrow-2" data-i18n="bew_eyebrow">Bewertungen</div><h2 data-i18n="bew_titel">Was Kundinnen und Kunden sagen</h2></div><div class="quotes"><div class="quote"><div class="stars" aria-hidden="true">★★★★★</div><p data-i18n="q1t">„Photovoltaik inkl. Speicher sauber installiert, Förderung komplett abgewickelt.“</p><div class="who"><span class="av" aria-hidden="true">F</span><div><b data-i18n="q1n">Familie Wagner</b><span data-i18n="q1r">PV-Anlage, Graz</span></div></div></div><div class="quote"><div class="stars" aria-hidden="true">★★★★★</div><p data-i18n="q2t">„Schnell beim Notdienst, kompetent und fair. Klare Empfehlung.“</p><div class="who"><span class="av" aria-hidden="true">G</span><div><b data-i18n="q2n">Gasthaus Zentral</b><span data-i18n="q2r">Störungsdienst, Wien</span></div></div></div><div class="quote"><div class="stars" aria-hidden="true">★★★★★</div><p data-i18n="q3t">„Vom Angebot bis zur Abnahme alles top organisiert.“</p><div class="who"><span class="av" aria-hidden="true">H</span><div><b data-i18n="q3n">H. Steiner</b><span data-i18n="q3r">Neubau, Linz</span></div></div></div></div></div></section>
+
+<section id="kontakt" style="background:var(--surface)">
+  <div class="wrap contact">
+    <div class="info">
+      <div class="eyebrow-2" data-i18n="contact_eyebrow">Kontakt</div>
+      <h2 data-field="kontakt_titel">Reden wir über Ihr Projekt</h2>
+      <p class="lead" data-field="kontakt_text">Kostenloses Erstgespräch, unverbindliches Angebot innerhalb von 48 Stunden. Lorem ipsum dolor sit amet.</p>
+      <div class="line"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span><p data-field="kontakt_adresse">Musterstraße 12, 1010 Wien</p></div>
+      <div class="line"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><p data-field="kontakt_email">hallo@musterbetrieb.at</p></div>
+      <div class="line"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h4l2 5-2.4 1.5a12 12 0 0 0 6 6L15.5 14 20 16v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg></span><p data-field="kontakt_telefon">+43 1 234 56 78</p></div>
+    </div>
+    <form class="cf" onsubmit="event.preventDefault();seitfix.demoContact()">
+      <div class="field"><label data-i18n="f_name">Name</label><input type="text" required autocomplete="name" placeholder="Max Mustermann"></div>
+      <div class="field"><label data-i18n="f_email">E-Mail</label><input type="email" required autocomplete="email" placeholder="max@beispiel.at"></div>
+      <div class="field"><label data-i18n="f_msg">Nachricht</label><textarea required placeholder="Worum geht es?"></textarea></div>
+      <button class="btn" type="submit" style="width:100%;justify-content:center" data-i18n="f_send">Nachricht senden</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top"><span class="dot"></span><span data-field="firmenname">Elektrotechnik Musterbetrieb</span></a>
+        <p class="muted" style="margin-top:12px" data-field="footer_text">Ihr konzessionierter Elektrobetrieb in ganz Österreich. Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h4 data-i18n="foot_nav">Navigation</h4>
+          <a href="#leistungen" data-i18n="nav_services">Leistungen</a>
+          <a href="#projekte" data-i18n="nav_projects">Projekte</a>
+          <a href="#ueber" data-i18n="nav_about">Über uns</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="year">2026</span> <span data-field="firmenname">Elektrotechnik Musterbetrieb</span></span>
+      <span data-i18n="foot_made">Erstellt mit seitfix.at</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="favModal" role="dialog" aria-modal="true" aria-labelledby="favTitle">
+  <div class="box">
+    <h3 id="favTitle" data-i18n="fav_title">Fast geschafft!</h3>
+    <p data-i18n="fav_q">Welches Layout war Ihr 2.- und 3.-liebstes?</p>
+    <div class="field"><label data-i18n="fav_2">2. Favorit</label><select id="fav2"></select></div>
+    <div class="field"><label data-i18n="fav_3">3. Favorit</label><select id="fav3"></select></div>
+    <div class="actions">
+      <button class="btn ghost" id="favCancel" data-i18n="fav_cancel">Zurück</button>
+      <button class="btn" id="favSend" data-i18n="fav_send">Absenden</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- SEITFIX:CONFIG:START -->
+<script>
+window.SEITFIX_CONFIG = {
+  leadId: "demo", schema: 1,
+  akzent: "", textfarbe: "", nebentext: "",   /* leer = Schema bestimmt Farbe/Schrift; n8n/Runde 2 fuellt dies */
+  headingFont: "", bodyFont: "",
+  round: 1, availableSchemas: [1,2,3,4,5,6,7,8,9,10]
+};
+</script>
+<!-- SEITFIX:CONFIG:END -->
+
+<!-- SEITFIX:CONTENT:START -->
+<script>
+window.SEITFIX_CONTENT = {
+  firmenname:        {de:"Elektrotechnik Musterbetrieb", en:"Musterbetrieb Electrical"},
+  hero_eyebrow:      {de:"Konzessionierter Betrieb", en:"Licensed contractor"},
+  hero_titel:        {de:"Strom, der sicher und effizient fließt", en:"Power that flows safely and efficiently"},
+  hero_subtitel:     {de:"Elektroinstallation, Photovoltaik und Smart Home aus einer Hand — normgerecht, sauber und pünktlich. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.", en:"Electrical installation, photovoltaics and smart home from one source — compliant, clean and on time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+  hero_badge_zahl:   {de:"24/7", en:"24/7"},
+  hero_badge_text:   {de:"Notdienst verfügbar", en:"Emergency service"},
+  hero_bild:         "https://loremflickr.com/900/720/electrician,installation?lock=11",
+  leistungen_titel:  {de:"Elektrotechnik für Haus & Gewerbe", en:"Electrical work for home & business"},
+  leistungen_text:   {de:"Von der Steckdose bis zur PV-Anlage — ein Team für alle Gewerke. Lorem ipsum dolor sit amet consectetur.", en:"From socket to solar array — one team for all trades. Lorem ipsum dolor sit amet consectetur."},
+  leistung_1_titel:  {de:"Elektroinstallation", en:"Electrical installation"},
+  leistung_1_text:   {de:"Neubau, Sanierung und Erweiterung nach aktueller Norm. Lorem ipsum dolor sit amet consectetur adipiscing.", en:"New builds, renovations and extensions to current standards. Lorem ipsum dolor sit amet consectetur adipiscing."},
+  leistung_2_titel:  {de:"Photovoltaik", en:"Photovoltaics"},
+  leistung_2_text:   {de:"Planung, Montage und Speicher für Ihre eigene Energie. Ut labore et dolore magna aliqua.", en:"Planning, mounting and storage for your own energy. Ut labore et dolore magna aliqua."},
+  leistung_3_titel:  {de:"Smart Home", en:"Smart home"},
+  leistung_3_text:   {de:"Licht, Beschattung und Sicherheit intelligent vernetzt. Quis nostrud exercitation ullamco laboris.", en:"Lighting, shading and security intelligently connected. Quis nostrud exercitation ullamco laboris."},
+  leistung_4_titel:  {de:"E-Ladelösungen", en:"EV charging"},
+  leistung_4_text:   {de:"Wallboxen für Zuhause und Betrieb, förderfähig installiert. Duis aute irure dolor in reprehenderit.", en:"Wallboxes for home and business, installed with subsidies. Duis aute irure dolor in reprehenderit."},
+  leistung_5_titel:  {de:"Beleuchtungskonzepte", en:"Lighting concepts"},
+  leistung_5_text:   {de:"LED, Steuerung und Lichtplanung für Effizienz und Atmosphäre.", en:"LED, controls and lighting design for efficiency and atmosphere."},
+  leistung_6_titel:  {de:"24/7-Notdienst", en:"24/7 emergency service"},
+  leistung_6_text:   {de:"Bei Störungen schnell zur Stelle — auch am Wochenende.", en:"On site fast when faults occur — even at weekends."},
+  projekte_titel:    {de:"Ausgewählte Projekte", en:"Selected projects"},
+  projekte_text:     {de:"Ein Einblick in unsere Arbeit. Lorem ipsum dolor sit amet consectetur adipiscing elit.", en:"A glimpse of our work. Lorem ipsum dolor sit amet consectetur adipiscing elit."},
+  referenz_1_bild:   "https://loremflickr.com/640/480/wiring,cables?lock=17",
+  referenz_1_titel:  {de:"Verteilerbau, Wien", en:"Distribution board, Vienna"},
+  referenz_2_bild:   "https://loremflickr.com/640/480/solar,panel?lock=19",
+  referenz_2_titel:  {de:"PV-Anlage, Graz", en:"Solar array, Graz"},
+  referenz_3_bild:   "https://loremflickr.com/640/480/fusebox,electric?lock=14",
+  referenz_3_titel:  {de:"Gewerbebau, Linz", en:"Commercial build, Linz"},
+  ueber_bild:        "https://loremflickr.com/720/760/electrician,work?lock=13",
+  ueber_titel:       {de:"Technik, auf die Verlass ist", en:"Technology you can rely on"},
+  ueber_text:        {de:"Geprüfte Qualität, transparente Preise und ein Team, das mitdenkt. Lorem ipsum dolor sit amet.", en:"Certified quality, transparent prices and a team that thinks ahead. Lorem ipsum dolor sit amet."},
+  station_1_jahr:{de:"2004",en:"2004"}, station_1_titel:{de:"Gründung",en:"Founded"}, station_1_text:{de:"Start mit Fokus auf Wohnbau-Installation. Lorem ipsum dolor sit amet consectetur.",en:"Started focused on residential installation. Lorem ipsum dolor sit amet consectetur."},
+  station_2_jahr:{de:"2015",en:"2015"}, station_2_titel:{de:"Photovoltaik",en:"Photovoltaics"}, station_2_text:{de:"Aufbau der PV- und Speicher-Sparte. Sed do eiusmod tempor incididunt.",en:"Built up the PV and storage division. Sed do eiusmod tempor incididunt."},
+  station_3_jahr:{de:"2022",en:"2022"}, station_3_titel:{de:"E-Mobilität",en:"E-mobility"}, station_3_text:{de:"Zertifizierter Partner für Ladeinfrastruktur. Ut enim ad minim veniam.",en:"Certified partner for charging infrastructure. Ut enim ad minim veniam."},
+  kontakt_titel:     {de:"Reden wir über Ihr Projekt", en:"Let's talk about your project"},
+  kontakt_text:      {de:"Kostenloses Erstgespräch, unverbindliches Angebot innerhalb von 48 Stunden. Lorem ipsum dolor sit amet.", en:"Free initial consultation, no-obligation quote within 48 hours. Lorem ipsum dolor sit amet."},
+  kontakt_adresse:   {de:"Musterstraße 12, 1010 Wien", en:"Musterstraße 12, 1010 Vienna"},
+  kontakt_email:     {de:"hallo@musterbetrieb.at", en:"hallo@musterbetrieb.at"},
+  kontakt_telefon:   {de:"+43 1 234 56 78", en:"+43 1 234 56 78"},
+  footer_text:       {de:"Ihr konzessionierter Elektrobetrieb in ganz Österreich. Lorem ipsum dolor sit amet consectetur.", en:"Your licensed electrical contractor across Austria. Lorem ipsum dolor sit amet consectetur."}
+};
+</script>
+<!-- SEITFIX:CONTENT:END -->
+
+<script>
+const N8N_ROUND1_WEBHOOK = "https://REPLACE-ME.n8n.cloud/webhook/seitfix-round1";
+const N8N_ROUND2_WEBHOOK = "https://REPLACE-ME.n8n.cloud/webhook/seitfix-round2";
+const SEITFIX_PAGE = "elektriker";
+
+const SCHEMAS = [
+  {id:1,de:"Blueprint",en:"Blueprint"},{id:2,de:"Signal",en:"Signal"},{id:3,de:"Leitstand",en:"Control"},
+  {id:4,de:"Werkstoff",en:"Material"},{id:5,de:"Stahlbau",en:"Steel"},{id:6,de:"Minimal",en:"Minimal"},
+  {id:7,de:"Edel",en:"Elegant"},{id:8,de:"Modern",en:"Modern"},{id:9,de:"Verspielt",en:"Playful"},{id:10,de:"Corporate",en:"Corporate"}
+];
+const FONTS = ["Inter","Manrope","Space Grotesk","Sora","Poppins","Archivo","IBM Plex Sans","Playfair Display","Fraunces","Source Serif 4","Lora"];
+
+const I18N = {
+  de:{
+    b_layout:"Layout-Schema",b_customize:"Anpassen",b_accent:"Akzent",b_text:"Text",b_muted:"Nebentext",
+    b_headfont:"Überschrift",b_bodyfont:"Fließtext",b_submit:"Absenden",
+    r2_pick:"Finale Wahl — 1 von 3 Schemas wählen & bestätigen",r2_confirm:"Finale Wahl bestätigen",
+    nav_services:"Leistungen",nav_projects:"Projekte",nav_about:"Über uns",nav_contact:"Kontakt",nav_cta:"Angebot anfragen",
+    hero_cta1:"Kostenlos anfragen",hero_cta2:"Projekte ansehen",
+    services_eyebrow:"Leistungen",projects_eyebrow:"Referenzen",about_eyebrow:"Werdegang",contact_eyebrow:"Kontakt",
+    f_name:"Name",f_email:"E-Mail",f_msg:"Nachricht",f_send:"Nachricht senden",
+    foot_nav:"Navigation",foot_legal:"Rechtliches",foot_imprint:"Impressum",foot_privacy:"Datenschutz",foot_made:"Erstellt mit seitfix.at",
+    fav_title:"Fast geschafft!",fav_q:"Welches Layout war Ihr 2.- und 3.-liebstes?",fav_2:"2. Favorit",fav_3:"3. Favorit",
+    fav_cancel:"Zurück",fav_send:"Absenden",
+    toast_thanks:"Danke! Ihre Auswahl wurde übermittelt.",toast_final:"Danke! Ihre finale Wahl ist bei uns.",toast_contact:"Danke! Wir melden uns in Kürze.",
+    st1n:"15+",st1l:"Jahre Erfahrung",st2n:"500+",st2l:"Anlagen installiert",st3n:"4.9★",st3l:"Ø Bewertung",st4n:"24/7",st4l:"Notdienst",why_eyebrow:"Warum wir",why_titel:"Sicher, normgerecht, verlässlich",why_lead:"Elektrotechnik, auf die Sie sich verlassen können.",why1h:"Normgerecht & sicher",why1p:"Jede Installation nach ÖVE/ÖNORM — geprüft und dokumentiert.",why2h:"Förderungen inklusive",why2p:"Wir kümmern uns um die Anträge für PV, Wallbox & Co.",why3h:"Termintreu & sauber",why3p:"Fixe Termine, sauberer Abschluss, transparente Abrechnung.",why4h:"Notdienst rund um die Uhr",why4p:"Im Störfall schnell erreichbar und schnell vor Ort.",ablauf_eyebrow:"Ablauf",ablauf_titel:"In vier Schritten zur fertigen Anlage",ablauf_lead:"Von der Anfrage bis zur geprüften Übergabe.",ab1h:"Anfrage",ab1p:"Sie schildern Ihr Vorhaben — Neubau, Sanierung oder Störung.",ab2h:"Aufmaß & Beratung",ab2p:"Wir prüfen vor Ort und planen die beste Lösung.",ab3h:"Fixpreis-Angebot",ab3p:"Transparentes Angebot inklusive Förder-Check.",ab4h:"Installation & Abnahme",ab4p:"Fachgerecht montiert, geprüft und protokolliert.",bew_eyebrow:"Bewertungen",bew_titel:"Was Kundinnen und Kunden sagen",q1t:"„Photovoltaik inkl. Speicher sauber installiert, Förderung komplett abgewickelt.“",q1n:"Familie Wagner",q1r:"PV-Anlage, Graz",q2t:"„Schnell beim Notdienst, kompetent und fair. Klare Empfehlung.“",q2n:"Gasthaus Zentral",q2r:"Störungsdienst, Wien",q3t:"„Vom Angebot bis zur Abnahme alles top organisiert.“",q3n:"H. Steiner",q3r:"Neubau, Linz",team_eyebrow:"Unser Team",team_titel:"Die Menschen hinter der Anlage",team_lead:"Meister, Techniker und Büro — alles aus einer Hand.",m1n:"Martin Gruber",m1r:"Elektromeister & Inhaber",m2n:"Kathrin Sonnleitner",m2r:"Projektleitung",m3n:"David Kern",m3r:"Photovoltaik-Techniker",m4n:"Sabine Mayr",m4r:"Büro & Förderungen"
+  },
+  en:{
+    b_layout:"Layout scheme",b_customize:"Customise",b_accent:"Accent",b_text:"Text",b_muted:"Muted",
+    b_headfont:"Heading",b_bodyfont:"Body",b_submit:"Submit",
+    r2_pick:"Final choice — pick 1 of 3 schemes & confirm",r2_confirm:"Confirm final choice",
+    nav_services:"Services",nav_projects:"Projects",nav_about:"About",nav_contact:"Contact",nav_cta:"Request a quote",
+    hero_cta1:"Get a free quote",hero_cta2:"See projects",
+    services_eyebrow:"Services",projects_eyebrow:"References",about_eyebrow:"Journey",contact_eyebrow:"Contact",
+    f_name:"Name",f_email:"Email",f_msg:"Message",f_send:"Send message",
+    foot_nav:"Navigation",foot_legal:"Legal",foot_imprint:"Imprint",foot_privacy:"Privacy",foot_made:"Built with seitfix.at",
+    fav_title:"Almost there!",fav_q:"Which layout was your 2nd and 3rd favourite?",fav_2:"2nd favourite",fav_3:"3rd favourite",
+    fav_cancel:"Back",fav_send:"Submit",
+    toast_thanks:"Thanks! Your selection has been sent.",toast_final:"Thanks! We received your final choice.",toast_contact:"Thanks! We'll be in touch shortly.",
+    st1n:"15+",st1l:"Years of experience",st2n:"500+",st2l:"Systems installed",st3n:"4.9★",st3l:"Avg. rating",st4n:"24/7",st4l:"Emergency service",why_eyebrow:"Why us",why_titel:"Safe, compliant, reliable",why_lead:"Electrical work you can rely on.",why1h:"Standards-compliant & safe",why1p:"Every install to standards — tested and documented.",why2h:"Subsidies handled",why2p:"We take care of applications for PV, wallbox & more.",why3h:"On time & tidy",why3p:"Fixed dates, clean finish, transparent billing.",why4h:"Round-the-clock service",why4p:"Reachable and on site fast in an emergency.",ablauf_eyebrow:"Process",ablauf_titel:"Four steps to a finished system",ablauf_lead:"From enquiry to a tested handover.",ab1h:"Enquiry",ab1p:"Describe your project — new build, upgrade or fault.",ab2h:"Survey & advice",ab2p:"We check on site and plan the best solution.",ab3h:"Fixed-price quote",ab3p:"Transparent quote incl. subsidy check.",ab4h:"Install & handover",ab4p:"Professionally installed, tested and documented.",bew_eyebrow:"Reviews",bew_titel:"What customers say",q1t:"„PV system incl. storage cleanly installed, subsidy fully handled.“",q1n:"The Wagner family",q1r:"PV system, Graz",q2t:"„Fast emergency service, competent and fair. Clear recommendation.“",q2n:"Gasthaus Zentral",q2r:"Emergency service, Vienna",q3t:"„Everything top-organised from quote to handover.“",q3n:"H. Steiner",q3r:"New build, Linz",team_eyebrow:"Our team",team_titel:"The people behind the system",team_lead:"Masters, technicians and office — all from one team.",m1n:"Martin Gruber",m1r:"Master electrician & owner",m2n:"Kathrin Sonnleitner",m2r:"Project management",m3n:"David Kern",m3r:"PV technician",m4n:"Sabine Mayr",m4r:"Office & subsidies"
+  }
+};
+
+const seitfix = (function(){
+  const root = document.documentElement;
+  const CFG = Object.assign({leadId:"demo",schema:1,akzent:"",textfarbe:"",nebentext:"",headingFont:"",bodyFont:"",round:1,availableSchemas:[1,2,3,4,5,6,7,8,9,10]}, window.SEITFIX_CONFIG||{});
+  const CONTENT = window.SEITFIX_CONTENT||{};
+  const store = key => "seitfix:"+SEITFIX_PAGE+":"+key;
+  let lang = localStorage.getItem(store("lang")) || "de";
+  const round = CFG.round||1;
+  const available = (round===2 && Array.isArray(CFG.availableSchemas) && CFG.availableSchemas.length) ? CFG.availableSchemas.slice(0,3) : SCHEMAS.map(s=>s.id);
+
+  function t(k){return (I18N[lang]&&I18N[lang][k])||I18N.de[k]||k;}
+  function fieldVal(v){ if(v==null) return null; if(typeof v==="object") return v[lang]!=null?v[lang]:v.de; return v; }
+
+  function applyContent(){
+    document.querySelectorAll("[data-field]").forEach(el=>{const v=fieldVal(CONTENT[el.getAttribute("data-field")]);if(v!=null&&v!=="")el.textContent=v;});
+    document.querySelectorAll("[data-field-src]").forEach(el=>{const v=CONTENT[el.getAttribute("data-field-src")];if(v)el.src=v;});
+  }
+  function applyLang(){
+    document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=t(el.getAttribute("data-i18n"));});
+    document.documentElement.lang=lang;
+    document.getElementById("langDe").setAttribute("aria-pressed",lang==="de");
+    document.getElementById("langEn").setAttribute("aria-pressed",lang==="en");
+    applyContent();renderChips();renderFavOptions();
+  }
+  function setSchema(id,persist=true){
+    root.setAttribute("data-schema",id);
+    if(persist)localStorage.setItem(store("schema"),id);
+    document.querySelectorAll("#schemaChips .chip").forEach(c=>c.setAttribute("aria-pressed",String(+c.dataset.schemaId===+id)));
+    syncSwatches();
+  }
+  function setVar(n,v){root.style.setProperty(n,v);}
+  function applyColors(a,txt,mut,persist=true){
+    if(a){setVar("--accent",a);document.getElementById("cAccent").value=a;}
+    if(txt){setVar("--text",txt);document.getElementById("cText").value=txt;}
+    if(mut){setVar("--muted",mut);document.getElementById("cMuted").value=mut;}
+    if(persist)localStorage.setItem(store("colors"),JSON.stringify({a,txt,mut}));
+  }
+  function applyFonts(h,b,persist=true){
+    if(h){setVar("--font-head","'"+h+"', system-ui, sans-serif");document.getElementById("fHead").value=h;}
+    if(b){setVar("--font-body","'"+b+"', system-ui, sans-serif");document.getElementById("fBody").value=b;}
+    if(persist)localStorage.setItem(store("fonts"),JSON.stringify({h,b}));
+  }
+  function cssVar(n){return getComputedStyle(root).getPropertyValue(n).trim();}
+  function famOf(v){return (v||"").split(",")[0].replace(/['"]/g,"").trim();}
+  function hex6(v){v=(v||"").trim();return /^#[0-9a-fA-F]{6}$/.test(v)?v:null;}
+  function syncSwatches(){
+    const rs=root.style;
+    const acc=hex6(rs.getPropertyValue("--accent"))||hex6(cssVar("--accent"));if(acc)document.getElementById("cAccent").value=acc;
+    const txt=hex6(rs.getPropertyValue("--text"))||hex6(cssVar("--text"));if(txt)document.getElementById("cText").value=txt;
+    const mut=hex6(rs.getPropertyValue("--muted"))||hex6(cssVar("--muted"));if(mut)document.getElementById("cMuted").value=mut;
+    const hf=famOf(rs.getPropertyValue("--font-head")||cssVar("--font-head"));if(FONTS.includes(hf))document.getElementById("fHead").value=hf;
+    const bf=famOf(rs.getPropertyValue("--font-body")||cssVar("--font-body"));if(FONTS.includes(bf))document.getElementById("fBody").value=bf;
+  }
+  function renderChips(){
+    const box=document.getElementById("schemaChips");box.innerHTML="";
+    SCHEMAS.forEach(s=>{const b=document.createElement("button");b.className="chip";b.dataset.schemaId=s.id;b.type="button";
+      b.setAttribute("aria-pressed",String(+root.getAttribute("data-schema")===s.id));
+      if(round===2&&!available.includes(s.id))b.setAttribute("data-schema-hidden","");
+      b.innerHTML='<span class="num">'+s.id+'</span>'+(lang==="de"?s.de:s.en);
+      b.addEventListener("click",()=>setSchema(s.id));box.appendChild(b);});
+  }
+  function fillSelect(sel,items,val,labelFn){sel.innerHTML="";items.forEach(it=>{const o=document.createElement("option");o.value=it.value;o.textContent=labelFn?labelFn(it):it.value;if(it.value===val)o.selected=true;sel.appendChild(o);});}
+  function renderFontSelects(){const cur=JSON.parse(localStorage.getItem(store("fonts"))||"null")||{h:CFG.headingFont,b:CFG.bodyFont};fillSelect(document.getElementById("fHead"),FONTS.map(f=>({value:f})),cur.h);fillSelect(document.getElementById("fBody"),FONTS.map(f=>({value:f})),cur.b);}
+  function renderFavOptions(){[document.getElementById("fav2"),document.getElementById("fav3")].forEach(sel=>{if(!sel)return;const prev=sel.value;fillSelect(sel,SCHEMAS.map(s=>({value:String(s.id),label:(lang==="de"?s.de:s.en)})),prev,it=>it.value+" · "+it.label);});}
+
+  function collect(){return{leadId:CFG.leadId,schema:+root.getAttribute("data-schema"),akzent:document.getElementById("cAccent").value,textfarbe:document.getElementById("cText").value,nebentext:document.getElementById("cMuted").value,headingFont:document.getElementById("fHead").value,bodyFont:document.getElementById("fBody").value};}
+  async function post(url,payload,okKey){try{await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});}catch(e){}showToast(t(okKey));}
+  function openFav(){document.getElementById("favModal").classList.add("open");document.getElementById("fav2").focus();}
+  function closeFav(){document.getElementById("favModal").classList.remove("open");}
+  function sendRound1(){const p=Object.assign(collect(),{favorit2:+document.getElementById("fav2").value,favorit3:+document.getElementById("fav3").value});closeFav();post(N8N_ROUND1_WEBHOOK,p,"toast_thanks");}
+  function sendRound2(){post(N8N_ROUND2_WEBHOOK,{leadId:CFG.leadId,schema:+root.getAttribute("data-schema")},"toast_final");}
+  let toastTimer;function showToast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),3600);}
+  function demoContact(){showToast(t("toast_contact"));}
+
+  function init(){
+    document.getElementById("year").textContent=new Date().getFullYear();
+    document.body.setAttribute("data-round",round);
+    renderChips();renderFontSelects();renderFavOptions();
+    const savedSchema=localStorage.getItem(store("schema"));let startSchema=savedSchema?+savedSchema:(CFG.schema||1);
+    if(round===2&&!available.includes(startSchema))startSchema=available[0];
+    setSchema(startSchema,false);
+    const savedColors=JSON.parse(localStorage.getItem(store("colors"))||"null");
+    if(savedColors)applyColors(savedColors.a,savedColors.txt,savedColors.mut,false);else applyColors(CFG.akzent,CFG.textfarbe,CFG.nebentext,false);
+    const savedFonts=JSON.parse(localStorage.getItem(store("fonts"))||"null");
+    if(savedFonts)applyFonts(savedFonts.h,savedFonts.b,false);else applyFonts(CFG.headingFont,CFG.bodyFont,false);
+    syncSwatches();
+    applyLang();
+    document.getElementById("cAccent").addEventListener("input",e=>applyColors(e.target.value));
+    document.getElementById("cText").addEventListener("input",e=>applyColors(null,e.target.value));
+    document.getElementById("cMuted").addEventListener("input",e=>applyColors(null,null,e.target.value));
+    document.getElementById("fHead").addEventListener("change",e=>applyFonts(e.target.value));
+    document.getElementById("fBody").addEventListener("change",e=>applyFonts(null,e.target.value));
+    document.getElementById("langDe").addEventListener("click",()=>{lang="de";localStorage.setItem(store("lang"),lang);applyLang();});
+    document.getElementById("langEn").addEventListener("click",()=>{lang="en";localStorage.setItem(store("lang"),lang);applyLang();});
+    document.getElementById("btnSubmit").addEventListener("click",openFav);
+    document.getElementById("favCancel").addEventListener("click",closeFav);
+    document.getElementById("favSend").addEventListener("click",sendRound1);
+    document.getElementById("favModal").addEventListener("click",e=>{if(e.target.id==="favModal")closeFav();});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeFav();});
+    const bf=document.getElementById("btnFinal");if(bf)bf.addEventListener("click",sendRound2);
+  }
+  document.addEventListener("DOMContentLoaded",init);
+  return {demoContact};
+})();
+</script>
+<script>
+/* Agentur-Feinschliff: Reveals + Stagger + Mobile-Menü */
+(function(){
+  var sels=[".hero .copy",".hero .media",".sec-head",".card",".shot",".quote",".member",".step",".why .item",".stats .grid>div",".timeline li",".about .media",".about .copy",".contact .info","form.cf"];
+  var els=Array.prototype.slice.call(document.querySelectorAll(sels.join(",")));
+  var counts=new Map();
+  els.forEach(function(el){
+    el.setAttribute("data-reveal","");
+    var p=el.parentElement,n=counts.get(p)||0;counts.set(p,n+1);
+    el.style.transitionDelay=(Math.min(n,5)*70)+"ms";
+  });
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}
+    });},{rootMargin:"0px 0px -8% 0px",threshold:.06});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add("in");});}
+  var hdr=document.querySelector("header.site"),burger=document.querySelector(".navburger");
+  if(burger&&hdr){
+    burger.addEventListener("click",function(){var open=hdr.classList.toggle("open");burger.setAttribute("aria-expanded",String(open));});
+    hdr.querySelectorAll(".links a").forEach(function(a){a.addEventListener("click",function(){hdr.classList.remove("open");burger.setAttribute("aria-expanded","false");});});
+  }
+})();
+</script>
+</body>
+</html>

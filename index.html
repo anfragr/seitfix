@@ -1,1269 +1,611 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-
-  <!-- ── SEO Core ───────────────────────────────────────────── -->
-  <title>Webseiten für Handwerker & kleine Betriebe – ab 299 € | Seitfix Österreich</title>
-  <meta name="description" content="Seitfix erstellt professionelle Onepager-Websites für Handwerker und kleine Betriebe. Ab 299 € einmalig, persönlich aus Graz, klar und unkompliziert." />
-  <meta name="google-site-verification" content="1C_eYPrbw4_f4q3RAzIR45KcvmoDJuhCPemchEtZaAA" />
-  <meta name="author" content="Seitfix – Ivo Hrovat" />
-  <link rel="canonical" href="https://seitfix.at/" />
-  <link rel="alternate" hreflang="de" href="https://seitfix.at/" />
-  <link rel="alternate" hreflang="en" href="https://seitfix.at/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://seitfix.at/" />
-  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
-
-  <!-- ── Open Graph ─────────────────────────────────────────── -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://seitfix.at/" />
-  <meta property="og:title" content="Webseiten für Handwerker & kleine Betriebe – ab 299 € | Seitfix" />
-  <meta property="og:description" content="Professionelle Onepager-Websites für Handwerker und kleine Betriebe. Fixpreis 299 €, fertig in 7 Tagen. Persönlich aus Graz." />
-  <meta property="og:locale" content="de_AT" />
-  <meta property="og:site_name" content="Seitfix" />
-
-  <!-- ── Twitter Card ───────────────────────────────────────── -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Webseiten für Handwerker & kleine Betriebe – ab 299 € | Seitfix" />
-  <meta name="twitter:description" content="Professionelle Onepager-Websites. Fixpreis 299 €, fertig in 7 Tagen. Persönlich aus Graz." />
-
-  <!-- ── Schema.org ─────────────────────────────────────────── -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Seitfix",
-    "description": "Seitfix erstellt professionelle Onepager-Websites für Handwerker und kleine Betriebe in Österreich. Fixpreis 299 €, fertig in 7 Tagen.",
-    "url": "https://seitfix.at",
-    "email": "hallo@seitfix.at",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Engelgasse 54",
-      "addressLocality": "Graz",
-      "postalCode": "8010",
-      "addressCountry": "AT"
-    },
-    "areaServed": { "@type": "Country", "name": "Österreich" },
-    "priceRange": "€€",
-    "offers": {
-      "@type": "Offer",
-      "name": "Onepager Website",
-      "price": "299",
-      "priceCurrency": "EUR",
-      "description": "Professioneller Onepager inkl. Texte, Design, mobile Optimierung und Kontaktbereich"
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Seitfix — Moderne Onepager für Handwerker & kleine Betriebe · ab 799 €</title>
+<meta name="description" content="Seitfix erstellt klare, professionelle Onepager-Websites für Handwerker und kleine Betriebe. Fixpreis 799 €, fertig in 7 Tagen, persönlich aus Graz." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Seitfix — Moderne Onepager für Handwerker & kleine Betriebe" />
+<meta property="og:description" content="Klare, professionelle Onepager-Websites. Fixpreis 799 €, fertig in 7 Tagen, persönlich aus Graz." />
+<meta property="og:locale" content="de_AT" />
+<meta property="og:site_name" content="Seitfix" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --accent:#2563eb; --accent-dk:#1d4ed8; --accent-lt:#eff4ff; --accent-lt2:#dbeafe;
+    --text:#1a1a18; --muted:#6b6b67; --border:#e2e2dd;
+    --white:#fff; --off:#f7f7f5; --light:#efefec; --green:#22c55e; --ink:#111114;
+    --font-body:'DM Sans',system-ui,sans-serif; --font-head:'DM Serif Display',Georgia,serif;
+    --max:1120px; --nav-h:72px;
+    --radius:12px; --radius-lg:20px; --radius-xl:28px;
+    --shadow:0 1px 3px rgba(20,20,30,.05),0 6px 20px rgba(20,20,30,.06);
+    --shadow-md:0 4px 14px rgba(20,20,30,.08),0 18px 48px rgba(20,20,30,.10);
+    --shadow-lg:0 20px 60px -12px rgba(20,30,60,.22);
+    --ease:cubic-bezier(.22,.61,.36,1);
   }
-  </script>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--font-body);color:var(--text);background:var(--off);line-height:1.6;
+    font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:var(--font-head);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+  em,.ital{font-style:italic;color:var(--accent)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  section{position:relative}
+  .eyebrow{font-family:var(--font-body);font-weight:600;font-size:.78rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent)}
+  .lead{color:var(--muted);font-size:1.08rem;max-width:56ch}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-body);font-weight:600;
+    font-size:.98rem;padding:14px 26px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s;white-space:nowrap}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px -8px rgba(37,99,235,.6)}
+  .btn-primary:hover{background:var(--accent-dk);transform:translateY(-2px);box-shadow:0 16px 30px -8px rgba(37,99,235,.7)}
+  .btn-ghost{background:var(--white);color:var(--text);border-color:var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .btn:focus-visible{outline:3px solid var(--accent-lt2);outline-offset:2px}
 
-  <style>
-    /* ─── Reset & Base ─────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+    display:flex;align-items:center;transition:height .3s var(--ease),background .3s,box-shadow .3s,border-color .3s;
+    background:transparent;border-bottom:1px solid transparent}
+  header.nav.scrolled{height:60px;background:rgba(247,247,245,.82);backdrop-filter:saturate(1.4) blur(14px);
+    border-bottom-color:var(--border);box-shadow:0 4px 24px -16px rgba(0,0,0,.25)}
+  .nav-in{max-width:var(--max);margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{font-family:var(--font-head);font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:center;gap:2px}
+  .brand b{font-weight:400}.brand .fix{color:var(--accent);font-style:italic}
+  .nav-links{display:flex;align-items:center;gap:4px}
+  .nav-links a{position:relative;font-weight:500;font-size:.96rem;color:var(--text);padding:9px 14px;border-radius:8px;transition:color .2s,background .2s}
+  .nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--accent);
+    border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a.active{color:var(--accent)}
+  .nav-links a.active::after{transform:scaleX(1)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .lang{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--white)}
+  .lang button{border:0;background:transparent;font-family:var(--font-body);font-weight:600;font-size:.8rem;
+    padding:6px 12px;cursor:pointer;color:var(--muted);transition:background .2s,color .2s}
+  .lang button.on{background:var(--accent);color:#fff}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+  .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.x span:nth-child(2){opacity:0}
+  .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  /* mobile slide-in */
+  .mobile{position:fixed;inset:0 0 0 auto;width:min(84vw,360px);background:var(--white);z-index:99;
+    transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);
+    display:flex;flex-direction:column;padding:96px 30px 30px;gap:6px}
+  .mobile.open{transform:translateX(0)}
+  .mobile a{font-family:var(--font-head);font-size:1.5rem;padding:12px 0;border-bottom:1px solid var(--border);transition:color .2s,padding-left .2s}
+  .mobile a:hover{color:var(--accent);padding-left:8px}
+  .mobile .btn{margin-top:18px;justify-content:center}
+  .scrim{position:fixed;inset:0;background:rgba(15,20,35,.4);opacity:0;pointer-events:none;transition:opacity .3s;z-index:98}
+  .scrim.on{opacity:1;pointer-events:auto}
 
-    :root {
-      --white:      #ffffff;
-      --off-white:  #f7f7f5;
-      --light:      #efefec;
-      --border:     #e2e2dd;
-      --text:       #1a1a18;
-      --muted:      #6b6b67;
-      --accent:     #2563eb;
-      --accent-dk:  #1d4ed8;
-      --accent-lt:  #eff4ff;
-      --green:      #22c55e;
-      --font-head:  'DM Serif Display', Georgia, serif;
-      --font-body:  'DM Sans', system-ui, sans-serif;
-      --radius:     10px;
-      --radius-lg:  18px;
-      --shadow:     0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
-      --shadow-md:  0 2px 8px rgba(0,0,0,.08), 0 8px 32px rgba(0,0,0,.08);
-      --nav-h:      68px;
-      --max:        1100px;
-    }
+  /* HERO */
+  .hero{padding:calc(var(--nav-h) + 60px) 0 40px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-20%;right:-10%;width:60%;height:120%;
+    background:radial-gradient(closest-side,rgba(37,99,235,.10),transparent);z-index:0}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--border);
+    border-radius:999px;padding:7px 15px;font-size:.83rem;font-weight:500;color:var(--muted);box-shadow:var(--shadow)}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+  h1{font-size:clamp(2.6rem,5.4vw,4rem);margin:22px 0 20px}
+  .price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:26px 0 10px}
+  .price{font-family:var(--font-head);font-size:2.6rem}.price small{font-size:1rem;color:var(--muted);font-family:var(--font-body);font-weight:500}
+  .price-note{background:var(--accent-lt);color:var(--accent-dk);font-weight:600;font-size:.82rem;padding:6px 12px;border-radius:999px}
+  .signed{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.92rem;margin-top:6px}
+  .check{color:var(--green);font-weight:700}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
+  .fitfor{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.86rem}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--border);
+    border-radius:999px;padding:7px 13px;font-size:.85rem;font-weight:500;color:var(--text);
+    transition:transform .2s var(--ease),border-color .2s}
+  .chip:hover{transform:translateY(-2px);border-color:var(--accent)}
+  /* browser mockup */
+  .mock{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-lg);overflow:hidden;animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .mock-bar{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--border);background:var(--off)}
+  .mock-bar i{width:11px;height:11px;border-radius:50%;display:block}
+  .mock-bar i:nth-child(1){background:#ff5f57}.mock-bar i:nth-child(2){background:#ffbd2e}.mock-bar i:nth-child(3){background:#28c840}
+  .mock-url{flex:1;background:var(--white);border:1px solid var(--border);border-radius:8px;font-size:.78rem;
+    color:var(--muted);padding:6px 12px;margin-left:8px;text-align:center}
+  .mock-body{padding:0}
+  .mock-hero{padding:30px 26px;background:linear-gradient(160deg,#f0f5ff,#fff)}
+  .mock-hero .mh-badge{display:inline-block;background:var(--accent-lt2);color:var(--accent-dk);font-size:.62rem;font-weight:700;
+    padding:4px 9px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+  .mock-hero h4{font-family:var(--font-head);font-size:1.5rem;margin:12px 0 8px;line-height:1.1}
+  .mock-hero p{font-size:.8rem;color:var(--muted);margin-bottom:14px}
+  .mock-hero .mh-btn{display:inline-block;background:var(--accent);color:#fff;font-size:.72rem;font-weight:600;padding:8px 16px;border-radius:999px}
+  .mock-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:16px 26px 26px}
+  .mock-cards div{height:52px;border:1px solid var(--border);border-radius:10px;background:var(--off)}
+  .mock-cap{position:absolute;left:-14px;bottom:34px;background:var(--white);border:1px solid var(--border);
+    border-radius:14px;box-shadow:var(--shadow-md);padding:12px 16px;font-size:.8rem}
+  .mock-cap b{color:var(--accent);font-family:var(--font-head);font-size:1.1rem}
+  .mock-shell{position:relative}
 
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body { font-family: var(--font-body); color: var(--text); background: var(--white); font-size: 16px; line-height: 1.65; }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
+  /* REFERENZEN / Logozeile */
+  .refs{padding:52px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .refs .lab{text-align:center;color:var(--muted);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:28px}
+  .refs-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
+  .refs-row img{height:58px;width:auto;filter:grayscale(1);opacity:.6;transition:filter .35s var(--ease),opacity .35s var(--ease),transform .35s var(--ease)}
+  .refs-row img:hover{filter:grayscale(0);opacity:1;transform:translateY(-3px)}
+  .refs-word{font-family:var(--font-body);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;color:var(--text);opacity:.55;filter:grayscale(1);transition:opacity .35s var(--ease),transform .35s var(--ease),filter .35s}
+  .refs-word:hover{opacity:1;filter:none;transform:translateY(-3px)}
+  .refs-word .dot{color:var(--accent)}
+  /* generic section */
+  .sec{padding:96px 0}
+  .sec-head{max-width:60ch;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(2rem,3.8vw,2.9rem);margin:14px 0 14px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:30px;
+    box-shadow:var(--shadow);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--accent-lt2)}
+  .card .ic{width:48px;height:48px;border-radius:12px;background:var(--accent-lt);color:var(--accent);
+    display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+  .card h3{font-size:1.3rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem}
 
-    /* ─── Utilities ─────────────────────────────────────────── */
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-    .section { padding: 96px 0; }
-    .section--alt { background: var(--off-white); }
-    .section--dark { background: var(--text); color: white; }
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
+  .step{position:relative;padding-top:52px}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:40px;height:40px;
+    border-radius:50%;background:var(--accent);color:#fff;font-family:var(--font-head);font-size:1.2rem;
+    display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(37,99,235,.6)}
+  .step h3{font-size:1.08rem;margin-bottom:6px}.step p{color:var(--muted);font-size:.9rem}
 
-    .tag {
-      display: inline-block;
-      font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-lt);
-      border-radius: 20px; padding: 4px 14px; margin-bottom: 20px;
-    }
+  /* pricing */
+  .price-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+  .price-main{background:linear-gradient(165deg,#1a2c5c,#111114);color:#fff;border-radius:var(--radius-xl);padding:40px;position:relative;overflow:hidden}
+  .price-main::after{content:"";position:absolute;top:-40%;right:-20%;width:70%;height:140%;background:radial-gradient(closest-side,rgba(37,99,235,.4),transparent)}
+  .price-main .rel{position:relative;z-index:1}
+  .price-main .big{font-family:var(--font-head);font-size:3.4rem;margin:10px 0}
+  .price-main ul{list-style:none;margin:22px 0;display:flex;flex-direction:column;gap:10px}
+  .price-main li{display:flex;gap:10px;font-size:.95rem;color:#d4d9e6}
+  .price-main li::before{content:"✓";color:var(--green);font-weight:700}
+  .price-side{display:flex;flex-direction:column;gap:16px}
+  .paybox{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
+  .paybox h4{font-family:var(--font-body);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}
+  .payrow{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--border)}
+  .payrow:last-child{border:0}.payrow b{font-family:var(--font-head);font-size:1.3rem}
+  .payrow span{color:var(--muted);font-size:.82rem;max-width:60%}
+  .ust{font-size:.8rem;color:var(--muted);background:var(--accent-lt);padding:12px 16px;border-radius:12px}
 
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.18; color: var(--text); margin-bottom: 18px;
-    }
-    .section--dark .section-title { color: white; }
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  .qa{background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:box-shadow .3s,border-color .3s}
+  .qa[open]{box-shadow:var(--shadow-md);border-color:var(--accent-lt2)}
+  .qa summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:600;font-size:1.04rem;
+    display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary .pl{color:var(--accent);font-size:1.4rem;transition:transform .3s var(--ease);flex:none}
+  .qa[open] summary .pl{transform:rotate(45deg)}
+  .qa .a{padding:0 24px 22px;color:var(--muted);font-size:.96rem}
 
-    .section-sub {
-      font-size: 17px; color: var(--muted); max-width: 560px; line-height: 1.7;
-    }
-    .section--dark .section-sub { color: rgba(255,255,255,.65); }
+  /* contact / form */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .form{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:34px;box-shadow:var(--shadow-md)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:600;font-size:.88rem;margin-bottom:8px}
+  .field input,.field textarea{width:100%;font-family:var(--font-body);font-size:1rem;padding:13px 15px;
+    border:1px solid var(--border);border-radius:12px;background:var(--off);transition:border-color .2s,box-shadow .2s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-lt)}
+  .toggle{display:flex;gap:10px}
+  .toggle button{flex:1;padding:12px;border:1px solid var(--border);background:var(--off);border-radius:12px;
+    font-family:var(--font-body);font-weight:600;cursor:pointer;transition:all .2s}
+  .toggle button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .tile{border:1px solid var(--border);background:var(--off);border-radius:14px;padding:16px 10px;text-align:center;
+    cursor:pointer;transition:all .2s var(--ease)}
+  .tile:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .tile.on{background:var(--accent-lt);border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-lt2)}
+  .tile .e{font-size:1.5rem}.tile .t{font-size:.86rem;font-weight:600;margin-top:6px;display:block}
+  .hide{display:none!important}
+  .contact-aside h2{font-size:clamp(2rem,3.6vw,2.7rem);margin:12px 0}
+  .contact-aside .who{display:flex;gap:14px;align-items:center;margin-top:28px;background:var(--white);
+    border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow)}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dk));
+    color:#fff;font-family:var(--font-head);font-size:1.5rem;display:grid;place-items:center;flex:none}
+  .who b{display:block}.who span{color:var(--muted);font-size:.88rem}
+  .done{text-align:center;padding:20px}.done .big{font-size:2.4rem;color:var(--green)}
 
-    .section-head { margin-bottom: 56px; }
-    .section-head--center { text-align: center; }
-    .section-head--center .section-sub { margin: 0 auto; }
+  /* footer */
+  footer{background:var(--ink);color:#b9b9b5;padding:56px 0 30px}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:start}
+  footer .brand{color:#fff}
+  .foot-links{display:flex;gap:28px;flex-wrap:wrap}
+  .foot-links a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid #2a2a2e;margin-top:34px;padding-top:20px;font-size:.82rem;color:#7d7d79;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
-    /* ─── Buttons ────────────────────────────────────────────── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-body); font-size: 15px; font-weight: 500;
-      padding: 13px 26px; border-radius: var(--radius);
-      cursor: pointer; border: none; transition: all .18s ease; text-decoration: none;
-    }
-    .btn-primary { background: var(--accent); color: var(--white); }
-    .btn-primary:hover { background: var(--accent-dk); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,.3); }
-    .btn-outline { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
-    .btn-outline:hover { border-color: var(--text); background: var(--off-white); }
-    .btn-white { background: white; color: var(--accent); }
-    .btn-white:hover { background: var(--accent-lt); transform: translateY(-1px); }
+  .ic svg,.tile .e svg{width:24px;height:24px}
+  .tile .e{color:var(--accent);display:flex;justify-content:center}
+  /* reveal */
+  [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  [data-reveal].in{opacity:1;transform:none}
+  [data-reveal][data-d="1"]{transition-delay:.08s}[data-reveal][data-d="2"]{transition-delay:.16s}
+  [data-reveal][data-d="3"]{transition-delay:.24s}[data-reveal][data-d="4"]{transition-delay:.32s}
 
-    /* ─── Navigation ─────────────────────────────────────────── */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
-      background: rgba(255,255,255,.9); backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent;
-      z-index: 100; transition: border-color .2s;
-    }
-    .nav.scrolled { border-color: var(--border); }
-    .nav-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 24px; height: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { font-family: var(--font-head); font-size: 22px; color: var(--text); letter-spacing: -.01em; }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .15s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta { margin-left: 8px; }
-    .lang-switch { display: flex; align-items: center; gap: 4px; margin-left: 20px; }
-    .lang-switch a { font-size: 13px; font-weight: 600; color: var(--muted); padding: 4px 9px; border-radius: 6px; transition: all .15s; }
-    .lang-switch a:hover { color: var(--text); background: var(--off-white); }
-    .lang-switch a.lang-active { color: var(--accent); background: var(--accent-lt); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all .2s; }
-    .mobile-menu {
-      display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
-      background: var(--white); border-bottom: 1px solid var(--border);
-      padding: 20px 24px 28px; z-index: 99; flex-direction: column; gap: 0;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { padding: 14px 0; font-size: 16px; font-weight: 500; border-bottom: 1px solid var(--border); color: var(--text); }
-    .mobile-menu a:last-child { border: none; }
-    .mobile-menu .btn { margin-top: 16px; justify-content: center; }
-
-    /* ─── Hero ───────────────────────────────────────────────── */
-    .hero {
-      padding-top: calc(var(--nav-h) + 80px);
-      padding-bottom: 96px;
-      background-color: var(--white);
-      background-image:
-        radial-gradient(circle at 80% 20%, rgba(37,99,235,.06) 0%, transparent 50%),
-        radial-gradient(circle, rgba(37,99,235,.04) 1px, transparent 1px);
-      background-size: 100% 100%, 28px 28px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: var(--border);
-    }
-    .hero-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 460px; gap: 64px; align-items: center;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 500; color: var(--muted);
-      background: var(--off-white); border: 1px solid var(--border);
-      border-radius: 20px; padding: 6px 16px; margin-bottom: 28px;
-    }
-    .hero-badge .dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .7; transform: scale(1.2); }
-    }
-    .hero h1 {
-      font-family: var(--font-head);
-      font-size: clamp(36px, 5.2vw, 58px);
-      line-height: 1.1; color: var(--text); margin-bottom: 22px; letter-spacing: -.02em;
-    }
-    .hero h1 em { color: var(--accent); font-style: italic; }
-    .hero-sub { font-size: 18px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; max-width: 500px; }
-    .hero-trust-line {
-      font-size: 14px; color: var(--muted); margin-bottom: 32px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .hero-trust-line svg { color: var(--green); flex-shrink: 0; }
-    .hero-price-line {
-      display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-    .hero-price-main {
-      font-family: var(--font-head); font-size: 32px; color: var(--text); line-height: 1;
-    }
-    .hero-price-sep {
-      font-size: 14px; color: var(--muted); font-weight: 500;
-    }
-    .hero-price-opt {
-      font-size: 13px; color: var(--muted);
-      background: var(--off-white); border: 1px solid var(--border);
-      border-radius: 20px; padding: 3px 10px;
-    }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .hero-branchen {
-      display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
-      margin-top: 24px;
-    }
-    .hero-branchen-label { font-size: 12px; color: var(--muted); font-weight: 500; margin-right: 4px; }
-    .branche-chip {
-      font-size: 13px; color: var(--text);
-      background: var(--off-white); border: 1px solid var(--border);
-      border-radius: 20px; padding: 4px 12px;
-      white-space: nowrap;
-    }
-
-    /* Hero Visual */
-    .hero-visual { position: relative; }
-    .hero-device {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-    }
-    .hero-device-bar {
-      background: var(--light); padding: 10px 16px;
-      display: flex; align-items: center; gap: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-    .dev-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-    .hero-device-urlbar {
-      flex: 1; margin-left: 8px;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 6px; padding: 4px 10px;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .hero-device-urlbar svg { color: var(--green); flex-shrink: 0; }
-    .hero-device-urlbar span { font-size: 12px; color: var(--muted); }
-    .hero-device-screen { padding: 0; overflow: hidden; height: 380px; }
-    .hero-device-screen iframe {
-      width: 100%; height: 100%; border: none;
-      transform-origin: top left;
-      pointer-events: none;
-    }
-    .hero-device-overlay {
-      padding: 20px 24px 24px;
-      border-top: 1px solid var(--border);
-      background: var(--off-white);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .hero-device-label { font-size: 12px; color: var(--muted); }
-    .hero-device-label strong { display: block; font-size: 13px; color: var(--text); margin-bottom: 2px; }
-
-    /* Hero Price badge */
-    .hero-price-pill {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--text); color: white;
-      border-radius: var(--radius); padding: 10px 18px;
-      font-size: 14px; font-weight: 500;
-    }
-    .hero-price-pill .pill-num { font-family: var(--font-head); font-size: 20px; }
-
-    /* ─── Stats Band ─────────────────────────────────────────── */
-    .stats-band {
-      background: var(--text);
-      padding: 32px 0;
-    }
-    .stats-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-family: var(--font-head);
-      font-size: clamp(28px, 3.5vw, 40px);
-      color: white; line-height: 1; margin-bottom: 6px;
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label { font-size: 13px; color: rgba(255,255,255,.55); }
-    .stat-divider { width: 1px; background: rgba(255,255,255,.1); align-self: stretch; display: none; }
-
-    /* ─── Person / Trust ─────────────────────────────────────── */
-    .person-section {
-      padding: 80px 0;
-    }
-    .person-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    }
-    .person-visual {
-      background: linear-gradient(135deg, var(--accent-lt) 0%, #dbeafe 100%);
-      border-radius: var(--radius-lg);
-      padding: 48px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .person-visual::before {
-      content: '';
-      position: absolute; top: -30px; right: -30px;
-      width: 120px; height: 120px;
-      background: rgba(37,99,235,.12);
-      border-radius: 50%;
-    }
-    .person-avatar {
-      width: 72px; height: 72px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 28px; color: white;
-      margin-bottom: 20px;
-    }
-    .person-visual blockquote {
-      font-family: var(--font-head);
-      font-size: 20px; line-height: 1.45; color: var(--text);
-      font-style: italic; margin-bottom: 20px;
-      position: relative; z-index: 1;
-    }
-    .person-visual cite {
-      font-style: normal; font-size: 14px; color: var(--muted);
-    }
-    .person-visual cite strong { display: block; font-size: 15px; color: var(--text); margin-bottom: 2px; }
-    .person-text .tag { margin-bottom: 16px; }
-    .person-points { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
-    .person-point {
-      display: flex; gap: 12px; align-items: flex-start;
-    }
-    .person-point-icon {
-      width: 32px; height: 32px; background: var(--accent-lt); border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .person-point-icon svg { width: 16px; height: 16px; color: var(--accent); }
-    .person-point p { font-size: 15px; color: var(--text); line-height: 1.5; }
-    .person-point p span { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
-
-    /* ─── Problem ────────────────────────────────────────────── */
-    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .problem-text .section-sub { max-width: none; }
-    .problem-points { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-    .problem-point { display: flex; gap: 14px; align-items: flex-start; }
-    .problem-x {
-      width: 28px; height: 28px; background: #fee2e2; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
-    }
-    .problem-x svg { width: 12px; height: 12px; color: #dc2626; }
-    .problem-point p { font-size: 15px; color: var(--text); line-height: 1.55; }
-    .problem-point strong { display: block; font-weight: 600; margin-bottom: 2px; }
-    .problem-visual {
-      background: var(--off-white); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px; position: relative;
-    }
-    .mock-browser { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .mock-bar { background: var(--light); padding: 10px 14px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--border); }
-    .mock-dot { width: 9px; height: 9px; border-radius: 50%; }
-    .mock-url { flex: 1; height: 20px; background: var(--border); border-radius: 4px; margin-left: 8px; }
-    .mock-content { padding: 20px; }
-    .mock-line { height: 10px; background: var(--border); border-radius: 4px; margin-bottom: 8px; }
-    .mock-line.short { width: 60%; }
-    .mock-line.med { width: 80%; }
-    .mock-badge-old { margin-top: 12px; display: inline-block; background: #fee2e2; color: #991b1b; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
-
-    /* ─── Solution ───────────────────────────────────────────── */
-    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .solution-visual {
-      background: var(--accent); border-radius: var(--radius-lg); padding: 32px; color: white;
-    }
-    .solution-visual-title { font-family: var(--font-head); font-size: 22px; margin-bottom: 20px; color: white; }
-    .sol-item { display: flex; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.15); }
-    .sol-item:last-child { border: none; }
-    .sol-num { width: 30px; height: 30px; background: rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
-    .sol-item span { font-size: 14px; color: rgba(255,255,255,.9); }
-
-    /* ─── Demo / iframe ──────────────────────────────────────── */
-    .demo-wrap { max-width: 900px; margin: 0 auto; }
-    .demo-browser {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-    }
-    .demo-bar {
-      background: var(--light); padding: 12px 18px;
-      display: flex; align-items: center; gap: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    .demo-dots { display: flex; gap: 6px; }
-    .demo-dots span { width: 10px; height: 10px; border-radius: 50%; display: block; }
-    .demo-urlbar {
-      flex: 1; margin: 0 12px;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 6px; padding: 5px 12px;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .demo-urlbar svg { color: var(--green); flex-shrink: 0; }
-    .demo-urlbar span { font-size: 12px; color: var(--muted); }
-    .demo-open-link {
-      font-size: 12px; font-weight: 600; color: var(--accent);
-      background: var(--accent-lt); border-radius: 6px; padding: 5px 10px;
-      white-space: nowrap; transition: background .15s;
-    }
-    .demo-open-link:hover { background: #dbeafe; }
-    .demo-screen {
-      width: 100%; height: 600px;
-      position: relative;
-      background: var(--off-white);
-    }
-    .demo-screen iframe {
-      width: 100%; height: 100%; border: none;
-      display: block;
-    }
-    .demo-fallback {
-      display: none;
-      position: absolute; inset: 0;
-      align-items: center; justify-content: center;
-      flex-direction: column; gap: 12px;
-      background: var(--off-white);
-      text-align: center; padding: 40px;
-    }
-    .demo-fallback p { font-size: 15px; color: var(--muted); max-width: 300px; line-height: 1.6; }
-    .demo-footer {
-      padding: 14px 18px;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; gap: 8px;
-      background: var(--off-white);
-    }
-    .demo-footer span { font-size: 12px; color: var(--muted); }
-    .demo-footer strong { font-size: 13px; }
-
-    /* ─── Leistungen ─────────────────────────────────────────── */
-    .leistungen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .leistung-card {
-      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 28px 24px; transition: box-shadow .2s, transform .2s, border-color .2s;
-    }
-    .leistung-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--accent); }
-    .leistung-icon { width: 46px; height: 46px; background: var(--accent-lt); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-    .leistung-icon svg { width: 22px; height: 22px; color: var(--accent); }
-    .leistung-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
-    .leistung-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-
-    /* ─── Preis ──────────────────────────────────────────────── */
-    .preis-outer { max-width: 720px; margin: 0 auto; }
-    .preis-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); overflow: hidden; }
-    .preis-header { background: var(--text); color: white; padding: 36px 40px; display: flex; justify-content: space-between; align-items: center; }
-    .preis-header h3 { font-family: var(--font-head); font-size: 28px; font-weight: normal; margin-bottom: 6px; }
-    .preis-header p { font-size: 14px; color: rgba(255,255,255,.6); }
-    .preis-amount { text-align: right; }
-    .preis-amount .big { font-family: var(--font-head); font-size: 52px; line-height: 1; color: white; }
-    .preis-amount .label { font-size: 13px; color: rgba(255,255,255,.6); }
-    .preis-body { padding: 36px 40px; }
-    .preis-zahlung { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
-    .zahlung-item { background: var(--off-white); border-radius: var(--radius); padding: 18px 20px; }
-    .zahlung-item .label { font-size: 12px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
-    .zahlung-item .amount { font-size: 22px; font-weight: 600; color: var(--text); }
-    .zahlung-item .note { font-size: 12px; color: var(--muted); margin-top: 2px; }
-    .preis-monatlich {
-      border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px;
-      display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;
-    }
-    .preis-monatlich .left p { font-size: 14px; color: var(--muted); margin-top: 3px; }
-    .preis-monatlich .left strong { font-size: 15px; }
-    .preis-monatlich .right { font-family: var(--font-head); font-size: 30px; white-space: nowrap; }
-    .preis-monatlich .right span { font-family: var(--font-body); font-size: 13px; color: var(--muted); }
-    .preis-hinweis {
-      font-size: 14px; color: var(--muted); padding: 14px 18px;
-      background: var(--accent-lt); border-radius: var(--radius);
-      border-left: 3px solid var(--accent); line-height: 1.6;
-    }
-    .preis-hinweis strong { color: var(--accent); }
-    .preis-steuer {
-      margin-top: 14px; font-size: 13px; color: var(--muted);
-      padding: 10px 14px; background: var(--off-white); border-radius: var(--radius);
-    }
-
-    /* ─── Ablauf ─────────────────────────────────────────────── */
-    .ablauf-steps { display: flex; flex-direction: column; gap: 0; max-width: 680px; margin: 0 auto; }
-    .ablauf-step { display: flex; gap: 28px; align-items: flex-start; position: relative; }
-    .ablauf-step:not(:last-child)::after { content: ''; position: absolute; left: 22px; top: 48px; bottom: -16px; width: 1px; background: var(--border); }
-    .step-num-wrap { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
-    .step-num { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; color: var(--accent); background: var(--white); z-index: 1; flex-shrink: 0; }
-    .step-content { padding-bottom: 40px; flex: 1; }
-    .step-content h3 { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 6px; padding-top: 9px; }
-    .step-content p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-    /* ─── FAQ ────────────────────────────────────────────────── */
-    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-    .faq-item {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      transition: border-color .15s;
-    }
-    .faq-item.open { border-color: var(--accent); }
-    .faq-q {
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      padding: 18px 22px; cursor: pointer;
-      font-size: 15px; font-weight: 600; color: var(--text);
-      background: none; border: none; width: 100%; text-align: left;
-      font-family: var(--font-body);
-    }
-    .faq-q:hover { color: var(--accent); }
-    .faq-icon { width: 22px; height: 22px; border: 1.5px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all .2s; }
-    .faq-icon svg { width: 12px; height: 12px; transition: transform .2s; }
-    .faq-item.open .faq-icon { background: var(--accent); border-color: var(--accent); }
-    .faq-item.open .faq-icon svg { transform: rotate(45deg); color: white; }
-    .faq-a { display: none; padding: 0 22px 18px; font-size: 14px; color: var(--muted); line-height: 1.7; }
-    .faq-item.open .faq-a { display: block; }
-
-    /* ─── Branchen ───────────────────────────────────────────── */
-    .branchen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
-    .branche-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 20px; text-align: center; transition: box-shadow .2s, transform .2s, border-color .2s; }
-    .branche-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); border-color: var(--accent); }
-    .branche-icon { font-size: 32px; margin-bottom: 12px; display: block; line-height: 1; }
-    .branche-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .branche-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
-    .branchen-note { text-align: center; font-size: 14px; color: var(--muted); padding: 14px 20px; background: var(--off-white); border-radius: var(--radius); max-width: 520px; margin: 0 auto; line-height: 1.6; }
-
-    /* ─── Kontakt ────────────────────────────────────────────── */
-    .kontakt-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .kontakt-info h2 { margin-bottom: 16px; }
-    .kontakt-points { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-    .kontakt-point { display: flex; gap: 12px; align-items: flex-start; }
-    .kontakt-point-icon { width: 36px; height: 36px; background: var(--accent-lt); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .kontakt-point-icon svg { width: 18px; height: 18px; color: var(--accent); }
-    .kontakt-point div strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
-    .kontakt-point div p { font-size: 14px; color: var(--muted); }
-    .kontakt-person-strip {
-      margin-top: 32px; padding: 18px 20px;
-      background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius);
-      display: flex; align-items: center; gap: 14px;
-    }
-    .kontakt-person-avatar {
-      width: 46px; height: 46px;
-      background: var(--accent); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 18px; color: white; flex-shrink: 0;
-    }
-    .kontakt-person-avatar { font-family: var(--font-head); }
-    .kontakt-person-text strong { display: block; font-size: 14px; font-weight: 600; }
-    .kontakt-person-text p { font-size: 13px; color: var(--muted); }
-    .form-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow); }
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 7px; letter-spacing: .01em; }
-    .form-group label .optional { font-weight: 400; color: var(--muted); margin-left: 4px; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 11px 14px;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      font-family: var(--font-body); font-size: 14px; color: var(--text);
-      background: var(--white); transition: border-color .15s, box-shadow .15s;
-      outline: none; -webkit-appearance: none; appearance: none;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,.1); }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: #aaa; }
-    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%236b6b67' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
-    .form-submit { width: 100%; justify-content: center; font-size: 15px; padding: 14px; }
-    .form-note { text-align: center; margin-top: 12px; font-size: 12px; color: var(--muted); }
-    .form-consent { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 18px; padding: 14px 16px; background: var(--off-white); border-radius: var(--radius); border: 1px solid var(--border); }
-    .form-consent input[type="checkbox"] { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; accent-color: var(--accent); cursor: pointer; }
-    .form-consent label { font-size: 13px; color: var(--muted); line-height: 1.55; font-weight: 400; cursor: pointer; margin-bottom: 0; }
-    .form-consent label a { color: var(--accent); text-decoration: underline; }
-    .form-consent label a:hover { color: var(--accent-dk); }
-
-    /* ─── Footer ─────────────────────────────────────────────── */
-    .footer { background: var(--text); color: rgba(255,255,255,.7); padding: 48px 0; }
-    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-    .footer-logo { font-family: var(--font-head); font-size: 22px; color: white; }
-    .footer-logo span { color: var(--accent); }
-    .footer-tagline { font-size: 13px; color: rgba(255,255,255,.4); margin-top: 4px; }
-    .footer-links { display: flex; gap: 24px; list-style: none; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,.5); transition: color .15s; }
-    .footer-links a:hover { color: white; }
-    .footer-copy { font-size: 12px; color: rgba(255,255,255,.3); margin-top: 4px; text-align: right; }
-
-    /* ─── Scroll Reveal ─────────────────────────────────────── */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .5s ease, transform .5s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ─── Responsive ─────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-      .person-inner, .problem-grid, .solution-grid, .kontakt-inner { grid-template-columns: 1fr; gap: 40px; }
-      .problem-visual { order: -1; }
-      .leistungen-grid { grid-template-columns: 1fr 1fr; }
-      .branchen-grid { grid-template-columns: 1fr 1fr; }
-      .preis-header { flex-direction: column; gap: 20px; text-align: center; }
-      .preis-amount { text-align: center; }
-      .preis-zahlung { grid-template-columns: 1fr; }
-      .demo-screen { height: 400px; }
-    }
-    @media (max-width: 600px) {
-      .section { padding: 64px 0; }
-      .leistungen-grid { grid-template-columns: 1fr; }
-      .branchen-grid { grid-template-columns: 1fr 1fr; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
-      .footer-copy { text-align: center; }
-      .preis-body { padding: 24px 20px; }
-      .preis-header { padding: 28px 20px; }
-      .form-card { padding: 24px 20px; }
-      .demo-screen { height: 320px; }
-      .person-visual { padding: 32px 24px; }
-    }
-  </style>
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .grid3{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .price-wrap,.contact-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:30px}
+    .nav-links{display:none}.burger{display:flex}
+  }
+  @media(max-width:560px){
+    .grid3{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}
+    .foot-bottom{flex-direction:column}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important}
+    [data-reveal]{opacity:1;transform:none;transition:none}
+    .mock{animation:none}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Seit<span>fix</span></a>
-      <ul class="nav-links">
-        <li><a href="#leistung">Leistung</a></li>
-        <li><a href="#preis">Preis</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-      <a href="#kontakt" class="btn btn-primary nav-cta" style="padding:10px 20px; font-size:14px;">Kostenlos anfragen</a>
-      <div class="lang-switch">
-        <a href="index.html" class="lang-active">DE</a>
-        <a href="en/index.html">EN</a>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand"><b>Seit</b><span class="fix">fix</span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#leistung" data-i18n="nav_leistung">Leistung</a>
+      <a href="#ablauf" data-i18n="nav_ablauf">Ablauf</a>
+      <a href="#preis" data-i18n="nav_preis">Preis</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Sprache">
+        <button data-lang="de" class="on">DE</button><button data-lang="en">EN</button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#leistung" class="mobile-link">Leistung</a>
-    <a href="#preis" class="mobile-link">Preis</a>
-    <a href="#faq" class="mobile-link">FAQ</a>
-    <a href="#kontakt" class="mobile-link">Kontakt</a>
-    <a href="#kontakt" class="btn btn-primary">Kostenlos anfragen</a>
-  </div>
-
-  <!-- ══ HERO ════════════════════════════════════════════════ -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="dot"></span>
-          Persönlich aus Graz · österreichweit
-        </div>
-        <h1>Moderne Onepager für <em>Handwerker</em> &amp; kleine Betriebe</h1>
-        <p class="hero-sub">Seitfix erstellt Ihnen eine klare, professionelle Website, die auf dem Handy gut aussieht und Kunden direkt zur Anfrage führt.</p>
-        <div class="hero-price-line">
-          <span class="hero-price-main">299 €</span>
-          <span class="hero-price-sep">einmalig</span>
-          <span class="hero-price-opt">+ optional Hosting ab 59 €/Monat</span>
-        </div>
-        <p class="hero-trust-line">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-          Persönlich umgesetzt von Ivo Hrovat aus Graz
-        </p>
-        <div class="hero-actions">
-          <a href="#kontakt" class="btn btn-primary">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            Kostenlos anfragen
-          </a>
-          <a href="#demo" class="btn btn-outline">Beispiel ansehen</a>
-        </div>
-        <div class="hero-branchen">
-          <span class="hero-branchen-label">Geeignet für:</span>
-          <span class="branche-chip">🔧 Handwerk</span>
-          <span class="branche-chip">💼 Dienstleister</span>
-          <span class="branche-chip">🎯 Coaches</span>
-          <span class="branche-chip">📍 Lokale Betriebe</span>
-        </div>
-      </div>
-
-      <!-- Hero Visual: Live Preview -->
-      <div class="hero-visual reveal">
-        <div class="hero-device">
-          <div class="hero-device-bar">
-            <span class="dev-dot" style="background:#ff5f57"></span>
-            <span class="dev-dot" style="background:#ffbd2e"></span>
-            <span class="dev-dot" style="background:#28c840"></span>
-            <div class="hero-device-urlbar">
-              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>anfragr.at</span>
-            </div>
-          </div>
-          <div class="hero-device-screen">
-            <iframe src="https://anfragr.at" title="Beispiel-Onepager" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-          </div>
-          <div class="hero-device-overlay">
-            <div>
-              <div class="hero-device-label"><strong>Beispiel: anfragr.at</strong>So sieht Ihr fertiger Onepager aus</div>
-            </div>
-            <a href="#demo" class="btn btn-primary" style="font-size:12px; padding:8px 14px;">Groß ansehen ↓</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ STATS BAND ══════════════════════════════════════════ -->
-  <div class="stats-band">
-    <div class="stats-inner">
-      <div class="stat-item">
-        <div class="stat-num">299<span>€</span></div>
-        <div class="stat-label">Fixpreis, einmalig</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">7</div>
-        <div class="stat-label">Tage nach Erhalt aller Inhalte</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">1x Feedback</div>
-        <div class="stat-label">Anpassung inklusive</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">0<span>€</span></div>
-        <div class="stat-label">Versteckte Kosten</div>
-      </div>
+      <a href="#kontakt" class="btn btn-primary" style="padding:10px 20px" data-i18n="nav_cta">Kostenlos anfragen</a>
+      <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </div>
+</header>
 
-  <!-- ══ PERSON / TRUST ══════════════════════════════════════ -->
-  <section class="person-section section--alt" id="person">
-    <div class="person-inner container">
-      <div class="person-visual reveal">
-        <div class="person-avatar">I</div>
-        <blockquote>„Ich erstelle Webseiten, die Kunden sofort verstehen – klarer Preis, keine Agentur-Bürokratie."</blockquote>
-        <cite>
-          <strong>Ivo Hrovat</strong>
-          Seitfix · Graz, Österreich
-        </cite>
-      </div>
-      <div class="person-text reveal">
-        <span class="tag">Wer steckt dahinter</span>
-        <h2 class="section-title">Keine Agentur. Eine Person. Direkter Kontakt.</h2>
-        <p class="section-sub">Bei Seitfix arbeiten Sie direkt mit mir – kein Ticketsystem, kein wechselnder Ansprechpartner, keine langen Prozesse.</p>
-        <div class="person-points">
-          <div class="person-point">
-            <span class="person-point-icon">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-            </span>
-            <p>Persönliche Betreuung von Anfang bis Ende<span>Ich bin Ihr direkter Ansprechpartner für alles.</span></p>
-          </div>
-          <div class="person-point">
-            <span class="person-point-icon">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </span>
-            <p>Faire, transparente Preise<span>299 € einmalig für Ihren fertigen Onepager – kein Verstecktes.</span></p>
-          </div>
-          <div class="person-point">
-            <span class="person-point-icon">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </span>
-            <p>Schnelle Umsetzung<span>Kein monatelanger Agenturprozess. Fertig in ca. 7 Tagen nach Erhalt aller Inhalte.</span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="scrim" id="scrim"></div>
+<aside class="mobile" id="mobile">
+  <a href="#leistung" data-i18n="nav_leistung">Leistung</a>
+  <a href="#ablauf" data-i18n="nav_ablauf">Ablauf</a>
+  <a href="#preis" data-i18n="nav_preis">Preis</a>
+  <a href="#faq" data-i18n="nav_faq">FAQ</a>
+  <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
+  <a href="#kontakt" class="btn btn-primary" data-i18n="nav_cta">Kostenlos anfragen</a>
+</aside>
 
-  <!-- ══ DEMO / IFRAME ═══════════════════════════════════════ -->
-  <section class="section" id="demo">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <span class="tag">Live-Beispiel</span>
-        <h2 class="section-title">So kann ein fertiger Onepager aussehen</h2>
-        <p class="section-sub">Ein echtes Beispiel direkt im Browser – so könnte Ihre Website aufgebaut sein.</p>
+<span id="top"></span>
+<!-- Netlify-Formularerkennung (versteckt) -->
+<form name="seitfix-anfrage" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="text" name="email"><input type="text" name="hat_website"><input type="text" name="url"><input type="text" name="gewerbe"><input type="text" name="bot-field">
+</form>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge" data-reveal><span class="dot"></span><span data-i18n="hero_badge">Persönlich aus Graz · im DACH-Raum</span></span>
+      <h1 data-reveal data-d="1"><span data-i18n="hero_h1a">Moderne Onepager für</span> <em data-i18n="hero_h1b">Handwerker</em> <span data-i18n="hero_h1c">& kleine Betriebe</span></h1>
+      <p class="lead" data-reveal data-d="2" data-i18n="hero_lead">Seitfix erstellt Ihnen eine klare, professionelle Website, die auf dem Handy gut aussieht und Kunden direkt zur Anfrage führt.</p>
+      <div class="price-row" data-reveal data-d="2">
+        <span class="price">799 €<small> <span data-i18n="hero_once">einmalig</span></small></span>
+        <span class="price-note" data-i18n="hero_hosting">+ optional Hosting ab 30 €/Monat</span>
       </div>
-      <div class="demo-wrap reveal">
-        <div class="demo-browser">
-          <div class="demo-bar">
-            <div class="demo-dots">
-              <span style="background:#ff5f57"></span>
-              <span style="background:#ffbd2e"></span>
-              <span style="background:#28c840"></span>
-            </div>
-            <div class="demo-urlbar">
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>anfragr.at</span>
-            </div>
-            <a href="https://anfragr.at" target="_blank" rel="noopener" class="demo-open-link">↗ Öffnen</a>
-          </div>
-          <div class="demo-screen" id="demo-screen">
-            <iframe
-              src="https://anfragr.at"
-              title="Beispiel-Onepager: anfragr.at"
-              loading="lazy"
-              sandbox="allow-same-origin allow-scripts allow-forms"
-              id="demo-iframe"
-            ></iframe>
-            <div class="demo-fallback" id="demo-fallback">
-              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--muted)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              <p>Die Vorschau konnte nicht geladen werden.</p>
-              <a href="https://anfragr.at" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px; padding:10px 20px;">anfragr.at direkt öffnen ↗</a>
-            </div>
-          </div>
-          <div class="demo-footer">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--green)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span><strong>Beispiel-Onepager</strong> – so kann eine fertige Website aufgebaut sein</span>
-            <a href="https://anfragr.at" target="_blank" rel="noopener" style="margin-left:auto; font-size:12px; color:var(--accent); font-weight:600;">In neuem Tab öffnen ↗</a>
-          </div>
-        </div>
+      <div class="signed" data-reveal data-d="3"><span class="check">✓</span> <span data-i18n="hero_signed">Persönlich umgesetzt in Graz</span></div>
+      <div class="cta-row" data-reveal data-d="3">
+        <a href="#kontakt" class="btn btn-primary" data-i18n="hero_cta1">→ Kostenlos anfragen</a>
+        <a href="#leistung" class="btn btn-ghost" data-i18n="hero_cta2">Beispiel ansehen</a>
+      </div>
+      <div class="fitfor" data-reveal data-d="4">
+        <span data-i18n="hero_fitfor">Geeignet für:</span>
+        <span class="chip"><span data-i18n="chip_handwerk">Handwerk</span></span>
+        <span class="chip"><span data-i18n="chip_dienst">Dienstleister</span></span>
+        <span class="chip">Coaches</span>
+        <span class="chip"><span data-i18n="chip_lokal">Lokale Betriebe</span></span>
       </div>
     </div>
-  </section>
-
-  <!-- ══ LEISTUNGEN ══════════════════════════════════════════ -->
-  <section class="section section--alt" id="leistung">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <span class="tag">Leistung</span>
-        <h2 class="section-title">Was enthalten ist</h2>
-        <p class="section-sub">Alles, was Sie für einen professionellen Online-Auftritt brauchen – ohne versteckte Extras.</p>
+    <div class="mock-shell" data-reveal data-d="2">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">ihre-firma.at</span></div>
+        <div class="mock-body">
+          <div class="mock-hero">
+            <span class="mh-badge">Onepager</span>
+            <h4 data-i18n="mock_h">Ihr Betrieb. Klar. Online.</h4>
+            <p data-i18n="mock_p">So sieht Ihr fertiger Onepager aus – aufs Handy optimiert.</p>
+            <span class="mh-btn" data-i18n="mock_btn">Jetzt anfragen</span>
+          </div>
+          <div class="mock-cards"><div></div><div></div><div></div></div>
+        </div>
       </div>
-      <div class="leistungen-grid">
-        <div class="leistung-card reveal">
-          <div class="leistung-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <h3>Struktur &amp; Konzept</h3>
-          <p>Wir entwickeln einen klaren Seitenaufbau, der Ihre Besucher gezielt zur Anfrage führt.</p>
+      <div class="mock-cap"><b>7 Tage</b><br><span data-i18n="mock_cap" style="color:var(--muted);font-size:.78rem">bis zur fertigen Seite</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN -->
+<section class="refs">
+  <div class="wrap">
+    <p class="lab" data-i18n="ref_lab">Unternehmen, mit denen wir gearbeitet haben</p>
+    <div class="refs-row">
+      <img src="data:image/png;base64,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" alt="Ing. Domokos Kovács" />
+      <span class="refs-word">anfragr<span class="dot">.at</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNG -->
+<section class="sec" id="leistung">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="eb_leistung">Leistung</span>
+      <h2 data-i18n="leistung_h">Alles, was Sie <em>brauchen</em> — nichts, was Sie nicht brauchen</h2>
+      <p class="lead" data-i18n="leistung_p">Alles, was Sie für einen professionellen Online-Auftritt brauchen – ohne versteckte Extras.</p>
+    </div>
+    <div class="grid3">
+      <div class="card" data-reveal><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3 data-i18n="l1h">Struktur & Konzept</h3><p data-i18n="l1p">Ein klarer Seitenaufbau, der Ihre Besucher gezielt zur Anfrage führt.</p></div>
+      <div class="card" data-reveal data-d="1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><h3 data-i18n="l2h">Texte für Ihre Website</h3><p data-i18n="l2p">Klare Website-Texte auf Basis Ihrer Angaben – verständlich erklärt, warum Kunden Sie wählen.</p></div>
+      <div class="card" data-reveal data-d="2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.8L18.5 9.6 13.7 11.4 12 16l-1.7-4.6L5.5 9.6l4.8-1.8Z"/><path d="M19 14.5l.5 1.4L21 16.5l-1.5.6L19 18.5l-.5-1.4L17 16.5l1.5-.6Z"/></svg></div><h3 data-i18n="l3h">Modernes Design</h3><p data-i18n="l3p">Sauber, zeitgemäß und auf Ihre Branche abgestimmt – ohne überladene Effekte.</p></div>
+      <div class="card" data-reveal><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><h3 data-i18n="l4h">Mobile Optimierung</h3><p data-i18n="l4p">Die Seite funktioniert auf allen Geräten – Handy, Tablet und Desktop.</p></div>
+      <div class="card" data-reveal data-d="1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3 data-i18n="l5h">Kontaktbereich</h3><p data-i18n="l5p">Ein klares Kontaktformular, damit Interessenten direkt anfragen können.</p></div>
+      <div class="card" data-reveal data-d="2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><path d="m8 17 4-4 4 4"/><path d="M20 16.5A4.5 4.5 0 0 0 17 8h-1.26A7 7 0 1 0 5 15.29"/></svg></div><h3 data-i18n="l6h">Veröffentlichung & Hosting</h3><p data-i18n="l6p">Mit dem optionalen Hosting-Paket (30 €/Monat) veröffentlichen wir Ihre Seite – inkl. Domain & Betreuung.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="sec" id="ablauf" style="background:var(--light)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="eb_ablauf">Ablauf</span>
+      <h2 data-i18n="ablauf_h">So einfach läuft es <em>ab</em></h2>
+      <p class="lead" data-i18n="ablauf_p">Von der Anfrage bis zur fertigen Website – klar, unkompliziert und in ca. 7 Tagen.</p>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal><h3 data-i18n="s1h">Anfrage senden</h3><p data-i18n="s1p">Formular ausfüllen oder kurz schreiben. Kein langes Briefing nötig.</p></div>
+      <div class="step" data-reveal data-d="1"><h3 data-i18n="s2h">Infos schicken</h3><p data-i18n="s2p">Wir fragen gezielt nach Leistungen, Zielgruppe, Kontakt. Ca. 15 Minuten.</p></div>
+      <div class="step" data-reveal data-d="2"><h3 data-i18n="s3h">Entwurf erhalten</h3><p data-i18n="s3p">Wir bauen Ihren Onepager und schicken den fertigen Entwurf zur Ansicht.</p></div>
+      <div class="step" data-reveal data-d="3"><h3 data-i18n="s4h">Eine Korrekturrunde</h3><p data-i18n="s4p">Sie geben Feedback, wir passen an – eine Runde ist inklusive.</p></div>
+      <div class="step" data-reveal data-d="4"><h3 data-i18n="s5h">Veröffentlichung</h3><p data-i18n="s5p">Wir stellen die Seite online & richten die Domain ein – oder übergeben alle Dateien.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREIS -->
+<section class="sec" id="preis">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="eb_preis">Preis</span>
+      <h2 data-i18n="preis_h">Ein klarer Preis. Kein <em>Agenturprozess</em>.</h2>
+      <p class="lead" data-i18n="preis_p">Transparente Kosten von Anfang an – keine Überraschungen, kein Agenturbudget nötig.</p>
+    </div>
+    <div class="price-wrap">
+      <div class="price-main" data-reveal>
+        <div class="rel">
+          <span class="eyebrow" style="color:#8ab4ff" data-i18n="preis_card">Onepager Komplett</span>
+          <div class="big">799 € <small style="font-size:1rem;color:#b9c2da;font-family:var(--font-body)" data-i18n="hero_once">einmalig</small></div>
+          <ul>
+            <li data-i18n="pm1">Einmalige Erstellung – Design, Text & Konzept</li>
+            <li data-i18n="pm2">Mobile Optimierung für alle Geräte</li>
+            <li data-i18n="pm3">Klarer Kontaktbereich für Anfragen</li>
+            <li data-i18n="pm4">Eine Korrekturrunde inklusive</li>
+            <li data-i18n="pm5">Komplett zahlbar bei Beauftragung</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-primary" data-i18n="preis_cta">→ Jetzt anfragen</a>
+          <p style="color:#b9c2da;font-size:.86rem;margin-top:16px" data-i18n="preis_note">+ Jede weitere Unterseite: 50 € · Hosting optional ab 30 €/Monat</p>
         </div>
-        <div class="leistung-card reveal">
-          <div class="leistung-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <h3>Texte für Ihre Website</h3>
-          <p>Klare Website-Texte auf Basis Ihrer Angaben, die verständlich erklären, was Sie anbieten und warum Kunden Sie wählen sollten.</p>
+      </div>
+      <div class="price-side">
+        <div class="paybox" data-reveal data-d="2">
+          <h4 data-i18n="host_h">Hosting & Wartung (optional)</h4>
+          <div class="big" style="font-family:var(--font-head);font-size:1.8rem">30 € <small style="font-size:.9rem;color:var(--muted);font-family:var(--font-body)" data-i18n="host_m">/ Monat</small></div>
+          <p style="color:var(--muted);font-size:.9rem;margin-top:8px" data-i18n="host_p">Hosting, Domain, Wartung & kleine Änderungen. Monatlich kündbar.</p>
         </div>
-        <div class="leistung-card reveal">
-          <div class="leistung-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-          </div>
-          <h3>Modernes Design</h3>
-          <p>Sauber, zeitgemäß und auf Ihre Branche abgestimmt – ohne überladene Effekte.</p>
-        </div>
-        <div class="leistung-card reveal">
-          <div class="leistung-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-          </div>
-          <h3>Mobile Optimierung</h3>
-          <p>Die Seite funktioniert auf allen Geräten – Handy, Tablet und Desktop.</p>
-        </div>
-        <div class="leistung-card reveal">
-          <div class="leistung-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <h3>Kontaktbereich</h3>
-          <p>Ein klares Kontaktformular oder eine direkte Verlinkung, damit Interessenten anfragen können.</p>
-        </div>
-        <div class="leistung-card reveal">
-          <div class="leistung-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3>Veröffentlichung &amp; Hosting</h3>
-          <p>Mit dem optionalen Hosting-Paket (59 €/Monat) veröffentlichen wir die fertige Seite für Sie – inklusive Domain-Einrichtung und laufender Betreuung.</p>
-        </div>
+        <div class="ust" data-reveal data-d="3">ℹ️ <span data-i18n="ust">Gemäß § 6 Abs. 1 Z 27 UStG wird keine Umsatzsteuer berechnet. Alle Preise sind Endpreise.</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ PREIS ════════════════════════════════════════════════ -->
-  <section class="section" id="preis">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <span class="tag">Preis</span>
-        <h2 class="section-title">Ein klarer Preis. Kein komplizierter Agenturprozess.</h2>
-        <p class="section-sub">Transparente Kosten von Anfang an – keine Überraschungen, kein Agenturbudget nötig.</p>
-      </div>
-      <div class="preis-outer reveal">
-        <div class="preis-card">
-          <div class="preis-header">
-            <div>
-              <h3>Onepager Komplett</h3>
-              <p>Einmalige Erstellung · Design · Text · mobile Optimierung · Kontaktbereich</p>
-            </div>
-            <div class="preis-amount">
-              <div class="big">299 €</div>
-              <div class="label">einmalig</div>
-            </div>
-          </div>
-          <div class="preis-body">
-            <p style="font-size:13px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px;">Zahlungsplan</p>
-            <div class="preis-zahlung">
-              <div class="zahlung-item">
-                <div class="label">Anzahlung</div>
-                <div class="amount">149 €</div>
-                <div class="note">Bei Auftragserteilung</div>
-              </div>
-              <div class="zahlung-item">
-                <div class="label">Restzahlung</div>
-                <div class="amount">150 €</div>
-                <div class="note">Restzahlung vor Übergabe der fertigen Website</div>
-              </div>
-            </div>
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:var(--light)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal style="text-align:center;margin:0 auto 48px">
+      <span class="eyebrow" data-i18n="eb_faq">Häufige Fragen</span>
+      <h2 data-i18n="faq_h">Fragen & <em>Antworten</em></h2>
+    </div>
+    <div class="faq">
+      <details class="qa" data-reveal><summary><span data-i18n="q1">Was ist nicht im Preis von 799 € enthalten?</span><span class="pl">+</span></summary><div class="a" data-i18n="a1">Der Preis gilt für einen einfachen Onepager mit klarem Umfang. Nicht enthalten: mehrseitige Websites, Online-Shops, Sonderfunktionen (Buchung, Kalender, Mitgliederbereiche), Logo-/Grafikdesign und umfangreiche SEO-Maßnahmen. Solche Leistungen gibt es auf Anfrage gesondert.</div></details>
+      <details class="qa" data-reveal><summary><span data-i18n="q2">Was ist ein Onepager?</span><span class="pl">+</span></summary><div class="a" data-i18n="a2">Eine Website auf einer einzigen Seite. Alle wichtigen Infos – Leistungen, Vorteile, Kontakt – kompakt aufgebaut. Besucher scrollen statt zu klicken. Ideal, um schnell und klar zu überzeugen.</div></details>
+      <details class="qa" data-reveal><summary><span data-i18n="q3">Für wen ist Seitfix geeignet?</span><span class="pl">+</span></summary><div class="a" data-i18n="a3">Für Handwerker, Dienstleister und kleine Betriebe, die eine einfache, professionelle Website ohne großen Agenturprozess brauchen und Neukunden gewinnen möchten.</div></details>
+      <details class="qa" data-reveal><summary><span data-i18n="q4">Ist das Hosting verpflichtend?</span><span class="pl">+</span></summary><div class="a" data-i18n="a4">Nein. Das Hosting-Paket (30 €/Monat) ist optional. Mit Hosting kümmern wir uns um Domain, Wartung und kleine Änderungen. Ohne Hosting erhalten Sie alle Dateien zur eigenständigen Veröffentlichung.</div></details>
+      <details class="qa" data-reveal><summary><span data-i18n="q5">Wem gehört die fertige Website?</span><span class="pl">+</span></summary><div class="a" data-i18n="a5">Die fertige Website gehört Ihnen. Sie erhalten alle Dateien. Kündigen Sie das Hosting, können Sie jederzeit selbst oder über einen anderen Anbieter hosten.</div></details>
+      <details class="qa" data-reveal><summary><span data-i18n="q6">Wird Umsatzsteuer berechnet?</span><span class="pl">+</span></summary><div class="a" data-i18n="a6">Nein. Gemäß § 6 Abs. 1 Z 27 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet. Alle Preise sind Endpreise.</div></details>
+    </div>
+  </div>
+</section>
 
-            <div class="preis-monatlich">
-              <div class="left">
-                <strong>Hosting, Wartung &amp; kleine Änderungen</strong>
-                <p>Optional · monatlich kündbar · Ihre Seite bleibt online &amp; betreut</p>
-              </div>
-              <div class="right">59 € <span>/ Monat</span></div>
-            </div>
-
-            <div class="preis-hinweis">
-              <strong>Für einfache Onepager mit klarem Umfang und einer Korrekturrunde.</strong> Ideal für Handwerker und kleine Betriebe, die ohne großen Agenturprozess professionell online auftreten möchten.
-            </div>
-            <div class="preis-steuer">
-              ℹ️ Gemäß § 6 Abs. 1 Z 27 UStG wird keine Umsatzsteuer berechnet. Alle Preise sind Endpreise.
-            </div>
-          </div>
-        </div>
+<!-- KONTAKT -->
+<section class="sec" id="kontakt">
+  <div class="wrap contact-grid">
+    <div class="contact-aside" data-reveal>
+      <span class="eyebrow" data-i18n="eb_kontakt">Kontakt</span>
+      <h2 data-i18n="kontakt_h">Bereit für Ihren <em>Onepager</em>?</h2>
+      <p class="lead" data-i18n="kontakt_p">Drei kurze Angaben – und wir bauen Ihnen kostenlos eine erste Vorschau. Kein langes Briefing nötig.</p>
+      <div class="who">
+        <div class="avatar">S</div>
+        <div><b>Seitfix</b><span data-i18n="who">Graz, Österreich · hallo@seitfix.at</span></div>
       </div>
     </div>
-  </section>
-
-  <!-- ══ ABLAUF ══════════════════════════════════════════════ -->
-  <section class="section section--alt" id="ablauf">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <span class="tag">Ablauf</span>
-        <h2 class="section-title">So einfach läuft es ab</h2>
-        <p class="section-sub">Von der Anfrage bis zur fertigen Website – klar, unkompliziert und in ca. 7 Tagen nach Erhalt aller Inhalte.</p>
+    <form class="form" id="form" novalidate>
+      <div id="formfields">
+        <div class="field">
+          <label for="email" data-i18n="f_email">Ihre E-Mail-Adresse</label>
+          <input type="email" id="email" name="email" placeholder="name@firma.at" required />
+        </div>
+        <div class="field">
+          <label data-i18n="f_haswebsite">Haben Sie schon eine Website?</label>
+          <div class="toggle" id="haswebsite">
+            <button type="button" data-v="ja" data-i18n="f_yes">Ja</button>
+            <button type="button" data-v="nein" data-i18n="f_no">Nein</button>
+          </div>
+        </div>
+        <div class="field hide" id="urlfield">
+          <label for="url" data-i18n="f_url">Adresse Ihrer bestehenden Website</label>
+          <input type="url" id="url" name="url" placeholder="https://ihre-seite.at" />
+        </div>
+        <div class="field">
+          <label data-i18n="f_gewerbe">Was machen Sie?</label>
+          <div class="tiles" id="gewerbe">
+            <div class="tile" data-v="maler"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg></span><span class="t" data-i18n="g_maler">Maler</span></div>
+            <div class="tile" data-v="elektriker"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span><span class="t" data-i18n="g_elektriker">Elektriker</span></div>
+            <div class="tile" data-v="beratung"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span><span class="t" data-i18n="g_beratung">Beratung</span></div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" data-i18n="f_submit">Meine Vorschau bauen →</button>
       </div>
-      <div class="ablauf-steps">
-        <div class="ablauf-step reveal">
-          <div class="step-num-wrap"><span class="step-num">1</span></div>
-          <div class="step-content">
-            <h3>Anfrage senden</h3>
-            <p>Sie füllen das Kontaktformular aus oder schreiben uns eine kurze Nachricht. Kein langes Briefing nötig.</p>
-          </div>
-        </div>
-        <div class="ablauf-step reveal">
-          <div class="step-num-wrap"><span class="step-num">2</span></div>
-          <div class="step-content">
-            <h3>Informationen zum Unternehmen schicken</h3>
-            <p>Wir fragen gezielt nach dem, was wir brauchen – Leistungen, Zielgruppe, Kontaktdaten. Das dauert ca. 15 Minuten.</p>
-          </div>
-        </div>
-        <div class="ablauf-step reveal">
-          <div class="step-num-wrap"><span class="step-num">3</span></div>
-          <div class="step-content">
-            <h3>Entwurf erhalten</h3>
-            <p>Wir erstellen Ihren Onepager und schicken Ihnen den fertigen Entwurf zur Ansicht.</p>
-          </div>
-        </div>
-        <div class="ablauf-step reveal">
-          <div class="step-num-wrap"><span class="step-num">4</span></div>
-          <div class="step-content">
-            <h3>Eine Korrekturrunde</h3>
-            <p>Sie geben Feedback, wir passen an. Eine Korrekturrunde ist im Preis enthalten. Weitere Anpassungen können gesondert beauftragt werden.</p>
-          </div>
-        </div>
-        <div class="ablauf-step reveal">
-          <div class="step-num-wrap">
-            <span class="step-num" style="background:var(--accent); color:white; border-color:var(--accent);">5</span>
-          </div>
-          <div class="step-content">
-            <h3>Veröffentlichung Ihrer fertigen Seite</h3>
-            <p>Bei gebuchtem Hosting-Paket veröffentlichen wir Ihre Seite und richten Ihre Domain ein. Alternativ übergeben wir Ihnen alle Dateien zur eigenständigen Veröffentlichung.</p>
-          </div>
-        </div>
+      <div class="done hide" id="done">
+        <div class="big">✓</div>
+        <h3 style="margin:8px 0" data-i18n="done_h">Danke! Ihre Anfrage ist da.</h3>
+        <p style="color:var(--muted)" data-i18n="done_p">Ich melde mich in Kürze mit Ihrer ersten Vorschau bei Ihnen.</p>
       </div>
-    </div>
-  </section>
+    </form>
+  </div>
+</section>
 
-  <!-- ══ FAQ ══════════════════════════════════════════════════ -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-head section-head--center reveal">
-        <span class="tag">Häufige Fragen</span>
-        <h2 class="section-title">Fragen &amp; Antworten</h2>
-        <p class="section-sub">Hier finden Sie Antworten auf die häufigsten Fragen zu Seitfix.</p>
-      </div>
-      <div class="faq-list reveal">
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Was ist nicht im Preis von 299 € enthalten?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Der Preis von 299 € gilt für einen einfachen Onepager mit klarem Umfang. Nicht enthalten sind: mehrseitige Websites, Online-Shops, individuelle Sonderfunktionen (z.B. Buchungssysteme, Kalender, Mitgliederbereiche), Logo- oder Grafikdesign sowie umfangreiche SEO-Maßnahmen. Solche Leistungen können auf Anfrage gesondert angeboten werden.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Was ist ein Onepager?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Ein Onepager ist eine Website auf einer einzigen Seite. Alle wichtigen Informationen – Leistungen, Vorteile, Kontakt und Anfragebereich – sind kompakt und übersichtlich aufgebaut. Besucher scrollen statt zu klicken. Ideal für Betriebe, die schnell und klar überzeugen wollen.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Für wen ist Seitfix geeignet?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Seitfix ist für Handwerker, Dienstleister und kleine Betriebe gemacht, die eine einfache, professionelle Website ohne großen Agenturprozess brauchen. Wenn Sie Neukunden gewinnen möchten und dafür eine klare, seriöse Online-Präsenz brauchen, sind Sie bei uns richtig.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Ist das Hosting verpflichtend?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Nein. Das Hosting-Paket (59 €/Monat) ist optional. Bei gebuchtem Hosting veröffentlichen wir Ihre Seite und kümmern uns um Domain, Wartung und kleine Änderungen. Ohne Hosting erhalten Sie alle Dateien zur eigenständigen Veröffentlichung.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Was sind „kleine Änderungen" im Hosting-Paket?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Kleine Änderungen sind einfache Anpassungen an bestehenden Inhalten: z.B. Öffnungszeiten, Telefonnummern, Texte, Links oder einzelne Bilder. Größere Umbauten oder neue Sektionen werden gesondert berechnet und vorab besprochen.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Wem gehört die fertige Website?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Die fertige Website gehört Ihnen. Sie erhalten alle Dateien. Kündigen Sie das Hosting-Paket, können Sie Ihre Website jederzeit selbst oder über einen anderen Anbieter hosten.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Wird Umsatzsteuer berechnet?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Nein. Gemäß § 6 Abs. 1 Z 27 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet. Alle genannten Preise sind Endpreise.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q">
-            Was brauche ich, um anzufangen?
-            <span class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-          </button>
-          <div class="faq-a">Nichts außer einer kurzen Nachricht. Nach Ihrer Anfrage schicke ich Ihnen gezielte Fragen zu Ihrem Betrieb – Leistungen, Zielgruppe, Kontaktdaten. Das Ausfüllen dauert ca. 15 Minuten. Den Rest übernehme ich.</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ KONTAKT ═════════════════════════════════════════════ -->
-  <section class="section" id="kontakt">
-    <div class="container">
-      <div class="kontakt-inner">
-        <div class="reveal">
-          <span class="tag">Kontakt</span>
-          <h2 class="section-title">Bereit für Ihren Onepager?</h2>
-          <p class="section-sub">Schreiben Sie kurz, welche Branche Sie haben und was Sie sich vorstellen. Ich melde mich innerhalb von 24 Stunden.</p>
-          <div class="kontakt-points">
-            <div class="kontakt-point">
-              <span class="kontakt-point-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </span>
-              <div>
-                <strong>Antwort binnen 24 Stunden</strong>
-                <p>Werktags meist noch am selben Tag</p>
-              </div>
-            </div>
-            <div class="kontakt-point">
-              <span class="kontakt-point-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </span>
-              <div>
-                <strong>Keine Verpflichtung</strong>
-                <p>Die erste Anfrage ist unverbindlich und kostenlos</p>
-              </div>
-            </div>
-            <div class="kontakt-point">
-              <span class="kontakt-point-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-              </span>
-              <div>
-                <strong>Persönlich &amp; direkt</strong>
-                <p>Kein Ticketsystem, kein Callcenter</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Person strip -->
-          <div class="kontakt-person-strip">
-            <div class="kontakt-person-avatar">I</div>
-            <div class="kontakt-person-text">
-              <strong>Ivo Hrovat</strong>
-              <p>Graz, Österreich · <a href="mailto:hallo@seitfix.at" style="color:var(--accent);">hallo@seitfix.at</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-card reveal">
-          <form id="kontakt-form" name="kontakt" method="POST" action="danke.html" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="kontakt" />
-            <!-- Honeypot: bot trap, hidden from real users -->
-            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
-              <label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-            </div>
-
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Max Mustermann" required autocomplete="name" />
-            </div>
-            <div class="form-group">
-              <label for="firma">Firma <span class="optional">(optional)</span></label>
-              <input type="text" id="firma" name="firma" placeholder="Mustermann GmbH oder Ihr Name" autocomplete="organization" />
-            </div>
-            <div class="form-group">
-              <label for="branche">Branche / Tätigkeit</label>
-              <select id="branche" name="branche" required>
-                <option value="" disabled selected>Bitte wählen …</option>
-                <option value="Handwerk">Handwerk (Maler, Elektriker, Fliesenleger …)</option>
-                <option value="Reinigung / Hausbetreuung">Reinigung / Hausbetreuung</option>
-                <option value="Garten / Landschaft">Garten / Landschaft</option>
-                <option value="Transport / Umzug">Transport / Umzug</option>
-                <option value="Friseur / Beauty">Friseur / Beauty</option>
-                <option value="Coaching / Beratung">Coaching / Beratung</option>
-                <option value="Fitness / Yoga">Fitness / Yoga</option>
-                <option value="Gastronomie">Gastronomie</option>
-                <option value="Sonstiges">Sonstiges</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="email">E-Mail</label>
-              <input type="email" id="email" name="email" placeholder="max@mustermann.at" required autocomplete="email" />
-            </div>
-            <div class="form-group">
-              <label for="website">Aktuelle Website <span class="optional">(optional)</span></label>
-              <input type="text" id="website" name="website" placeholder="z.B. meinbetrieb.at" autocomplete="url" />
-            </div>
-            <div class="form-group">
-              <label for="nachricht">Nachricht <span class="optional">(optional)</span></label>
-              <textarea id="nachricht" name="nachricht" placeholder="Kurze Info zu Ihrem Betrieb und was Sie sich wünschen …"></textarea>
-            </div>
-            <div class="form-consent">
-              <input type="checkbox" id="datenschutz" name="datenschutz" required />
-              <label for="datenschutz">
-                Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Einwilligung kann jederzeit widerrufen werden.
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Kostenlos anfragen
-            </button>
-          </form>
-          <p class="form-note">Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FOOTER ══════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
       <div>
-        <div class="footer-logo">Seit<span>fix</span></div>
-        <div class="footer-tagline">Onepager für Handwerker &amp; kleine Betriebe · Graz, Österreich</div>
+        <div class="brand"><b>Seit</b><span class="fix" style="color:var(--accent)">fix</span></div>
+        <p style="margin-top:10px;max-width:34ch;font-size:.9rem" data-i18n="foot_tag">Moderne Onepager für Handwerker & kleine Betriebe. Persönlich aus Graz.</p>
       </div>
-      <div>
-        <ul class="footer-links">
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutz.html">Datenschutz</a></li>
-        </ul>
-        <div class="footer-copy">© 2026 Seitfix · Ivo Hrovat · Österreich</div>
+      <div class="foot-links">
+        <a href="#leistung" data-i18n="nav_leistung">Leistung</a>
+        <a href="#preis" data-i18n="nav_preis">Preis</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
+        <a href="impressum.html" data-i18n="foot_imp">Impressum</a>
+        <a href="datenschutz.html" data-i18n="foot_ds">Datenschutz</a>
       </div>
     </div>
-  </footer>
+    <div class="foot-bottom">
+      <span>© 2026 Seitfix · Engelgasse 54, 8010 Graz</span>
+      <span data-i18n="foot_made">Persönlich gemacht in Graz</span>
+    </div>
+  </div>
+</footer>
 
-  <!-- ══ JAVASCRIPT ══════════════════════════════════════════ -->
-  <script>
-    // ── Nav scroll border
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
+<script>
+const N8N_FORM_WEBHOOK = "https://REPLACE-ME.n8n.cloud/webhook/seitfix-form";
 
-    // ── Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    document.querySelectorAll('.mobile-link, .mobile-menu .btn').forEach(el => {
-      el.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    });
+/* ---------- i18n ---------- */
+const I18N = {
+  de:{}, // German is in the HTML by default
+  en:{
+    nav_leistung:"Services",nav_ablauf:"Process",nav_preis:"Pricing",nav_faq:"FAQ",nav_kontakt:"Contact",nav_cta:"Get a free preview",
+    hero_badge:"Personal, from Graz · across the DACH region",hero_h1a:"Modern one-pagers for",hero_h1b:"tradespeople",hero_h1c:"& small businesses",
+    hero_lead:"Seitfix builds you a clear, professional website that looks great on mobile and turns visitors into enquiries.",
+    hero_once:"one-time",hero_hosting:"+ optional hosting from € 30/month",hero_signed:"Personally built in Graz",
+    hero_cta1:"→ Get a free preview",hero_cta2:"See an example",hero_fitfor:"Great for:",chip_handwerk:"Trades",chip_dienst:"Services",chip_lokal:"Local businesses",
+    mock_h:"Your business. Clear. Online.",mock_p:"This is how your finished one-pager looks – optimised for mobile.",mock_btn:"Enquire now",mock_cap:"to a finished site",mock_f1:"No hidden costs",mock_f2:"Fixed price, one-time",mock_f3:"Mobile-first",
+    stat1:"fixed price, one-time",stat2:"days after receiving your content",stat3:"feedback round included",stat4:"hidden costs",
+    eb_leistung:"Services",leistung_h:"Everything you <em>need</em> — nothing you don't",leistung_p:"Everything you need for a professional online presence – no hidden extras.",
+    l1h:"Structure & concept",l1p:"A clear page structure that guides visitors straight to an enquiry.",
+    l2h:"Copy for your website",l2p:"Clear website copy based on your input – explaining plainly why customers should choose you.",
+    l3h:"Modern design",l3p:"Clean, contemporary and tailored to your trade – without overloaded effects.",
+    l4h:"Mobile optimised",l4p:"Works on every device – phone, tablet and desktop.",
+    l5h:"Contact area",l5p:"A clear contact form so prospects can reach out directly.",
+    l6h:"Publishing & hosting",l6p:"With the optional hosting plan (€ 30/month) we publish your site – incl. domain & care.",
+    eb_ablauf:"Process",ablauf_h:"It's this <em>simple</em>",ablauf_p:"From enquiry to finished website – clear, easy and in about 7 days.",
+    s1h:"Send enquiry",s1p:"Fill in the form or drop a short message. No long briefing needed.",
+    s2h:"Send your info",s2p:"We ask specifically for services, audience and contact. About 15 minutes.",
+    s3h:"Get your draft",s3p:"We build your one-pager and send you the finished draft to review.",
+    s4h:"One revision round",s4p:"You give feedback, we adjust – one round is included.",
+    s5h:"Go live",s5p:"We publish the site & set up your domain – or hand over all files.",
+    eb_preis:"Pricing",preis_h:"One clear price. No <em>agency process</em>.",preis_p:"Transparent costs from the start – no surprises, no agency budget needed.",
+    preis_card:"One-pager complete",pm1:"One-time build – design, copy & concept",pm2:"Mobile optimised for all devices",pm3:"Clear contact area for enquiries",pm4:"One revision round included",preis_cta:"→ Enquire now",
+    pay_h:"Payment plan",pay1:"Deposit on order",pay2:"Balance before handover",host_h:"Hosting & care (optional)",host_m:"/ month",host_p:"Hosting, domain, care & small changes. Cancel monthly.",
+    ust:"Under § 6 (1) 27 Austrian VAT Act no VAT is charged. All prices are final.",
+    eb_faq:"FAQ",faq_h:"Questions & <em>answers</em>",
+    q1:"What's not included in the € 799 price?",a1:"The price covers a simple one-pager with a clear scope. Not included: multi-page sites, online shops, special features (booking, calendars, member areas), logo/graphic design and extensive SEO. Those are available separately on request.",
+    q2:"What is a one-pager?",a2:"A website on a single page. All key info – services, benefits, contact – built compactly. Visitors scroll instead of clicking. Ideal to convince quickly and clearly.",
+    q3:"Who is Seitfix for?",a3:"For tradespeople, service providers and small businesses that want a simple, professional website without a big agency process and want to win new customers.",
+    q4:"Is hosting mandatory?",a4:"No. The hosting plan (€ 30/month) is optional. With hosting we handle domain, maintenance and small changes. Without it, you get all files to publish yourself.",
+    q5:"Who owns the finished website?",a5:"The finished website is yours. You get all files. Cancel hosting and you can host anywhere, anytime.",
+    q6:"Is VAT charged?",a6:"No. Under § 6 (1) 27 Austrian VAT Act (small-business rule) no VAT is charged. All prices are final.",
+    eb_kontakt:"Contact",kontakt_h:"Ready for your <em>one-pager</em>?",kontakt_p:"Three quick answers – and we build you a free first preview. No long briefing needed.",
+    who:"Graz, Austria · hallo@seitfix.at",
+    f_email:"Your email address",f_haswebsite:"Do you already have a website?",f_yes:"Yes",f_no:"No",f_url:"Address of your existing website",f_gewerbe:"What do you do?",
+    g_maler:"Painter",g_elektriker:"Electrician",g_beratung:"Consulting",f_submit:"Build my preview →",
+    done_h:"Thanks! Your enquiry is in.",done_p:"I'll get back to you shortly with your first preview.",
+    foot_tag:"Modern one-pagers for tradespeople & small businesses. Personal, from Graz.",foot_imp:"Imprint",foot_ds:"Privacy",foot_made:"Personally made in Graz",ref_lab:"Companies we\u0027ve worked with",preis_note:"+ Each additional page: € 50 · Hosting optional from € 30/month",pm5:"Paid in full on order"
+  }
+};
+// capture German defaults
+document.querySelectorAll('[data-i18n]').forEach(el=>{ I18N.de[el.getAttribute('data-i18n')] = el.innerHTML; });
+function applyLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n'); const v=(I18N[l]&&I18N[l][k])||I18N.de[k]; if(v!=null) el.innerHTML=v;
+  });
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
 
-    // ── Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href').slice(1);
-        const target = document.getElementById(id);
-        if (target) {
-          e.preventDefault();
-          const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 68;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset - 16;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      });
-    });
+/* ---------- nav scroll + active section + mobile ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>24),{passive:true});
+const burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),scrim=document.getElementById('scrim');
+function toggleMenu(open){burger.classList.toggle('x',open);mobile.classList.toggle('open',open);scrim.classList.toggle('on',open);document.body.style.overflow=open?'hidden':''}
+burger.addEventListener('click',()=>toggleMenu(!mobile.classList.contains('open')));
+scrim.addEventListener('click',()=>toggleMenu(false));
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+const links=[...document.querySelectorAll('.nav-links a')];
+const secObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+  const id=e.target.id;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}});},{rootMargin:'-45% 0px -50% 0px'});
+['leistung','ablauf','preis','faq','kontakt'].forEach(id=>{const s=document.getElementById(id);if(s)secObs.observe(s)});
 
-    // ── Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => observer.observe(el));
+/* ---------- reveal on scroll ---------- */
+const rev=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+document.querySelectorAll('[data-reveal]').forEach(el=>rev.observe(el));
 
-    // ── FAQ accordion
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
+/* ---------- count up ---------- */
+const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target,to=+el.dataset.to;let s=0,st=null;
+  const step=t=>{if(!st)st=t;const p=Math.min((t-st)/1100,1);el.textContent=Math.round(to*(p<1?1-Math.pow(1-p,3):1));if(p<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);cObs.unobserve(el)}})},{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cObs.observe(el));
 
-    // ── Demo iframe fallback
-    const demoIframe = document.getElementById('demo-iframe');
-    const demoFallback = document.getElementById('demo-fallback');
-    if (demoIframe) {
-      demoIframe.addEventListener('error', () => {
-        demoIframe.style.display = 'none';
-        demoFallback.style.display = 'flex';
-      });
-      // Check after load if iframe loaded meaningful content
-      demoIframe.addEventListener('load', () => {
-        try {
-          // If cross-origin, we can't check — but that's fine, the iframe loaded
-        } catch(e) {
-          // Expected for cross-origin iframes
-        }
-      });
-    }
-  </script>
+/* ---------- form logic ---------- */
+let hasWebsite=null,gewerbe=null;
+document.querySelectorAll('#haswebsite button').forEach(b=>b.addEventListener('click',()=>{
+  hasWebsite=b.dataset.v;document.querySelectorAll('#haswebsite button').forEach(x=>x.classList.toggle('on',x===b));
+  document.getElementById('urlfield').classList.toggle('hide',hasWebsite!=='ja');
+}));
+document.querySelectorAll('#gewerbe .tile').forEach(t=>t.addEventListener('click',()=>{
+  gewerbe=t.dataset.v;document.querySelectorAll('#gewerbe .tile').forEach(x=>x.classList.toggle('on',x===t));
+}));
+document.getElementById('form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const payload={email:document.getElementById('email').value,hat_website:hasWebsite,
+    url:hasWebsite==='ja'?document.getElementById('url').value:'',gewerbe:gewerbe};
+  // 1) n8n (Automatisierung)
+  try{await fetch(N8N_FORM_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}catch(err){}
+  // 2) Netlify Forms (native Lead-Erfassung, funktioniert ohne n8n auf Netlify)
+  try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams({'form-name':'seitfix-anfrage',email:payload.email||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||''}).toString()});}catch(err){}
+  document.getElementById('formfields').classList.add('hide');
+  document.getElementById('done').classList.remove('hide');
+});
+</script>
 </body>
 </html>
