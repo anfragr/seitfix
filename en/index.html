@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seitfix | Modern One-Pagers for Tradespeople &amp; Small Businesses · from €599</title>
+<meta name="description" content="Seitfix builds clear, professional one-page websites for tradespeople and small businesses. Fixed price €599, finished in 7 days, personal service from Graz, Austria.">
+<meta name="author" content="Seitfix – Ivo Hrovat">
+<meta name="google-site-verification" content="1C_eYPrbw4_f4q3RAzIR45KcvmoDJuhCPemchEtZaAA">
+<link rel="canonical" href="https://seitfix.at/en/">
+<link rel="alternate" hreflang="de" href="https://seitfix.at/">
+<link rel="alternate" hreflang="en" href="https://seitfix.at/en/">
+<link rel="alternate" hreflang="x-default" href="https://seitfix.at/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seitfix | Modern One-Pagers for Tradespeople &amp; Small Businesses">
+<meta property="og:description" content="Clear, professional one-page websites. Fixed price €599, finished in 7 days, personal service from Graz.">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Seitfix">
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url('../fonts/dm-sans-var.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:100 1000;font-display:swap;src:url('../fonts/dm-sans-var-italic.woff2') format('woff2')}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/dm-serif-display.woff2') format('woff2')}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('../fonts/dm-serif-display-italic.woff2') format('woff2')}
+</style>
+<style>
+  :root{
+    --accent:#2563eb; --accent-dk:#1d4ed8; --accent-lt:#eff4ff; --accent-lt2:#dbeafe;
+    --text:#1a1a18; --muted:#6b6b67; --border:#e2e2dd;
+    --white:#fff; --off:#f7f7f5; --light:#efefec; --green:#22c55e; --ink:#111114;
+    --font-body:'DM Sans',system-ui,sans-serif; --font-head:'DM Serif Display',Georgia,serif;
+    --max:1120px; --nav-h:72px;
+    --radius:12px; --radius-lg:20px; --radius-xl:28px;
+    --shadow:0 1px 3px rgba(20,20,30,.05),0 6px 20px rgba(20,20,30,.06);
+    --shadow-md:0 4px 14px rgba(20,20,30,.08),0 18px 48px rgba(20,20,30,.10);
+    --shadow-lg:0 20px 60px -12px rgba(20,30,60,.22);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--font-body);color:var(--text);background:var(--off);line-height:1.6;
+    font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:var(--font-head);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+  em,.ital{font-style:italic;color:var(--accent)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  section{position:relative}
+  .eyebrow{font-family:var(--font-body);font-weight:600;font-size:.78rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent)}
+  .lead{color:var(--muted);font-size:1.08rem;max-width:56ch}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--font-body);font-weight:600;
+    font-size:.98rem;padding:14px 26px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s;white-space:nowrap}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px -8px rgba(37,99,235,.6)}
+  .btn-primary:hover{background:var(--accent-dk);transform:translateY(-2px);box-shadow:0 16px 30px -8px rgba(37,99,235,.7)}
+  .btn-ghost{background:var(--white);color:var(--text);border-color:var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .btn:focus-visible{outline:3px solid var(--accent-lt2);outline-offset:2px}
+
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+    display:flex;align-items:center;transition:height .3s var(--ease),background .3s,box-shadow .3s,border-color .3s;
+    background:transparent;border-bottom:1px solid transparent}
+  header.nav.scrolled{height:60px;background:rgba(247,247,245,.82);backdrop-filter:saturate(1.4) blur(14px);
+    border-bottom-color:var(--border);box-shadow:0 4px 24px -16px rgba(0,0,0,.25)}
+  .nav-in{max-width:var(--max);margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{font-family:var(--font-head);font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:center;gap:2px}
+  .brand b{font-weight:400}.brand .fix{color:var(--accent);font-style:italic}
+  .brandswitch{display:inline-flex;align-items:baseline;gap:9px}
+  .brandswitch .bs{font-family:var(--font-head);letter-spacing:-.02em;line-height:1}
+  .brandswitch .bs.on{font-size:1.5rem;color:var(--text)}
+  .brandswitch .bs.on .fix{color:var(--accent);font-style:italic}
+  .brandswitch .bs.alt{font-size:1.02rem;color:var(--muted);opacity:.65;transition:color .2s,opacity .2s}
+  .brandswitch .bs.alt:hover{color:var(--accent);opacity:1}
+  .brandswitch .bs.alt::after{content:"↗";font-size:.72em;margin-left:3px;opacity:.7}
+  .brandswitch .bs-sep{color:var(--border);font-size:1.1rem;font-family:var(--font-head)}
+  .nav-links{display:flex;align-items:center;gap:4px}
+  .nav-links a{position:relative;font-weight:500;font-size:.96rem;color:var(--text);padding:9px 14px;border-radius:8px;transition:color .2s,background .2s}
+  .nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--accent);
+    border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a.active{color:var(--accent)}
+  .nav-links a.active::after{transform:scaleX(1)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .lang{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--white)}
+  .lang button,.lang a,.lang span{display:inline-block;border:0;background:transparent;font-family:var(--font-body);font-weight:600;font-size:.8rem;
+    padding:6px 12px;cursor:pointer;color:var(--muted);transition:background .2s,color .2s}
+  .lang button.on,.lang a.on,.lang span.on{background:var(--accent);color:#fff}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+  .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.x span:nth-child(2){opacity:0}
+  .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  /* mobile slide-in */
+  .mobile{position:fixed;inset:0 0 0 auto;width:min(84vw,360px);background:var(--white);z-index:99;
+    transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);
+    display:flex;flex-direction:column;padding:96px 30px 30px;gap:6px}
+  .mobile.open{transform:translateX(0)}
+  .mobile a{font-family:var(--font-head);font-size:1.5rem;padding:12px 0;border-bottom:1px solid var(--border);transition:color .2s,padding-left .2s}
+  .mobile a:hover{color:var(--accent);padding-left:8px}
+  .mobile .btn{margin-top:18px;justify-content:center}
+  .scrim{position:fixed;inset:0;background:rgba(15,20,35,.4);opacity:0;pointer-events:none;transition:opacity .3s;z-index:98}
+  .scrim.on{opacity:1;pointer-events:auto}
+
+  /* HERO */
+  .hero{padding:calc(var(--nav-h) + 60px) 0 40px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-20%;right:-10%;width:60%;height:120%;
+    background:radial-gradient(closest-side,rgba(37,99,235,.10),transparent);z-index:0}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--border);
+    border-radius:999px;padding:7px 15px;font-size:.83rem;font-weight:500;color:var(--muted);box-shadow:var(--shadow)}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+  h1{font-size:clamp(2.6rem,5.4vw,4rem);margin:22px 0 20px}
+  .price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:26px 0 10px}
+  .price{font-family:var(--font-head);font-size:2.6rem}.price small{font-size:1rem;color:var(--muted);font-family:var(--font-body);font-weight:500}
+  .price-note{background:var(--accent-lt);color:var(--accent-dk);font-weight:600;font-size:.82rem;padding:6px 12px;border-radius:999px}
+  .signed{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.92rem;margin-top:6px}
+  .check{color:var(--green);font-weight:700}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 22px}
+  .fitfor{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.86rem}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--border);
+    border-radius:999px;padding:7px 13px;font-size:.85rem;font-weight:500;color:var(--text);
+    transition:transform .2s var(--ease),border-color .2s}
+  .chip:hover{transform:translateY(-2px);border-color:var(--accent)}
+  /* browser mockup */
+  .mock{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-lg);overflow:hidden;animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .mock-bar{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--border);background:var(--off)}
+  .mock-bar i{width:11px;height:11px;border-radius:50%;display:block}
+  .mock-bar i:nth-child(1){background:#ff5f57}.mock-bar i:nth-child(2){background:#ffbd2e}.mock-bar i:nth-child(3){background:#28c840}
+  .mock-url{flex:1;background:var(--white);border:1px solid var(--border);border-radius:8px;font-size:.78rem;
+    color:var(--muted);padding:6px 12px;margin-left:8px;text-align:center}
+  .mock-body{padding:0}
+  .mock-hero{padding:30px 26px;background:linear-gradient(160deg,#f0f5ff,#fff)}
+  .mock-hero .mh-badge{display:inline-block;background:var(--accent-lt2);color:var(--accent-dk);font-size:.62rem;font-weight:700;
+    padding:4px 9px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+  .mock-hero h4{font-family:var(--font-head);font-size:1.5rem;margin:12px 0 8px;line-height:1.1}
+  .mock-hero p{font-size:.8rem;color:var(--muted);margin-bottom:14px}
+  .mock-hero .mh-btn{display:inline-block;background:var(--accent);color:#fff;font-size:.72rem;font-weight:600;padding:8px 16px;border-radius:999px}
+  .mock-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:16px 26px 26px}
+  .mock-cards div{height:52px;border:1px solid var(--border);border-radius:10px;background:var(--off)}
+  .mock-cap{position:absolute;left:-14px;bottom:34px;background:var(--white);border:1px solid var(--border);
+    border-radius:14px;box-shadow:var(--shadow-md);padding:12px 16px;font-size:.8rem}
+  .mock-cap b{color:var(--accent);font-family:var(--font-head);font-size:1.1rem}
+  .mock-shell{position:relative}
+
+  /* REFERENZEN / Logozeile */
+  .refs{padding:52px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .refs .lab{text-align:center;color:var(--muted);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:28px}
+  .refs-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
+  .refs-row img{height:58px;width:auto;filter:grayscale(1);opacity:.6;transition:filter .35s var(--ease),opacity .35s var(--ease),transform .35s var(--ease)}
+  .refs-row img:hover{filter:grayscale(0);opacity:1;transform:translateY(-3px)}
+  .refs-word{font-family:var(--font-body);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;color:var(--text);opacity:.55;filter:grayscale(1);transition:opacity .35s var(--ease),transform .35s var(--ease),filter .35s}
+  .refs-word:hover{opacity:1;filter:none;transform:translateY(-3px)}
+  .refs-word .dot{color:var(--accent)}
+  /* generic section */
+  .sec{padding:96px 0}
+  .sec-head{max-width:60ch;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(2rem,3.8vw,2.9rem);margin:14px 0 14px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:30px;
+    box-shadow:var(--shadow);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--accent-lt2)}
+  .card .ic{width:48px;height:48px;border-radius:12px;background:var(--accent-lt);color:var(--accent);
+    display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+  .card h3{font-size:1.3rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
+  .step{position:relative;padding-top:52px}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:40px;height:40px;
+    border-radius:50%;background:var(--accent);color:#fff;font-family:var(--font-head);font-size:1.2rem;
+    display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(37,99,235,.6)}
+  .step h3{font-size:1.08rem;margin-bottom:6px}.step p{color:var(--muted);font-size:.9rem}
+
+  /* pricing */
+  .price-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+  .price-main{background:linear-gradient(165deg,#1a2c5c,#111114);color:#fff;border-radius:var(--radius-xl);padding:40px;position:relative;overflow:hidden}
+  .price-main::after{content:"";position:absolute;top:-40%;right:-20%;width:70%;height:140%;background:radial-gradient(closest-side,rgba(37,99,235,.4),transparent)}
+  .price-main .rel{position:relative;z-index:1}
+  .price-main .big{font-family:var(--font-head);font-size:3.4rem;margin:10px 0}
+  .price-main ul{list-style:none;margin:22px 0;display:flex;flex-direction:column;gap:10px}
+  .price-main li{display:flex;gap:10px;font-size:.95rem;color:#d4d9e6}
+  .price-main li::before{content:"✓";color:var(--green);font-weight:700}
+  .price-side{display:flex;flex-direction:column;gap:16px}
+  .paybox{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
+  .paybox h4{font-family:var(--font-body);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}
+  .payrow{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--border)}
+  .payrow:last-child{border:0}.payrow b{font-family:var(--font-head);font-size:1.3rem}
+  .payrow span{color:var(--muted);font-size:.82rem;max-width:60%}
+  .ust{font-size:.8rem;color:var(--muted);background:var(--accent-lt);padding:12px 16px;border-radius:12px}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  .qa{background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:box-shadow .3s,border-color .3s}
+  .qa[open]{box-shadow:var(--shadow-md);border-color:var(--accent-lt2)}
+  .qa summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:600;font-size:1.04rem;
+    display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary .pl{color:var(--accent);font-size:1.4rem;transition:transform .3s var(--ease);flex:none}
+  .qa[open] summary .pl{transform:rotate(45deg)}
+  .qa .a{padding:0 24px 22px;color:var(--muted);font-size:.96rem}
+
+  /* contact / form */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .form{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:34px;box-shadow:var(--shadow-md)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:600;font-size:.88rem;margin-bottom:8px}
+  .field input,.field textarea{width:100%;font-family:var(--font-body);font-size:1rem;padding:13px 15px;
+    border:1px solid var(--border);border-radius:12px;background:var(--off);transition:border-color .2s,box-shadow .2s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-lt)}
+  .toggle{display:flex;gap:10px}
+  .toggle button{flex:1;padding:12px;border:1px solid var(--border);background:var(--off);border-radius:12px;
+    font-family:var(--font-body);font-weight:600;cursor:pointer;transition:all .2s}
+  .toggle button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .tile{border:1px solid var(--border);background:var(--off);border-radius:14px;padding:16px 10px;text-align:center;
+    cursor:pointer;transition:all .2s var(--ease)}
+  .tile:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .tile.on{background:var(--accent-lt);border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-lt2)}
+  .tile .e{font-size:1.5rem}.tile .t{font-size:.86rem;font-weight:600;margin-top:6px;display:block}
+  .hide{display:none!important}
+  .contact-aside h2{font-size:clamp(2rem,3.6vw,2.7rem);margin:12px 0}
+  .contact-aside .who{display:flex;gap:14px;align-items:center;margin-top:28px;background:var(--white);
+    border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow)}
+  .avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dk));
+    color:#fff;font-family:var(--font-head);font-size:1.5rem;display:grid;place-items:center;flex:none}
+  .who b{display:block}.who span{color:var(--muted);font-size:.88rem}
+  .done{text-align:center;padding:20px}.done .big{font-size:2.4rem;color:var(--green)}
+
+  /* footer */
+  footer{background:var(--ink);color:#b9b9b5;padding:56px 0 30px}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:start}
+  footer .brand{color:#fff}
+  .foot-links{display:flex;gap:28px;flex-wrap:wrap}
+  .foot-links a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid #2a2a2e;margin-top:34px;padding-top:20px;font-size:.82rem;color:#7d7d79;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  .ic svg,.tile .e svg{width:24px;height:24px}
+  .tile .e{color:var(--accent);display:flex;justify-content:center}
+
+  /* smooth brand switch (Seitfix ⇄ anfragr) */
+  body{animation:pageIn .45s var(--ease);transition:opacity .3s ease}
+  @keyframes pageIn{from{opacity:0}to{opacity:1}}
+  body.fade-out{opacity:0}
+
+  /* cross-promo: anfragr */
+  .xpromo{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center;
+    background:linear-gradient(150deg,#2E5090,#1A2535);border-radius:var(--radius-xl);
+    padding:48px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .xpromo::after{content:"";position:absolute;top:-50%;right:-15%;width:60%;height:200%;
+    background:radial-gradient(closest-side,rgba(224,123,57,.22),transparent);pointer-events:none}
+  .xp-text{position:relative;z-index:1}
+  .xp-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:#E07B39}
+  .xp-dot{width:5px;height:5px;border-radius:50%;background:#E07B39}
+  .xpromo h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin:14px 0 12px}
+  .xpromo .xp-brand{font-family:var(--font-body);font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+  .xpromo .xp-brand::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:#E07B39;margin-left:2px;margin-bottom:1px}
+  .xpromo p{color:rgba(255,255,255,.72);font-size:.98rem;max-width:52ch;margin-bottom:26px}
+  .xp-btn{background:#E07B39;color:#fff;box-shadow:0 10px 24px -8px rgba(224,123,57,.6)}
+  .xp-btn:hover{background:#C4622A;transform:translateY(-2px);box-shadow:0 16px 30px -8px rgba(224,123,57,.7)}
+  .xp-demo{position:relative;z-index:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:16px;padding:22px}
+  .xp-demo-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#E07B39;margin-bottom:10px}
+  .xp-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);font-size:.88rem}
+  .xp-row:last-child{border-bottom:none}
+  .xp-row span{color:rgba(255,255,255,.5)}
+  .xp-row b{color:#fff;font-weight:500;font-family:var(--font-body)}
+  .xp-pill{background:rgba(224,123,57,.18);color:#E07B39!important;font-size:.7rem;font-weight:700;
+    padding:3px 10px;border-radius:99px;border:1px solid rgba(224,123,57,.35)}
+  @media(max-width:900px){.xpromo{grid-template-columns:1fr;padding:34px 26px}}
+  /* reveal */
+  [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  [data-reveal].in{opacity:1;transform:none}
+  [data-reveal][data-d="1"]{transition-delay:.08s}[data-reveal][data-d="2"]{transition-delay:.16s}
+  [data-reveal][data-d="3"]{transition-delay:.24s}[data-reveal][data-d="4"]{transition-delay:.32s}
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .grid3{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .price-wrap,.contact-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:30px}
+    .nav-links{display:none}.burger{display:flex}
+  }
+  @media(max-width:560px){
+    .grid3{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}
+    .foot-bottom{flex-direction:column}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important}
+    [data-reveal]{opacity:1;transform:none;transition:none}
+    .mock{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <div class="brandswitch" role="group" aria-label="Choose product">
+      <a href="#top" class="bs on" aria-current="page"><b>Seit</b><span class="fix">fix</span></a>
+      <span class="bs-sep" aria-hidden="true">/</span>
+      <a href="https://anfragr.at/en/" class="bs alt js-brandswitch">anfragr</a>
+    </div>
+    <nav class="nav-links" id="navlinks">
+      <a href="#leistung" data-i18n="nav_leistung">Services</a>
+      <a href="#ablauf" data-i18n="nav_ablauf">Process</a>
+      <a href="#preis" data-i18n="nav_preis">Pricing</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#kontakt" data-i18n="nav_kontakt">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="../index.html" title="Deutsche Version">DE</a><span class="on">EN</span>
+      </div>
+      <a href="#kontakt" class="btn btn-primary" style="padding:10px 20px" data-i18n="nav_cta">Get a free preview</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="mobile" id="mobile">
+  <a href="#leistung" data-i18n="nav_leistung">Services</a>
+  <a href="#ablauf" data-i18n="nav_ablauf">Process</a>
+  <a href="#preis" data-i18n="nav_preis">Pricing</a>
+  <a href="#faq" data-i18n="nav_faq">FAQ</a>
+  <a href="#kontakt" data-i18n="nav_kontakt">Contact</a>
+  <a href="#kontakt" class="btn btn-primary" data-i18n="nav_cta">Get a free preview</a>
+</aside>
+
+<span id="top"></span>
+<!-- Netlify-Formularerkennung (versteckt) -->
+<form name="seitfix-anfrage" data-netlify="true" netlify-honeypot="bot-field" hidden="" aria-hidden="true">
+  <input type="text" name="email"><input type="text" name="hat_website"><input type="text" name="url"><input type="text" name="gewerbe"><input type="text" name="bot-field">
+</form>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge" data-reveal=""><span class="dot"></span><span data-i18n="hero_badge">Personal, from Graz · across the DACH region</span></span>
+      <h1 data-reveal="" data-d="1" class=""><span data-i18n="hero_h1a">Modern one-pagers for</span> <em data-i18n="hero_h1b">tradespeople</em> <span data-i18n="hero_h1c">&amp; small businesses</span></h1>
+      <p class="lead" data-reveal="" data-d="2" data-i18n="hero_lead">Seitfix builds you a clear, professional website that looks great on mobile and turns visitors into enquiries.</p>
+      <div class="price-row" data-reveal="" data-d="2">
+        <span class="price">599 €<small> <span data-i18n="hero_once">one-time</span></small></span>
+        <span class="price-note" data-i18n="hero_hosting">+ optional hosting from € 30/month</span>
+      </div>
+      <div class="signed" data-reveal="" data-d="3"><span class="check">✓</span> <span data-i18n="hero_signed">Personally built in Graz</span></div>
+      <div class="cta-row" data-reveal="" data-d="3">
+        <a href="#kontakt" class="btn btn-primary" data-i18n="hero_cta1">→ Get a free preview</a>
+        <a href="#leistung" class="btn btn-ghost" data-i18n="hero_cta2">See an example</a>
+      </div>
+      <div class="fitfor" data-reveal="" data-d="4">
+        <span data-i18n="hero_fitfor">Great for:</span>
+        <span class="chip"><span data-i18n="chip_handwerk">Trades</span></span>
+        <span class="chip"><span data-i18n="chip_dienst">Services</span></span>
+        <span class="chip">Coaches</span>
+        <span class="chip"><span data-i18n="chip_lokal">Local businesses</span></span>
+      </div>
+    </div>
+    <div class="mock-shell" data-reveal="" data-d="2">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">your-company.at</span></div>
+        <div class="mock-body">
+          <div class="mock-hero">
+            <span class="mh-badge">Onepager</span>
+            <h4 data-i18n="mock_h">Your business. Clear. Online.</h4>
+            <p data-i18n="mock_p">This is how your finished one-pager looks – optimised for mobile.</p>
+            <span class="mh-btn" data-i18n="mock_btn">Enquire now</span>
+          </div>
+          <div class="mock-cards"><div></div><div></div><div></div></div>
+        </div>
+      </div>
+      <div class="mock-cap"><b>7 days</b><br><span data-i18n="mock_cap" style="color:var(--muted);font-size:.78rem">to a finished site</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN -->
+<section class="refs">
+  <div class="wrap">
+    <p class="lab" data-i18n="ref_lab">Companies we've worked with</p>
+    <div class="refs-row">
+      <img src="data:image/png;base64,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" alt="Ing. Domokos Kovács">
+      <a href="https://anfragr.at/en/" class="refs-word js-brandswitch">anfragr<span class="dot">.at</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNG -->
+<section class="sec" id="leistung">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="">
+      <span class="eyebrow" data-i18n="eb_leistung">Services</span>
+      <h2 data-i18n="leistung_h">Everything you <em>need</em>. Nothing you don't</h2>
+      <p class="lead" data-i18n="leistung_p">Everything you need for a professional online presence – no hidden extras.</p>
+    </div>
+    <div class="grid3">
+      <div class="card" data-reveal=""><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg></div><h3 data-i18n="l1h">Structure &amp; concept</h3><p data-i18n="l1p">A clear page structure that guides visitors straight to an enquiry.</p></div>
+      <div class="card" data-reveal="" data-d="1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg></div><h3 data-i18n="l2h">Copy for your website</h3><p data-i18n="l2p">Clear website copy based on your input – explaining plainly why customers should choose you.</p></div>
+      <div class="card" data-reveal="" data-d="2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.8L18.5 9.6 13.7 11.4 12 16l-1.7-4.6L5.5 9.6l4.8-1.8Z"></path><path d="M19 14.5l.5 1.4L21 16.5l-1.5.6L19 18.5l-.5-1.4L17 16.5l1.5-.6Z"></path></svg></div><h3 data-i18n="l3h">Modern design</h3><p data-i18n="l3p">Clean, contemporary and tailored to your trade – without overloaded effects.</p></div>
+      <div class="card" data-reveal=""><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></div><h3 data-i18n="l4h">Mobile optimised</h3><p data-i18n="l4p">Works on every device – phone, tablet and desktop.</p></div>
+      <div class="card" data-reveal="" data-d="1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></div><h3 data-i18n="l5h">Contact area</h3><p data-i18n="l5p">A clear contact form so prospects can reach out directly.</p></div>
+      <div class="card" data-reveal="" data-d="2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"></path><path d="m8 17 4-4 4 4"></path><path d="M20 16.5A4.5 4.5 0 0 0 17 8h-1.26A7 7 0 1 0 5 15.29"></path></svg></div><h3 data-i18n="l6h">Publishing &amp; hosting</h3><p data-i18n="l6p">With the optional hosting plan (€ 30/month) we publish your site – incl. domain &amp; care.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="sec" id="ablauf" style="background:var(--light)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="">
+      <span class="eyebrow" data-i18n="eb_ablauf">Process</span>
+      <h2 data-i18n="ablauf_h">It's this <em>simple</em></h2>
+      <p class="lead" data-i18n="ablauf_p">From enquiry to finished website – clear, easy and in about 7 days.</p>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal=""><h3 data-i18n="s1h">Send enquiry</h3><p data-i18n="s1p">Fill in the form or drop a short message. No long briefing needed.</p></div>
+      <div class="step" data-reveal="" data-d="1"><h3 data-i18n="s2h">Send your info</h3><p data-i18n="s2p">We ask specifically for services, audience and contact. About 15 minutes.</p></div>
+      <div class="step" data-reveal="" data-d="2"><h3 data-i18n="s3h">Get your draft</h3><p data-i18n="s3p">We build your one-pager and send you the finished draft to review.</p></div>
+      <div class="step" data-reveal="" data-d="3"><h3 data-i18n="s4h">One revision round</h3><p data-i18n="s4p">You give feedback, we adjust – one round is included.</p></div>
+      <div class="step" data-reveal="" data-d="4"><h3 data-i18n="s5h">Go live</h3><p data-i18n="s5p">We publish the site &amp; set up your domain – or hand over all files.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREIS -->
+<section class="sec" id="preis">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="">
+      <span class="eyebrow" data-i18n="eb_preis">Pricing</span>
+      <h2 data-i18n="preis_h">One clear price. No <em>agency process</em>.</h2>
+      <p class="lead" data-i18n="preis_p">Transparent costs from the start – no surprises, no agency budget needed.</p>
+    </div>
+    <div class="price-wrap">
+      <div class="price-main" data-reveal="">
+        <div class="rel">
+          <span class="eyebrow" style="color:#8ab4ff" data-i18n="preis_card">One-pager complete</span>
+          <div class="big">599 € <small style="font-size:1rem;color:#b9c2da;font-family:var(--font-body)" data-i18n="hero_once">one-time</small></div>
+          <ul>
+            <li data-i18n="pm1">One-time build – design, copy &amp; concept</li>
+            <li data-i18n="pm2">Mobile optimised for all devices</li>
+            <li data-i18n="pm3">Clear contact area for enquiries</li>
+            <li data-i18n="pm4">One revision round included</li>
+            <li data-i18n="pm5">Paid in full on order</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-primary" data-i18n="preis_cta">→ Enquire now</a>
+          <p style="color:#b9c2da;font-size:.86rem;margin-top:16px" data-i18n="preis_note">+ Each additional page: € 50 · Hosting optional from € 30/month</p>
+        </div>
+      </div>
+      <div class="price-side">
+        <div class="paybox" data-reveal="" data-d="2">
+          <h4 data-i18n="host_h">Hosting &amp; care (optional)</h4>
+          <div class="big" style="font-family:var(--font-head);font-size:1.8rem">30 € <small style="font-size:.9rem;color:var(--muted);font-family:var(--font-body)" data-i18n="host_m">/ month</small></div>
+          <p style="color:var(--muted);font-size:.9rem;margin-top:8px" data-i18n="host_p">Hosting, domain, care &amp; small changes. Cancel monthly.</p>
+        </div>
+        <div class="ust" data-reveal="" data-d="3">ℹ️ <span data-i18n="ust">Under § 6 (1) 27 Austrian VAT Act no VAT is charged. All prices are final.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:var(--light)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="" style="text-align:center;margin:0 auto 48px">
+      <span class="eyebrow" data-i18n="eb_faq">FAQ</span>
+      <h2 data-i18n="faq_h">Questions &amp; <em>answers</em></h2>
+    </div>
+    <div class="faq">
+      <details class="qa" data-reveal=""><summary><span data-i18n="q1">What's not included in the € 599 price?</span><span class="pl">+</span></summary><div class="a" data-i18n="a1">The price covers a simple one-pager with a clear scope. Not included: multi-page sites, online shops, special features (booking, calendars, member areas), logo/graphic design and extensive SEO. Those are available separately on request.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q2">What is a one-pager?</span><span class="pl">+</span></summary><div class="a" data-i18n="a2">A website on a single page. All key info – services, benefits, contact – built compactly. Visitors scroll instead of clicking. Ideal to convince quickly and clearly.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q3">Who is Seitfix for?</span><span class="pl">+</span></summary><div class="a" data-i18n="a3">For tradespeople, service providers and small businesses that want a simple, professional website without a big agency process and want to win new customers.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q4">Is hosting mandatory?</span><span class="pl">+</span></summary><div class="a" data-i18n="a4">No. The hosting plan (€ 30/month) is optional. With hosting we handle domain, maintenance and small changes. Without it, you get all files to publish yourself.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q5">Who owns the finished website?</span><span class="pl">+</span></summary><div class="a" data-i18n="a5">The finished website is yours. You get all files. Cancel hosting and you can host anywhere, anytime.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q6">Is VAT charged?</span><span class="pl">+</span></summary><div class="a" data-i18n="a6">No. Under § 6 (1) 27 Austrian VAT Act (small-business rule) no VAT is charged. All prices are final.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ANFRAGR CROSS-PROMO -->
+<section class="sec" id="anfragr">
+  <div class="wrap">
+    <div class="xpromo" data-reveal="">
+      <div class="xp-text">
+        <span class="xp-eyebrow"><span class="xp-dot"></span><span data-i18n="xp_eyebrow">From the same maker</span></span>
+        <h2><span data-i18n="xp_h">And when the enquiries come in?</span> <span class="xp-brand">anfragr</span> <span data-i18n="xp_h2">pre-sorts them automatically.</span></h2>
+        <p data-i18n="xp_p">Your new website brings enquiries. anfragr helps small teams pre-sort, assign and document incoming emails with AI support.</p>
+        <a href="https://anfragr.at/en/" class="btn xp-btn js-brandswitch" data-i18n="xp_cta">Discover anfragr →</a>
+      </div>
+      <div class="xp-demo" aria-hidden="true">
+        <div class="xp-demo-label" data-i18n="xp_demo">Automatically pre-sorted</div>
+        <div class="xp-row"><span data-i18n="xp_k1">Type</span><b data-i18n="xp_v1">New enquiry</b></div>
+        <div class="xp-row"><span data-i18n="xp_k2">Priority</span><b class="xp-pill" data-i18n="xp_v2">High</b></div>
+        <div class="xp-row"><span data-i18n="xp_k3">Assigned to</span><b data-i18n="xp_v3">Sales</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="sec" id="kontakt">
+  <div class="wrap contact-grid">
+    <div class="contact-aside" data-reveal="">
+      <span class="eyebrow" data-i18n="eb_kontakt">Contact</span>
+      <h2 data-i18n="kontakt_h">Ready for your <em>one-pager</em>?</h2>
+      <p class="lead" data-i18n="kontakt_p">Three quick answers – and we build you a free first preview. No long briefing needed.</p>
+      <div class="who">
+        <div class="avatar">S</div>
+        <div><b>Seitfix</b><span data-i18n="who">Graz, Austria · hallo@seitfix.at</span></div>
+      </div>
+    </div>
+    <form class="form" id="form" novalidate="">
+      <div id="formfields">
+        <div class="field">
+          <label for="email" data-i18n="f_email">Your email address</label>
+          <input type="email" id="email" name="email" placeholder="name@company.com" required="">
+        </div>
+        <div class="field">
+          <label data-i18n="f_haswebsite">Do you already have a website?</label>
+          <div class="toggle" id="haswebsite">
+            <button type="button" data-v="ja" data-i18n="f_yes">Yes</button>
+            <button type="button" data-v="nein" data-i18n="f_no">No</button>
+          </div>
+        </div>
+        <div class="field hide" id="urlfield">
+          <label for="url" data-i18n="f_url">Address of your existing website</label>
+          <input type="url" id="url" name="url" placeholder="https://your-site.com">
+        </div>
+        <div class="field">
+          <label data-i18n="f_gewerbe">What do you do?</label>
+          <div class="tiles" id="gewerbe">
+            <div class="tile" data-v="maler"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"></path><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"></path></svg></span><span class="t" data-i18n="g_maler">Painter</span></div>
+            <div class="tile" data-v="elektriker"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"></path></svg></span><span class="t" data-i18n="g_elektriker">Electrician</span></div>
+            <div class="tile" data-v="beratung"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg></span><span class="t" data-i18n="g_beratung">Consulting</span></div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" data-i18n="f_submit">Build my preview →</button>
+      </div>
+      <div class="done hide" id="done">
+        <div class="big">✓</div>
+        <h3 style="margin:8px 0" data-i18n="done_h">Thanks! Your enquiry is in.</h3>
+        <p style="color:var(--muted)" data-i18n="done_p">I'll get back to you shortly with your first preview.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><b>Seit</b><span class="fix" style="color:var(--accent)">fix</span></div>
+        <p style="margin-top:10px;max-width:34ch;font-size:.9rem" data-i18n="foot_tag">Modern one-pagers for tradespeople &amp; small businesses. Personal, from Graz.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#leistung" data-i18n="nav_leistung">Services</a>
+        <a href="#preis" data-i18n="nav_preis">Pricing</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#kontakt" data-i18n="nav_kontakt">Contact</a>
+        <a href="impressum.html" data-i18n="foot_imp">Imprint</a>
+        <a href="datenschutz.html" data-i18n="foot_ds">Privacy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Seitfix · Engelgasse 54, 8010 Graz</span>
+      <span data-i18n="foot_made">Personally made in Graz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const N8N_FORM_WEBHOOK = "https://cophag.app.n8n.cloud/webhook/seitfix-form";
+
+/* ---------- nav scroll + active section + mobile ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>24),{passive:true});
+const burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),scrim=document.getElementById('scrim');
+function toggleMenu(open){burger.classList.toggle('x',open);mobile.classList.toggle('open',open);scrim.classList.toggle('on',open);document.body.style.overflow=open?'hidden':''}
+burger.addEventListener('click',()=>toggleMenu(!mobile.classList.contains('open')));
+scrim.addEventListener('click',()=>toggleMenu(false));
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+const links=[...document.querySelectorAll('.nav-links a')];
+const secObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+  const id=e.target.id;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}});},{rootMargin:'-45% 0px -50% 0px'});
+['leistung','ablauf','preis','faq','kontakt'].forEach(id=>{const s=document.getElementById(id);if(s)secObs.observe(s)});
+
+/* ---------- reveal on scroll ---------- */
+const rev=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+document.querySelectorAll('[data-reveal]').forEach(el=>rev.observe(el));
+
+/* ---------- count up ---------- */
+const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target,to=+el.dataset.to;let s=0,st=null;
+  const step=t=>{if(!st)st=t;const p=Math.min((t-st)/1100,1);el.textContent=Math.round(to*(p<1?1-Math.pow(1-p,3):1));if(p<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);cObs.unobserve(el)}})},{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cObs.observe(el));
+
+/* ---------- form logic ---------- */
+let hasWebsite=null,gewerbe=null;
+document.querySelectorAll('#haswebsite button').forEach(b=>b.addEventListener('click',()=>{
+  hasWebsite=b.dataset.v;document.querySelectorAll('#haswebsite button').forEach(x=>x.classList.toggle('on',x===b));
+  document.getElementById('urlfield').classList.toggle('hide',hasWebsite!=='ja');
+}));
+document.querySelectorAll('#gewerbe .tile').forEach(t=>t.addEventListener('click',()=>{
+  gewerbe=t.dataset.v;document.querySelectorAll('#gewerbe .tile').forEach(x=>x.classList.toggle('on',x===t));
+}));
+document.getElementById('form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const payload={email:document.getElementById('email').value,hat_website:hasWebsite,
+    url:hasWebsite==='ja'?document.getElementById('url').value:'',gewerbe:gewerbe};
+  // 1) n8n (Automatisierung): form-urlencoded = kein CORS-Preflight, erreicht n8n zuverlässig
+  try{await fetch(N8N_FORM_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({email:payload.email||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||''}).toString()});}catch(err){}
+  // 2) Netlify Forms (native Lead-Erfassung, funktioniert ohne n8n auf Netlify)
+  try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:new URLSearchParams({'form-name':'seitfix-anfrage',email:payload.email||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||''}).toString()});}catch(err){}
+  document.getElementById('formfields').classList.add('hide');
+  document.getElementById('done').classList.remove('hide');
+});
+
+/* ---------- smooth brand switch (Seitfix ⇄ anfragr) ---------- */
+const noMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('a.js-brandswitch').forEach(a=>a.addEventListener('click',e=>{
+  if(noMotion||e.metaKey||e.ctrlKey||e.shiftKey||a.target==='_blank')return;
+  e.preventDefault();document.body.classList.add('fade-out');
+  setTimeout(()=>{location.href=a.href},320);
+}));
+addEventListener('pageshow',e=>{if(e.persisted)document.body.classList.remove('fade-out')});
+</script>
+
+
+</body></html>

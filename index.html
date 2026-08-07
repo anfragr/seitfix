@@ -3,17 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Seitfix — Moderne Onepager für Handwerker & kleine Betriebe · ab 799 €</title>
-<meta name="description" content="Seitfix erstellt klare, professionelle Onepager-Websites für Handwerker und kleine Betriebe. Fixpreis 799 €, fertig in 7 Tagen, persönlich aus Graz." />
+<title>Seitfix | Moderne Onepager für Handwerker & kleine Betriebe · ab 599 €</title>
+<meta name="description" content="Seitfix erstellt klare, professionelle Onepager-Websites für Handwerker und kleine Betriebe. Fixpreis 599 €, fertig in 7 Tagen, persönlich aus Graz." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Seitfix — Moderne Onepager für Handwerker & kleine Betriebe" />
-<meta property="og:description" content="Klare, professionelle Onepager-Websites. Fixpreis 799 €, fertig in 7 Tagen, persönlich aus Graz." />
+<meta property="og:title" content="Seitfix | Moderne Onepager für Handwerker & kleine Betriebe" />
+<meta property="og:description" content="Klare, professionelle Onepager-Websites. Fixpreis 599 €, fertig in 7 Tagen, persönlich aus Graz." />
 <meta property="og:locale" content="de_AT" />
 <meta property="og:site_name" content="Seitfix" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+<link rel="canonical" href="https://seitfix.at/" />
+<link rel="alternate" hreflang="de" href="https://seitfix.at/" />
+<link rel="alternate" hreflang="en" href="https://seitfix.at/en/" />
+<link rel="alternate" hreflang="x-default" href="https://seitfix.at/" />
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url('fonts/dm-sans-var.woff2') format('woff2')}
+@font-face{font-family:'DM Sans';font-style:italic;font-weight:100 1000;font-display:swap;src:url('fonts/dm-sans-var-italic.woff2') format('woff2')}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/dm-serif-display.woff2') format('woff2')}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/dm-serif-display-italic.woff2') format('woff2')}
+</style>
 <style>
   :root{
     --accent:#2563eb; --accent-dk:#1d4ed8; --accent-lt:#eff4ff; --accent-lt2:#dbeafe;
@@ -60,6 +67,14 @@
   .nav-in{max-width:var(--max);margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
   .brand{font-family:var(--font-head);font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:center;gap:2px}
   .brand b{font-weight:400}.brand .fix{color:var(--accent);font-style:italic}
+  .brandswitch{display:inline-flex;align-items:baseline;gap:9px}
+  .brandswitch .bs{font-family:var(--font-head);letter-spacing:-.02em;line-height:1}
+  .brandswitch .bs.on{font-size:1.5rem;color:var(--text)}
+  .brandswitch .bs.on .fix{color:var(--accent);font-style:italic}
+  .brandswitch .bs.alt{font-size:1.02rem;color:var(--muted);opacity:.65;transition:color .2s,opacity .2s}
+  .brandswitch .bs.alt:hover{color:var(--accent);opacity:1}
+  .brandswitch .bs.alt::after{content:"↗";font-size:.72em;margin-left:3px;opacity:.7}
+  .brandswitch .bs-sep{color:var(--border);font-size:1.1rem;font-family:var(--font-head)}
   .nav-links{display:flex;align-items:center;gap:4px}
   .nav-links a{position:relative;font-weight:500;font-size:.96rem;color:var(--text);padding:9px 14px;border-radius:8px;transition:color .2s,background .2s}
   .nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--accent);
@@ -227,6 +242,40 @@
 
   .ic svg,.tile .e svg{width:24px;height:24px}
   .tile .e{color:var(--accent);display:flex;justify-content:center}
+
+  /* smooth brand switch (Seitfix ⇄ anfragr) */
+  body{animation:pageIn .45s var(--ease);transition:opacity .3s ease}
+  @keyframes pageIn{from{opacity:0}to{opacity:1}}
+  body.fade-out{opacity:0}
+
+  /* cross-promo: anfragr */
+  .xpromo{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center;
+    background:linear-gradient(150deg,#2E5090,#1A2535);border-radius:var(--radius-xl);
+    padding:48px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .xpromo::after{content:"";position:absolute;top:-50%;right:-15%;width:60%;height:200%;
+    background:radial-gradient(closest-side,rgba(224,123,57,.22),transparent);pointer-events:none}
+  .xp-text{position:relative;z-index:1}
+  .xp-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:#E07B39}
+  .xp-dot{width:5px;height:5px;border-radius:50%;background:#E07B39}
+  .xpromo h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin:14px 0 12px}
+  .xpromo .xp-brand{font-family:var(--font-body);font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+  .xpromo .xp-brand::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:#E07B39;margin-left:2px;margin-bottom:1px}
+  .xpromo p{color:rgba(255,255,255,.72);font-size:.98rem;max-width:52ch;margin-bottom:26px}
+  .xp-btn{background:#E07B39;color:#fff;box-shadow:0 10px 24px -8px rgba(224,123,57,.6)}
+  .xp-btn:hover{background:#C4622A;transform:translateY(-2px);box-shadow:0 16px 30px -8px rgba(224,123,57,.7)}
+  .xp-demo{position:relative;z-index:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:16px;padding:22px}
+  .xp-demo-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#E07B39;margin-bottom:10px}
+  .xp-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);font-size:.88rem}
+  .xp-row:last-child{border-bottom:none}
+  .xp-row span{color:rgba(255,255,255,.5)}
+  .xp-row b{color:#fff;font-weight:500;font-family:var(--font-body)}
+  .xp-pill{background:rgba(224,123,57,.18);color:#E07B39!important;font-size:.7rem;font-weight:700;
+    padding:3px 10px;border-radius:99px;border:1px solid rgba(224,123,57,.35)}
+  @media(max-width:900px){.xpromo{grid-template-columns:1fr;padding:34px 26px}}
   /* reveal */
   [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
   [data-reveal].in{opacity:1;transform:none}
@@ -256,7 +305,11 @@
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a href="#top" class="brand"><b>Seit</b><span class="fix">fix</span></a>
+    <div class="brandswitch" role="group" aria-label="Produkt wählen">
+      <a href="#top" class="bs on" aria-current="page"><b>Seit</b><span class="fix">fix</span></a>
+      <span class="bs-sep" aria-hidden="true">/</span>
+      <a href="https://anfragr.at" class="bs alt js-brandswitch">anfragr</a>
+    </div>
     <nav class="nav-links" id="navlinks">
       <a href="#leistung" data-i18n="nav_leistung">Leistung</a>
       <a href="#ablauf" data-i18n="nav_ablauf">Ablauf</a>
@@ -298,7 +351,7 @@
       <h1 data-reveal data-d="1"><span data-i18n="hero_h1a">Moderne Onepager für</span> <em data-i18n="hero_h1b">Handwerker</em> <span data-i18n="hero_h1c">& kleine Betriebe</span></h1>
       <p class="lead" data-reveal data-d="2" data-i18n="hero_lead">Seitfix erstellt Ihnen eine klare, professionelle Website, die auf dem Handy gut aussieht und Kunden direkt zur Anfrage führt.</p>
       <div class="price-row" data-reveal data-d="2">
-        <span class="price">799 €<small> <span data-i18n="hero_once">einmalig</span></small></span>
+        <span class="price">599 €<small> <span data-i18n="hero_once">einmalig</span></small></span>
         <span class="price-note" data-i18n="hero_hosting">+ optional Hosting ab 30 €/Monat</span>
       </div>
       <div class="signed" data-reveal data-d="3"><span class="check">✓</span> <span data-i18n="hero_signed">Persönlich umgesetzt in Graz</span></div>
@@ -338,7 +391,7 @@
     <p class="lab" data-i18n="ref_lab">Unternehmen, mit denen wir gearbeitet haben</p>
     <div class="refs-row">
       <img src="data:image/png;base64,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" alt="Ing. Domokos Kovács" />
-      <span class="refs-word">anfragr<span class="dot">.at</span></span>
+      <a href="https://anfragr.at" class="refs-word js-brandswitch">anfragr<span class="dot">.at</span></a>
     </div>
   </div>
 </section>
@@ -348,7 +401,7 @@
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <span class="eyebrow" data-i18n="eb_leistung">Leistung</span>
-      <h2 data-i18n="leistung_h">Alles, was Sie <em>brauchen</em> — nichts, was Sie nicht brauchen</h2>
+      <h2 data-i18n="leistung_h">Alles, was Sie <em>brauchen</em>. Nichts, was Sie nicht brauchen</h2>
       <p class="lead" data-i18n="leistung_p">Alles, was Sie für einen professionellen Online-Auftritt brauchen – ohne versteckte Extras.</p>
     </div>
     <div class="grid3">
@@ -392,7 +445,7 @@
       <div class="price-main" data-reveal>
         <div class="rel">
           <span class="eyebrow" style="color:#8ab4ff" data-i18n="preis_card">Onepager Komplett</span>
-          <div class="big">799 € <small style="font-size:1rem;color:#b9c2da;font-family:var(--font-body)" data-i18n="hero_once">einmalig</small></div>
+          <div class="big">599 € <small style="font-size:1rem;color:#b9c2da;font-family:var(--font-body)" data-i18n="hero_once">einmalig</small></div>
           <ul>
             <li data-i18n="pm1">Einmalige Erstellung – Design, Text & Konzept</li>
             <li data-i18n="pm2">Mobile Optimierung für alle Geräte</li>
@@ -424,12 +477,32 @@
       <h2 data-i18n="faq_h">Fragen & <em>Antworten</em></h2>
     </div>
     <div class="faq">
-      <details class="qa" data-reveal><summary><span data-i18n="q1">Was ist nicht im Preis von 799 € enthalten?</span><span class="pl">+</span></summary><div class="a" data-i18n="a1">Der Preis gilt für einen einfachen Onepager mit klarem Umfang. Nicht enthalten: mehrseitige Websites, Online-Shops, Sonderfunktionen (Buchung, Kalender, Mitgliederbereiche), Logo-/Grafikdesign und umfangreiche SEO-Maßnahmen. Solche Leistungen gibt es auf Anfrage gesondert.</div></details>
+      <details class="qa" data-reveal><summary><span data-i18n="q1">Was ist nicht im Preis von 599 € enthalten?</span><span class="pl">+</span></summary><div class="a" data-i18n="a1">Der Preis gilt für einen einfachen Onepager mit klarem Umfang. Nicht enthalten: mehrseitige Websites, Online-Shops, Sonderfunktionen (Buchung, Kalender, Mitgliederbereiche), Logo-/Grafikdesign und umfangreiche SEO-Maßnahmen. Solche Leistungen gibt es auf Anfrage gesondert.</div></details>
       <details class="qa" data-reveal><summary><span data-i18n="q2">Was ist ein Onepager?</span><span class="pl">+</span></summary><div class="a" data-i18n="a2">Eine Website auf einer einzigen Seite. Alle wichtigen Infos – Leistungen, Vorteile, Kontakt – kompakt aufgebaut. Besucher scrollen statt zu klicken. Ideal, um schnell und klar zu überzeugen.</div></details>
       <details class="qa" data-reveal><summary><span data-i18n="q3">Für wen ist Seitfix geeignet?</span><span class="pl">+</span></summary><div class="a" data-i18n="a3">Für Handwerker, Dienstleister und kleine Betriebe, die eine einfache, professionelle Website ohne großen Agenturprozess brauchen und Neukunden gewinnen möchten.</div></details>
       <details class="qa" data-reveal><summary><span data-i18n="q4">Ist das Hosting verpflichtend?</span><span class="pl">+</span></summary><div class="a" data-i18n="a4">Nein. Das Hosting-Paket (30 €/Monat) ist optional. Mit Hosting kümmern wir uns um Domain, Wartung und kleine Änderungen. Ohne Hosting erhalten Sie alle Dateien zur eigenständigen Veröffentlichung.</div></details>
       <details class="qa" data-reveal><summary><span data-i18n="q5">Wem gehört die fertige Website?</span><span class="pl">+</span></summary><div class="a" data-i18n="a5">Die fertige Website gehört Ihnen. Sie erhalten alle Dateien. Kündigen Sie das Hosting, können Sie jederzeit selbst oder über einen anderen Anbieter hosten.</div></details>
       <details class="qa" data-reveal><summary><span data-i18n="q6">Wird Umsatzsteuer berechnet?</span><span class="pl">+</span></summary><div class="a" data-i18n="a6">Nein. Gemäß § 6 Abs. 1 Z 27 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet. Alle Preise sind Endpreise.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ANFRAGR CROSS-PROMO -->
+<section class="sec" id="anfragr">
+  <div class="wrap">
+    <div class="xpromo" data-reveal>
+      <div class="xp-text">
+        <span class="xp-eyebrow"><span class="xp-dot"></span><span data-i18n="xp_eyebrow">Aus dem gleichen Haus</span></span>
+        <h2><span data-i18n="xp_h">Und wenn die Anfragen kommen?</span> <span class="xp-brand">anfragr</span> <span data-i18n="xp_h2">sortiert sie automatisch vor.</span></h2>
+        <p data-i18n="xp_p">Ihre neue Website bringt Anfragen. anfragr hilft kleinen Teams, eingehende E-Mails mit KI-Unterstützung vorzusortieren, zuzuordnen und übersichtlich zu dokumentieren.</p>
+        <a href="https://anfragr.at" class="btn xp-btn js-brandswitch" data-i18n="xp_cta">anfragr kennenlernen →</a>
+      </div>
+      <div class="xp-demo" aria-hidden="true">
+        <div class="xp-demo-label" data-i18n="xp_demo">Automatisch vorsortiert</div>
+        <div class="xp-row"><span data-i18n="xp_k1">Art</span><b data-i18n="xp_v1">Neue Anfrage</b></div>
+        <div class="xp-row"><span data-i18n="xp_k2">Priorität</span><b class="xp-pill" data-i18n="xp_v2">Hoch</b></div>
+        <div class="xp-row"><span data-i18n="xp_k3">Zuständig</span><b data-i18n="xp_v3">Vertrieb</b></div>
+      </div>
     </div>
   </div>
 </section>
@@ -506,7 +579,7 @@
 </footer>
 
 <script>
-const N8N_FORM_WEBHOOK = "https://REPLACE-ME.n8n.cloud/webhook/seitfix-form";
+const N8N_FORM_WEBHOOK = "https://cophag.app.n8n.cloud/webhook/seitfix-form";
 
 /* ---------- i18n ---------- */
 const I18N = {
@@ -519,7 +592,7 @@ const I18N = {
     hero_cta1:"→ Get a free preview",hero_cta2:"See an example",hero_fitfor:"Great for:",chip_handwerk:"Trades",chip_dienst:"Services",chip_lokal:"Local businesses",
     mock_h:"Your business. Clear. Online.",mock_p:"This is how your finished one-pager looks – optimised for mobile.",mock_btn:"Enquire now",mock_cap:"to a finished site",mock_f1:"No hidden costs",mock_f2:"Fixed price, one-time",mock_f3:"Mobile-first",
     stat1:"fixed price, one-time",stat2:"days after receiving your content",stat3:"feedback round included",stat4:"hidden costs",
-    eb_leistung:"Services",leistung_h:"Everything you <em>need</em> — nothing you don't",leistung_p:"Everything you need for a professional online presence – no hidden extras.",
+    eb_leistung:"Services",leistung_h:"Everything you <em>need</em>. Nothing you don't",leistung_p:"Everything you need for a professional online presence – no hidden extras.",
     l1h:"Structure & concept",l1p:"A clear page structure that guides visitors straight to an enquiry.",
     l2h:"Copy for your website",l2p:"Clear website copy based on your input – explaining plainly why customers should choose you.",
     l3h:"Modern design",l3p:"Clean, contemporary and tailored to your trade – without overloaded effects.",
@@ -537,7 +610,7 @@ const I18N = {
     pay_h:"Payment plan",pay1:"Deposit on order",pay2:"Balance before handover",host_h:"Hosting & care (optional)",host_m:"/ month",host_p:"Hosting, domain, care & small changes. Cancel monthly.",
     ust:"Under § 6 (1) 27 Austrian VAT Act no VAT is charged. All prices are final.",
     eb_faq:"FAQ",faq_h:"Questions & <em>answers</em>",
-    q1:"What's not included in the € 799 price?",a1:"The price covers a simple one-pager with a clear scope. Not included: multi-page sites, online shops, special features (booking, calendars, member areas), logo/graphic design and extensive SEO. Those are available separately on request.",
+    q1:"What's not included in the € 599 price?",a1:"The price covers a simple one-pager with a clear scope. Not included: multi-page sites, online shops, special features (booking, calendars, member areas), logo/graphic design and extensive SEO. Those are available separately on request.",
     q2:"What is a one-pager?",a2:"A website on a single page. All key info – services, benefits, contact – built compactly. Visitors scroll instead of clicking. Ideal to convince quickly and clearly.",
     q3:"Who is Seitfix for?",a3:"For tradespeople, service providers and small businesses that want a simple, professional website without a big agency process and want to win new customers.",
     q4:"Is hosting mandatory?",a4:"No. The hosting plan (€ 30/month) is optional. With hosting we handle domain, maintenance and small changes. Without it, you get all files to publish yourself.",
@@ -548,7 +621,8 @@ const I18N = {
     f_email:"Your email address",f_haswebsite:"Do you already have a website?",f_yes:"Yes",f_no:"No",f_url:"Address of your existing website",f_gewerbe:"What do you do?",
     g_maler:"Painter",g_elektriker:"Electrician",g_beratung:"Consulting",f_submit:"Build my preview →",
     done_h:"Thanks! Your enquiry is in.",done_p:"I'll get back to you shortly with your first preview.",
-    foot_tag:"Modern one-pagers for tradespeople & small businesses. Personal, from Graz.",foot_imp:"Imprint",foot_ds:"Privacy",foot_made:"Personally made in Graz",ref_lab:"Companies we\u0027ve worked with",preis_note:"+ Each additional page: € 50 · Hosting optional from € 30/month",pm5:"Paid in full on order"
+    foot_tag:"Modern one-pagers for tradespeople & small businesses. Personal, from Graz.",foot_imp:"Imprint",foot_ds:"Privacy",foot_made:"Personally made in Graz",ref_lab:"Companies we\u0027ve worked with",preis_note:"+ Each additional page: € 50 · Hosting optional from € 30/month",pm5:"Paid in full on order",
+    xp_eyebrow:"From the same maker",xp_h:"And when the enquiries come in?",xp_h2:"pre-sorts them automatically.",xp_p:"Your new website brings enquiries. anfragr helps small teams pre-sort, assign and document incoming emails with AI support.",xp_cta:"Discover anfragr →",xp_demo:"Automatically pre-sorted",xp_k1:"Type",xp_v1:"New enquiry",xp_k2:"Priority",xp_v2:"High",xp_k3:"Assigned to",xp_v3:"Sales"
   }
 };
 // capture German defaults
@@ -598,14 +672,23 @@ document.getElementById('form').addEventListener('submit',async e=>{
   e.preventDefault();
   const payload={email:document.getElementById('email').value,hat_website:hasWebsite,
     url:hasWebsite==='ja'?document.getElementById('url').value:'',gewerbe:gewerbe};
-  // 1) n8n (Automatisierung)
-  try{await fetch(N8N_FORM_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}catch(err){}
+  // 1) n8n (Automatisierung): form-urlencoded = kein CORS-Preflight, erreicht n8n zuverlässig
+  try{await fetch(N8N_FORM_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({email:payload.email||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||''}).toString()});}catch(err){}
   // 2) Netlify Forms (native Lead-Erfassung, funktioniert ohne n8n auf Netlify)
   try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:new URLSearchParams({'form-name':'seitfix-anfrage',email:payload.email||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||''}).toString()});}catch(err){}
   document.getElementById('formfields').classList.add('hide');
   document.getElementById('done').classList.remove('hide');
 });
+
+/* ---------- smooth brand switch (Seitfix ⇄ anfragr) ---------- */
+const noMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('a.js-brandswitch').forEach(a=>a.addEventListener('click',e=>{
+  if(noMotion||e.metaKey||e.ctrlKey||e.shiftKey||a.target==='_blank')return;
+  e.preventDefault();document.body.classList.add('fade-out');
+  setTimeout(()=>{location.href=a.href},320);
+}));
+addEventListener('pageshow',e=>{if(e.persisted)document.body.classList.remove('fade-out')});
 </script>
 </body>
 </html>
