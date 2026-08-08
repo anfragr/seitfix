@@ -213,6 +213,12 @@
   .field input,.field textarea{width:100%;font-family:var(--font-body);font-size:1rem;padding:13px 15px;
     border:1px solid var(--border);border-radius:12px;background:var(--off);transition:border-color .2s,box-shadow .2s}
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-lt)}
+  .field select{width:100%;font-family:var(--font-body);font-size:1rem;padding:13px 15px;
+    border:1px solid var(--border);border-radius:12px;background:var(--off);color:var(--text);cursor:pointer;
+    appearance:none;-webkit-appearance:none;transition:border-color .2s,box-shadow .2s;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%236b6b67' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+  .field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-lt)}
   .toggle{display:flex;gap:10px}
   .toggle button{flex:1;padding:12px;border:1px solid var(--border);background:var(--off);border-radius:12px;
     font-family:var(--font-body);font-weight:600;cursor:pointer;transition:all .2s}
@@ -292,7 +298,7 @@
     .nav-links{display:none}.burger{display:flex}
   }
   @media(max-width:560px){
-    .grid3{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}
+    .grid3{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr}
     .foot-bottom{flex-direction:column}
   }
   @media(prefers-reduced-motion:reduce){
@@ -341,7 +347,7 @@
 <span id="top"></span>
 <!-- Netlify-Formularerkennung (versteckt) -->
 <form name="seitfix-anfrage" data-netlify="true" netlify-honeypot="bot-field" hidden="" aria-hidden="true">
-  <input type="text" name="email"><input type="text" name="hat_website"><input type="text" name="url"><input type="text" name="gewerbe"><input type="text" name="bot-field">
+  <input type="text" name="email"><input type="text" name="firma"><input type="text" name="hat_website"><input type="text" name="url"><input type="text" name="gewerbe"><input type="text" name="gewerbe_sonstiges"><input type="text" name="bot-field">
 </form>
 
 <!-- HERO -->
@@ -527,6 +533,10 @@
           <input type="email" id="email" name="email" placeholder="name@company.com" required="">
         </div>
         <div class="field">
+          <label for="firma" data-i18n="f_firma">Your company name</label>
+          <input type="text" id="firma" name="firma" placeholder="Example Ltd" required />
+        </div>
+        <div class="field">
           <label data-i18n="f_haswebsite">Do you already have a website?</label>
           <div class="toggle" id="haswebsite">
             <button type="button" data-v="ja" data-i18n="f_yes">Yes</button>
@@ -539,11 +549,23 @@
         </div>
         <div class="field">
           <label data-i18n="f_gewerbe">What do you do?</label>
-          <div class="tiles" id="gewerbe">
-            <div class="tile" data-v="maler"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"></path><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"></path></svg></span><span class="t" data-i18n="g_maler">Painter</span></div>
-            <div class="tile" data-v="elektriker"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"></path></svg></span><span class="t" data-i18n="g_elektriker">Electrician</span></div>
-            <div class="tile" data-v="beratung"><span class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg></span><span class="t" data-i18n="g_beratung">Consulting</span></div>
-          </div>
+          <select id="gewerbe" name="gewerbe">
+            <option value="" disabled selected>Please choose …</option>
+            <option value="handwerk">Trades &amp; crafts</option>
+            <option value="gastro">Restaurant &amp; food</option>
+            <option value="handel">Retail &amp; shops</option>
+            <option value="beauty">Beauty &amp; hair</option>
+            <option value="gesundheit">Health &amp; practice</option>
+            <option value="immobilien">Real estate</option>
+            <option value="dienstleistung">Services</option>
+            <option value="beratung">Consulting &amp; coaching</option>
+            <option value="sonstiges">Other</option>
+          </select>
+        </div>
+        <div class="field hide" id="sonstfield">
+          <label for="gewerbe_sonstiges" data-i18n="f_sonst">What do you do exactly?</label>
+          <input type="text" id="gewerbe_sonstiges" name="gewerbe_sonstiges" placeholder="e.g. photographer, driving school …" />
+        </div>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" data-i18n="f_submit">Build my preview →</button>
       </div>
@@ -611,18 +633,22 @@ document.querySelectorAll('#haswebsite button').forEach(b=>b.addEventListener('c
   hasWebsite=b.dataset.v;document.querySelectorAll('#haswebsite button').forEach(x=>x.classList.toggle('on',x===b));
   document.getElementById('urlfield').classList.toggle('hide',hasWebsite!=='ja');
 }));
+document.getElementById('gewerbe').addEventListener('change',e=>{
+  document.getElementById('sonstfield').classList.toggle('hide',e.target.value!=='sonstiges');
+});
 document.querySelectorAll('#gewerbe .tile').forEach(t=>t.addEventListener('click',()=>{
   gewerbe=t.dataset.v;document.querySelectorAll('#gewerbe .tile').forEach(x=>x.classList.toggle('on',x===t));
 }));
 document.getElementById('form').addEventListener('submit',async e=>{
   e.preventDefault();
-  const payload={email:document.getElementById('email').value,hat_website:hasWebsite,
-    url:hasWebsite==='ja'?document.getElementById('url').value:'',gewerbe:gewerbe};
+  const payload={email:document.getElementById('email').value,firma:document.getElementById('firma').value,hat_website:hasWebsite,
+    url:hasWebsite==='ja'?document.getElementById('url').value:'',gewerbe:document.getElementById('gewerbe').value,
+    gewerbe_sonstiges:document.getElementById('gewerbe').value==='sonstiges'?document.getElementById('gewerbe_sonstiges').value:''};
   // 1) n8n (Automatisierung): form-urlencoded = kein CORS-Preflight, erreicht n8n zuverlässig
-  try{await fetch(N8N_FORM_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({email:payload.email||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||''}).toString()});}catch(err){}
+  try{await fetch(N8N_FORM_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({email:payload.email||'',firma:payload.firma||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||'',gewerbe_sonstiges:payload.gewerbe_sonstiges||''}).toString()});}catch(err){}
   // 2) Netlify Forms (native Lead-Erfassung, funktioniert ohne n8n auf Netlify)
   try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:new URLSearchParams({'form-name':'seitfix-anfrage',email:payload.email||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||''}).toString()});}catch(err){}
+    body:new URLSearchParams({'form-name':'seitfix-anfrage',email:payload.email||'',firma:payload.firma||'',hat_website:payload.hat_website||'',url:payload.url||'',gewerbe:payload.gewerbe||'',gewerbe_sonstiges:payload.gewerbe_sonstiges||''}).toString()});}catch(err){}
   document.getElementById('formfields').classList.add('hide');
   document.getElementById('done').classList.remove('hide');
 });
