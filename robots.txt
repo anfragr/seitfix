@@ -1,10 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /danke.html
-Disallow: /impressum.html
-Disallow: /datenschutz.html
-Disallow: /en/danke.html
-Disallow: /en/impressum.html
-Disallow: /en/datenschutz.html
 
 Sitemap: https://seitfix.at/sitemap.xml
