@@ -211,18 +211,42 @@
   /* REFERENZEN / Logozeile */
   .refs{padding:52px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
   .refs .lab{text-align:center;color:var(--muted);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:28px}
-  .refs-row{display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:nowrap}
-  .refs-row img.ref-wide{height:36px}
-  .refs-row a{display:inline-flex}
+  .refs-marquee{position:relative;overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+  .refs-track{display:flex;width:max-content;animation:refs-scroll 42s linear infinite;will-change:transform}
+  .refs-marquee:hover .refs-track{animation-play-state:paused}
+  .refs-set{display:flex;align-items:center;gap:64px;padding-right:64px}
+  .refs-set a{display:inline-flex;flex:0 0 auto}
+  .refs-set img{height:50px;width:auto;transition:transform .35s var(--ease)}
+  .refs-set img.ref-wide{height:34px}
+  .refs-set img:hover{transform:translateY(-3px)}
   .ref-brand{display:flex;flex-direction:column;align-items:center;gap:5px}
   .ref-brand small{font-family:var(--font-body);font-size:.64rem;font-weight:600;letter-spacing:.1em;
     text-transform:uppercase;color:var(--muted);opacity:.65;white-space:nowrap;text-align:center;transition:opacity .35s var(--ease)}
   .ref-brand:hover small{opacity:1}
-  .refs-row img{height:52px;width:auto;transition:transform .35s var(--ease)}
-  .refs-row img:hover{transform:translateY(-3px)}
   .refs-word{font-family:var(--font-body);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;color:var(--text);transition:transform .35s var(--ease)}
   .refs-word:hover{transform:translateY(-3px)}
   .refs-word .dot{color:var(--accent)}
+  /* STIMMEN / Bewertungen */
+  .stimmen .sec-head{text-align:center;margin:0 auto 44px}
+  .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:960px;margin:0 auto}
+  .rev-card{background:var(--white);border:1px solid var(--border);border-radius:18px;
+    padding:32px 30px;display:flex;flex-direction:column;box-shadow:0 14px 34px -20px rgba(0,0,0,.22)}
+  .rev-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+  .stars{display:inline-flex;gap:1px;color:#fbbf24;font-size:1.05rem;letter-spacing:1px;line-height:1}
+  .rev-src{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;
+    color:var(--muted);white-space:nowrap}
+  .rev-src svg{width:15px;height:15px;flex:0 0 auto}
+  .rev-text{font-size:1.02rem;line-height:1.62;color:var(--text);margin:0 0 22px;font-style:normal}
+  .rev-foot{margin-top:auto;border-top:1px solid var(--border);padding-top:16px}
+  .rev-name{font-weight:700;font-size:.98rem;color:var(--text)}
+  .rev-role{font-size:.85rem;color:var(--muted);margin-top:2px}
+  .rev-role a{color:var(--accent);text-decoration:none}
+  .rev-role a:hover{text-decoration:underline}
+  @media(max-width:760px){.rev-grid{grid-template-columns:1fr}}
+  @keyframes refs-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.refs-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}.refs-set:last-child{display:none}.refs-set{flex-wrap:wrap;justify-content:center;gap:44px;padding-right:0}}
   /* generic section */
   .sec{padding:96px 0}
   .sec-head{max-width:60ch;margin-bottom:48px}
@@ -357,7 +381,7 @@
   .xp-pill{background:rgba(224,123,57,.18);color:#E07B39!important;font-size:.7rem;font-weight:700;
     padding:3px 10px;border-radius:99px;border:1px solid rgba(224,123,57,.35)}
   @media(max-width:900px){
-    .refs-row{flex-wrap:wrap}.xpromo{grid-template-columns:1fr;padding:34px 26px}}
+    .xpromo{grid-template-columns:1fr;padding:34px 26px}}
   /* reveal */
   [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
   [data-reveal].in{opacity:1;transform:none}
@@ -464,14 +488,61 @@
 <section class="refs">
   <div class="wrap">
     <p class="lab" data-i18n="ref_lab">Unternehmen, mit denen wir gearbeitet haben</p>
-    <div class="refs-row">
-      <a href="https://dkovacs.at" target="_blank" rel="noopener"><img src="images/referenzen/kovacs.png" alt="Ing. Domokos Kovács" /></a>
-      <a class="ref-brand" href="https://baronfilou.com" target="_blank" rel="noopener"><img src="images/referenzen/baron-filou.png" alt="Baron Filou" /><small>Baron Filou</small></a>
-      <a href="https://dietextilpartner.de" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/textilpartner.png" alt="Textilpartner" /></a>
-      <a href="https://www.azimutconsulting.at" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/azimut-consulting.png" alt="Azimut Consulting" /></a>
-      <a href="https://foodrescue-himalayamasala.com" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/himalaya-masala.png" alt="Himalaya Masala" /></a>
-      <a href="https://tiatec.com" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/tiatec.png" alt="TIATEC Automation & Control" /></a>
-      <a href="https://anfragr.at" class="refs-word js-brandswitch">anfragr<span class="dot">.at</span></a>
+    <div class="refs-marquee">
+      <div class="refs-track">
+        <div class="refs-set">
+          <a href="https://dkovacs.at" target="_blank" rel="noopener"><img src="images/referenzen/kovacs.png" alt="Ing. Domokos Kovács" /></a>
+          <a class="ref-brand" href="https://baronfilou.com" target="_blank" rel="noopener"><img src="images/referenzen/baron-filou.png" alt="Baron Filou" /><small>Baron Filou</small></a>
+          <a href="https://dietextilpartner.de" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/textilpartner.png" alt="Textilpartner" /></a>
+          <a href="https://www.azimutconsulting.at" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/azimut-consulting.png" alt="Azimut Consulting" /></a>
+          <a href="https://foodrescue-himalayamasala.com" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/himalaya-masala.png" alt="Himalaya Masala" /></a>
+          <a href="https://tiatec.com" target="_blank" rel="noopener"><img class="ref-wide" src="images/referenzen/tiatec.png" alt="TIATEC Automation & Control" /></a>
+          <a href="https://anfragr.at" class="refs-word js-brandswitch">anfragr<span class="dot">.at</span></a>
+        </div>
+        <div class="refs-set" aria-hidden="true">
+          <a href="https://dkovacs.at" target="_blank" rel="noopener" tabindex="-1"><img src="images/referenzen/kovacs.png" alt="" /></a>
+          <a class="ref-brand" href="https://baronfilou.com" target="_blank" rel="noopener" tabindex="-1"><img src="images/referenzen/baron-filou.png" alt="" /><small>Baron Filou</small></a>
+          <a href="https://dietextilpartner.de" target="_blank" rel="noopener" tabindex="-1"><img class="ref-wide" src="images/referenzen/textilpartner.png" alt="" /></a>
+          <a href="https://www.azimutconsulting.at" target="_blank" rel="noopener" tabindex="-1"><img class="ref-wide" src="images/referenzen/azimut-consulting.png" alt="" /></a>
+          <a href="https://foodrescue-himalayamasala.com" target="_blank" rel="noopener" tabindex="-1"><img class="ref-wide" src="images/referenzen/himalaya-masala.png" alt="" /></a>
+          <a href="https://tiatec.com" target="_blank" rel="noopener" tabindex="-1"><img class="ref-wide" src="images/referenzen/tiatec.png" alt="" /></a>
+          <a href="https://anfragr.at" class="refs-word js-brandswitch" tabindex="-1" aria-hidden="true">anfragr<span class="dot">.at</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STIMMEN / Bewertungen -->
+<section class="sec stimmen" id="stimmen" style="background:var(--light)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow" data-i18n="rev_eyebrow">Kundenstimmen</span>
+      <h2 data-i18n="rev_h">Was Kunden über die <em>Zusammenarbeit</em> sagen</h2>
+    </div>
+    <div class="rev-grid">
+      <figure class="rev-card" data-reveal>
+        <div class="rev-top">
+          <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+          <span class="rev-src"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.7v3h3.9c2.3-2.1 3.6-5.2 3.6-8.9z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.3 6.6l4 3.1C6.2 6.9 8.9 4.8 12 4.8z"/></svg><span data-i18n="rev_src">Google Rezension</span></span>
+        </div>
+        <blockquote class="rev-text" data-i18n="rev1_t">„Ich habe Mitte Juli eine Website bei Seitfix angefragt. Der Prozess war super professionell und angenehm. Nach einem Tag hatte ich schon etwa 10 Mock-ups von Herrn Hrovath gesendet bekommen. Für eines habe ich mich entschieden, auf dem wurde aufgebaut. Die fertige Website war eine Woche nach der Anfrage online. Zu meiner maximalen Zufriedenheit."</blockquote>
+        <figcaption class="rev-foot">
+          <div class="rev-name">Ing. Domokos Kovács</div>
+          <div class="rev-role"><a href="https://dkovacs.at" target="_blank" rel="noopener">dkovacs.at</a></div>
+        </figcaption>
+      </figure>
+      <figure class="rev-card" data-reveal data-d="1">
+        <div class="rev-top">
+          <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+          <span class="rev-src"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.7v3h3.9c2.3-2.1 3.6-5.2 3.6-8.9z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.3 6.6l4 3.1C6.2 6.9 8.9 4.8 12 4.8z"/></svg><span data-i18n="rev_src">Google Rezension</span></span>
+        </div>
+        <blockquote class="rev-text" data-i18n="rev2_t">„Preis/Leistung ist großartig. Es wurde sich sehr viel Zeit genommen unser Projekt und unser Anliegen zu verstehen und selbst nach der Abgabe, wurde noch auf unsere Sonderwünsche eingegangen. Wir kommen wieder und empfehlen gerne weiter!"</blockquote>
+        <figcaption class="rev-foot">
+          <div class="rev-name">Georg Schrimpf</div>
+          <div class="rev-role" data-i18n="rev2_r">Geschäftsführer · Baron Filou &amp; Textilpartner</div>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -760,7 +831,8 @@ const I18N = {
     done_h:"Thanks! Your enquiry is in.",done_p:"I'll get back to you shortly with your first preview.",
     foot_tag:"Modern one-pagers for tradespeople & small businesses. Personal, from Graz.",foot_imp:"Imprint",foot_ds:"Privacy",foot_made:"Personally made in Graz",ref_lab:"Companies we\u0027ve worked with",preis_note:"+ Each additional page: € 50 · Hosting optional from € 30/month",pm5:"Paid in full on order",
     frs_eyebrow:"Against food waste",frs_h:"Good food ends up in the bin every night. <em>It doesn’t have to.</em>",frs_p:"With their own food rescue shop, restaurants sell leftover meals at a reduced price instead of throwing them away. Good for the planet, good for the till. Unlike resale apps they keep their margin and their guests, because only the payment fee applies. That's exactly what we built for Himalaya Masala.",frs_cta:"Calculate your savings →",frs_note:"Free calculator · under a minute · no strings attached",frs_c1lab:"Resale app",frs_c1d:"commission per box, no customer data of your own",frs_c2lab:"Your own shop",frs_c2d:"only the payment fee, brand and customers are yours",
-    xp_eyebrow:"From the same maker",xp_h:"And when the enquiries come in?",xp_h2:"pre-sorts them automatically.",xp_p:"Your new website brings enquiries. anfragr helps small teams pre-sort, assign and document incoming emails with AI support.",xp_cta:"Discover anfragr →",xp_demo:"Automatically pre-sorted",xp_k1:"Type",xp_v1:"New enquiry",xp_k2:"Priority",xp_v2:"High",xp_k3:"Assigned to",xp_v3:"Sales"
+    xp_eyebrow:"From the same maker",xp_h:"And when the enquiries come in?",xp_h2:"pre-sorts them automatically.",xp_p:"Your new website brings enquiries. anfragr helps small teams pre-sort, assign and document incoming emails with AI support.",xp_cta:"Discover anfragr →",xp_demo:"Automatically pre-sorted",xp_k1:"Type",xp_v1:"New enquiry",xp_k2:"Priority",xp_v2:"High",xp_k3:"Assigned to",xp_v3:"Sales",
+    rev_eyebrow:"Testimonials",rev_h:"What clients say about <em>working together</em>",rev_src:"Google review",rev1_t:"“I enquired about a website at Seitfix in mid-July. The process was super professional and pleasant. After one day I had already received around 10 mock-ups from Mr Hrovath. I chose one, and the site was built on it. The finished website was online a week after the enquiry. To my complete satisfaction.”",rev2_t:"“The value for money is outstanding. A lot of time was taken to understand our project and our concerns, and even after delivery our special requests were still accommodated. We will be back and are happy to recommend them!”",rev2_r:"Managing Director · Baron Filou &amp; Textilpartner"
   }
 };
 // capture German defaults
