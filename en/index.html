@@ -350,11 +350,7 @@
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <div class="brandswitch" role="group" aria-label="Choose product">
-      <a href="#top" class="bs on" aria-current="page"><b>Seit</b><span class="fix">fix</span></a>
-      <span class="bs-sep" aria-hidden="true">/</span>
-      <a href="https://anfragr.at/en/" class="bs alt js-brandswitch">anfragr</a>
-    </div>
+    <a href="#top" class="brand" aria-current="page"><b>Seit</b><span class="fix">fix</span></a>
     <nav class="nav-links" id="navlinks">
       <a href="#leistung" data-i18n="nav_leistung">Services</a>
       <a href="#ablauf" data-i18n="nav_ablauf">Process</a>
@@ -436,7 +432,6 @@
           <a href="https://www.azimutconsulting.at" target="_blank" rel="noopener"><img class="ref-wide" src="../images/referenzen/azimut-consulting.png" alt="Azimut Consulting" /></a>
           <a href="https://foodrescue-himalayamasala.com" target="_blank" rel="noopener"><img class="ref-wide" src="../images/referenzen/himalaya-masala.png" alt="Himalaya Masala" /></a>
           <a href="https://tiatec.com" target="_blank" rel="noopener"><img class="ref-wide" src="../images/referenzen/tiatec.png" alt="TIATEC Automation & Control" /></a>
-          <a href="https://anfragr.at/en/" class="refs-word js-brandswitch">anfragr<span class="dot">.at</span></a>
         </div>
         <div class="refs-set" aria-hidden="true">
           <a href="https://dkovacs.at" target="_blank" rel="noopener" tabindex="-1"><img src="../images/referenzen/kovacs.png" alt="" /></a>
@@ -445,7 +440,6 @@
           <a href="https://www.azimutconsulting.at" target="_blank" rel="noopener" tabindex="-1"><img class="ref-wide" src="../images/referenzen/azimut-consulting.png" alt="" /></a>
           <a href="https://foodrescue-himalayamasala.com" target="_blank" rel="noopener" tabindex="-1"><img class="ref-wide" src="../images/referenzen/himalaya-masala.png" alt="" /></a>
           <a href="https://tiatec.com" target="_blank" rel="noopener" tabindex="-1"><img class="ref-wide" src="../images/referenzen/tiatec.png" alt="" /></a>
-          <a href="https://anfragr.at/en/" class="refs-word js-brandswitch" tabindex="-1" aria-hidden="true">anfragr<span class="dot">.at</span></a>
         </div>
       </div>
     </div>
@@ -616,25 +610,6 @@
   </div>
 </section>
 
-<!-- ANFRAGR CROSS-PROMO -->
-<section class="sec" id="anfragr">
-  <div class="wrap">
-    <div class="xpromo" data-reveal="">
-      <div class="xp-text">
-        <span class="xp-eyebrow"><span class="xp-dot"></span><span data-i18n="xp_eyebrow">From the same maker</span></span>
-        <h2><span data-i18n="xp_h">And when the enquiries come in?</span> <span class="xp-brand">anfragr</span> <span data-i18n="xp_h2">pre-sorts them automatically.</span></h2>
-        <p data-i18n="xp_p">Your new website brings enquiries. anfragr helps small teams pre-sort, assign and document incoming emails with AI support.</p>
-        <a href="https://anfragr.at/en/" class="btn xp-btn js-brandswitch" data-i18n="xp_cta">Discover anfragr →</a>
-      </div>
-      <div class="xp-demo" aria-hidden="true">
-        <div class="xp-demo-label" data-i18n="xp_demo">Automatically pre-sorted</div>
-        <div class="xp-row"><span data-i18n="xp_k1">Type</span><b data-i18n="xp_v1">New enquiry</b></div>
-        <div class="xp-row"><span data-i18n="xp_k2">Priority</span><b class="xp-pill" data-i18n="xp_v2">High</b></div>
-        <div class="xp-row"><span data-i18n="xp_k3">Assigned to</span><b data-i18n="xp_v3">Sales</b></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- KONTAKT -->
 <section class="sec" id="kontakt">
@@ -779,14 +754,6 @@ document.getElementById('form').addEventListener('submit',async e=>{
   document.getElementById('done').classList.remove('hide');
 });
 
-/* ---------- smooth brand switch (Seitfix ⇄ anfragr) ---------- */
-const noMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-document.querySelectorAll('a.js-brandswitch').forEach(a=>a.addEventListener('click',e=>{
-  if(noMotion||e.metaKey||e.ctrlKey||e.shiftKey||a.target==='_blank')return;
-  e.preventDefault();document.body.classList.add('fade-out');
-  setTimeout(()=>{location.href=a.href},320);
-}));
-addEventListener('pageshow',e=>{if(e.persisted)document.body.classList.remove('fade-out')});
 </script>
 
 
