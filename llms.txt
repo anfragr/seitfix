@@ -9,7 +9,7 @@ Seitfix ist das Einzelunternehmen von Ivo Hrovat in Graz, Österreich. Zielgrupp
 - Onepager-Website für Handwerker und kleine Betriebe. Fixpreis ab 599 Euro, fertig in rund 7 Tagen. Enthält Struktur, Text, Design, mobile Optimierung und Kontaktbereich. Eine Korrekturrunde inklusive.
 - Mehrseitige Website: jede weitere Unterseite ab 50 Euro.
 - Kleiner, günstiger Online-Shop auf Shopify-Basis für kleine Betriebe.
-- Food-Rescue-Shop für Restaurants: ein eigener Verkaufs-Shop für übrig gebliebenes Essen. Das Restaurant verkauft Reste selbst, statt rund 25 Prozent Provision an Vermittlungs-Apps zu zahlen. Es fällt nur die Zahlungsgebühr an, Marke und Kundendaten bleiben beim Betrieb.
+- Food-Rescue-Shop für Restaurants: ein eigener Verkaufs-Shop für übrig gebliebenes Essen. Das Restaurant verkauft Reste selbst, statt eine hohe Provision an Vermittlungs-Apps zu zahlen. Es fällt nur die Zahlungsgebühr an, Marke und Kundendaten bleiben beim Betrieb.
 - Optional: Hosting, Domain und Wartung ab 30 Euro im Monat, monatlich kündbar.
 
 ## Preis-Logik
@@ -22,5 +22,4 @@ Graz und die Steiermark, Österreich. Anfragen auch aus dem übrigen DACH-Raum m
 Website: https://seitfix.at
 E-Mail: hallo@seitfix.at
 Adresse: Engelgasse 54, 8010 Graz, Österreich
-Food-Rescue-Rechner: https://seitfix.at/foodrescue-rechner.html
 Englische Version: https://seitfix.at/en/
