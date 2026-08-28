@@ -154,9 +154,10 @@
   .nav-links a.active::after{transform:scaleX(1)}
   .nav-right{display:flex;align-items:center;gap:14px}
   .lang{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--white)}
-  .lang button{border:0;background:transparent;font-family:var(--font-body);font-weight:600;font-size:.8rem;
-    padding:6px 12px;cursor:pointer;color:var(--muted);transition:background .2s,color .2s}
-  .lang button.on{background:var(--accent);color:#fff}
+  .lang button,.lang a,.lang span{border:0;background:transparent;font-family:var(--font-body);font-weight:600;font-size:.8rem;
+    padding:6px 12px;cursor:pointer;color:var(--muted);transition:background .2s,color .2s;display:inline-flex;align-items:center;line-height:1;text-decoration:none}
+  .lang button.on,.lang .on{background:var(--accent);color:#fff}
+  .lang a:hover{color:var(--accent-dk)}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
   .burger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
   .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -428,9 +429,7 @@
       <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
     </nav>
     <div class="nav-right">
-      <div class="lang" role="group" aria-label="Sprache">
-        <button data-lang="de" class="on">DE</button><button data-lang="en">EN</button>
-      </div>
+      <div class="lang" role="group" aria-label="Sprache"><span class="on">DE</span><a href="en/index.html">EN</a></div>
       <a href="#kontakt" class="btn btn-primary" style="padding:10px 20px" data-i18n="nav_cta">Kostenlos anfragen</a>
       <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
