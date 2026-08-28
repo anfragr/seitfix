@@ -17,9 +17,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/case-studies/"/>
   </url>
   <url>
-    <loc>https://seitfix.at/ueber-uns/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/ueber-uns/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/ueber-uns/"/>
+    <loc>https://seitfix.at/über-uns/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/über-uns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/über-uns/"/>
   </url>
   <url>
     <loc>https://seitfix.at/kontakt/</loc>
@@ -33,7 +33,7 @@
   </url>
   <url><loc>https://seitfix.at/en/leistungen/</loc></url>
   <url><loc>https://seitfix.at/en/case-studies/</loc></url>
-  <url><loc>https://seitfix.at/en/ueber-uns/</loc></url>
+  <url><loc>https://seitfix.at/en/über-uns/</loc></url>
   <url><loc>https://seitfix.at/en/kontakt/</loc></url>
   <url><loc>https://seitfix.at/impressum.html</loc></url>
   <url><loc>https://seitfix.at/datenschutz.html</loc></url>

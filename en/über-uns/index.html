@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About us: digital products from Graz | Seitfix</title>
+<meta name="description" content="Seitfix is a small company from Graz that builds digital products that are genuinely needed. Current passion project: Retteria." />
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="About us | Seitfix from Graz" />
+<meta property="og:description" content="A small company from Graz that builds digital products that are genuinely needed." />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Seitfix" />
+<meta property="og:url" content="https://seitfix.at/en/über-uns/" />
+<meta property="og:image" content="https://seitfix.at/images/og-seitfix.png" />
+<link rel="canonical" href="https://seitfix.at/en/über-uns/" />
+<link rel="alternate" hreflang="de" href="https://seitfix.at/über-uns/" />
+<link rel="alternate" hreflang="en" href="https://seitfix.at/en/über-uns/" />
+<link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="../index.html" class="brand"><b>Seit</b><span class="fix">fix</span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="../index.html">Start</a>
+      <a href="../leistungen/index.html">Services</a>
+      <a href="../case-studies/index.html">Case Studies</a>
+      <a href="index.html" class="active" aria-current="page">About us</a>
+      <a href="../kontakt/index.html">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language"><a href="../../über-uns/index.html">DE</a><span class="on">EN</span></div>
+      <a href="../kontakt/index.html" class="btn btn-primary" style="padding:10px 20px">Get a free quote</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="mobile" id="mobile">
+  <a href="../index.html">Start</a>
+  <a href="../leistungen/index.html">Services</a>
+  <a href="../case-studies/index.html">Case Studies</a>
+  <a href="index.html">About us</a>
+  <a href="../kontakt/index.html">Contact</a>
+  <a href="../kontakt/index.html" class="btn btn-primary">Get a free quote</a>
+</aside>
+
+<span id="top"></span>
+
+<!-- ABOUT -->
+<section class="sec page-head">
+  <div class="wrap">
+    <div class="sec-head" data-reveal style="max-width:60ch;margin-bottom:0">
+      <span class="eyebrow">About us</span>
+      <h1>Digital products that are <em>genuinely needed</em></h1>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:24px">
+  <div class="wrap">
+    <div class="about-split">
+      <div class="about-text" data-reveal>
+        <p class="lead-first">Seitfix is a small company from Graz that builds digital products that are genuinely needed – rather than as many as possible.</p>
+        <p>What interests us is what makes life a little better or easier for the people we build for.</p>
+        <p>Our current passion project is <a href="https://retteria.at" target="_blank" rel="noopener">Retteria</a>, an app that rescues leftover food from restaurants before it ends up in the bin – fair for the hospitality trade and good for the city.</p>
+      </div>
+
+      <div class="phone-wrap" data-reveal data-d="1">
+        <div class="phone">
+          <div class="phone-screen">
+            <img src="../../images/retteria-app.jpg" alt="Retteria app – restaurants and boxes in Graz" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="background:linear-gradient(135deg,var(--accent),var(--accent-dk));color:#fff;text-align:center">
+  <div class="wrap">
+    <div class="sec-head" data-reveal style="text-align:center;max-width:60ch;margin:0 auto">
+      <h2 style="color:#fff;font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:14px">Want to build something that's needed?</h2>
+      <p class="lead" style="color:rgba(255,255,255,.85);margin:0 auto 28px">Tell us briefly about your idea – we'll get back with a clear assessment and a fixed price. No obligation.</p>
+      <a href="../kontakt/index.html" class="btn" style="background:#fff;color:var(--accent);box-shadow:0 14px 30px -12px rgba(0,0,0,.35)">→ Get a free quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><b>Seit</b><span class="fix" style="color:var(--accent)">fix</span></div>
+        <p style="margin-top:10px;max-width:34ch;font-size:.9rem">Modern websites &amp; online shops for small businesses. Personal, from Graz.</p>
+      </div>
+      <div class="foot-links">
+        <a href="../leistungen/index.html">Services</a>
+        <a href="../case-studies/index.html">Case Studies</a>
+        <a href="index.html">About us</a>
+        <a href="../kontakt/index.html">Contact</a>
+        <a href="../impressum.html">Imprint</a>
+        <a href="../datenschutz.html">Privacy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Seitfix · Graz</span>
+      <span>Personally made in Graz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>24),{passive:true});
+const burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),scrim=document.getElementById('scrim');
+function toggleMenu(open){burger.classList.toggle('x',open);mobile.classList.toggle('open',open);scrim.classList.toggle('on',open);document.body.style.overflow=open?'hidden':''}
+burger.addEventListener('click',()=>toggleMenu(!mobile.classList.contains('open')));
+scrim.addEventListener('click',()=>toggleMenu(false));
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+const rev=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+document.querySelectorAll('[data-reveal]').forEach(el=>rev.observe(el));
+</script>
+</body>
+</html>
