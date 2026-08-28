@@ -54,7 +54,7 @@
       "makesOffer": [
         { "@type": "Offer", "name": "Onepager-Website", "priceCurrency": "EUR", "price": "599", "description": "Onepager-Website für Handwerker und kleine Betriebe, Fixpreis ab 599 Euro, fertig in rund 7 Tagen." },
         { "@type": "Offer", "name": "Mehrseitige Website", "description": "Website mit mehreren Seiten für kleine Unternehmen in Graz und der Steiermark." },
-        { "@type": "Offer", "name": "Online-Shop", "description": "Online-Shop für kleine Betriebe, individuell nach Umfang, Fixpreis auf Anfrage." }
+        { "@type": "Offer", "name": "Online-Shop", "priceCurrency": "EUR", "price": "2000", "description": "Online-Shop für kleine Betriebe, Fixpreis ab 2000 Euro, individuell nach Umfang." }
       ]
     },
     {
@@ -71,7 +71,7 @@
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://seitfix.at/" }
       ]
     },
-    {
+{
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "Was ist nicht im Preis von 599 € enthalten?", "acceptedAnswer": { "@type": "Answer", "text": "Der Preis gilt für einen einfachen Onepager mit klarem Umfang. Nicht enthalten sind mehrseitige Websites, Online-Shops, Sonderfunktionen wie Buchung, Kalender oder Mitgliederbereiche, Logo- und Grafikdesign sowie umfangreiche SEO-Maßnahmen. Solche Leistungen gibt es auf Anfrage gesondert." } },
@@ -421,10 +421,10 @@
   <div class="nav-in">
     <a href="#top" class="brand" aria-current="page"><b>Seit</b><span class="fix">fix</span></a>
     <nav class="nav-links" id="navlinks">
-      <a href="#leistung" data-i18n="nav_leistung">Leistung</a>
-      <a href="#ablauf" data-i18n="nav_ablauf">Ablauf</a>
-      <a href="#preis" data-i18n="nav_preis">Preis</a>
-      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#top" data-i18n="nav_start">Start</a>
+      <a href="leistungen/index.html" data-i18n="nav_leistung">Leistungen</a>
+      <a href="case-studies/index.html" data-i18n="nav_cases">Case Studies</a>
+      <a href="ueber-uns/index.html" data-i18n="nav_ueber">Über uns</a>
       <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
     </nav>
     <div class="nav-right">
@@ -439,10 +439,10 @@
 
 <div class="scrim" id="scrim"></div>
 <aside class="mobile" id="mobile">
-  <a href="#leistung" data-i18n="nav_leistung">Leistung</a>
-  <a href="#ablauf" data-i18n="nav_ablauf">Ablauf</a>
-  <a href="#preis" data-i18n="nav_preis">Preis</a>
-  <a href="#faq" data-i18n="nav_faq">FAQ</a>
+  <a href="#top" data-i18n="nav_start">Start</a>
+  <a href="leistungen/index.html" data-i18n="nav_leistung">Leistungen</a>
+  <a href="case-studies/index.html" data-i18n="nav_cases">Case Studies</a>
+  <a href="ueber-uns/index.html" data-i18n="nav_ueber">Über uns</a>
   <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
   <a href="#kontakt" class="btn btn-primary" data-i18n="nav_cta">Kostenlos anfragen</a>
 </aside>
@@ -564,7 +564,16 @@
       <div class="price-main" data-reveal>
         <div class="rel">
           <span class="eyebrow" style="color:#8ab4ff" data-i18n="preis_card">Fixpreis</span>
-          <div class="big" data-i18n="preis_big">ab 599 €</div>
+          <div style="margin:16px 0 8px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12)">
+              <span style="font-family:var(--font-body);font-size:1.02rem;color:#d4d9e6" data-i18n="tier1n">Onepager-Website</span>
+              <span style="font-family:var(--font-head);font-size:2rem;color:#fff;white-space:nowrap" data-i18n="tier1p">ab 599 €</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0">
+              <span style="font-family:var(--font-body);font-size:1.02rem;color:#d4d9e6" data-i18n="tier2n">Online-Shop</span>
+              <span style="font-family:var(--font-head);font-size:2rem;color:#fff;white-space:nowrap" data-i18n="tier2p">ab 2.000 €</span>
+            </div>
+          </div>
           <ul>
             <li data-i18n="pm1">Design, Text & Konzept aus einer Hand</li>
             <li data-i18n="pm2">Mobile Optimierung für alle Geräte</li>
@@ -689,6 +698,10 @@
             <option value="onepager" data-i18n="g_onepager">Onepager (eine Seite)</option>
             <option value="website" data-i18n="g_website">Website (mehrere Seiten)</option>
             <option value="shop" data-i18n="g_shop">Online-Shop</option>
+            <option value="seo" data-i18n="g_seo">SEO / Sichtbarkeit</option>
+            <option value="webapp" data-i18n="g_webapp">Web App</option>
+            <option value="brand" data-i18n="g_brand">Brand Identity / CI-Guide</option>
+            <option value="expansion" data-i18n="g_expansion">Expansionshilfe (DACH-Ausland)</option>
             <option value="sonstiges" data-i18n="g_sonstiges">Anderes</option>
           </select>
         </div>
@@ -704,7 +717,7 @@
           <input type="checkbox" id="datenschutz" name="datenschutz" value="ja" required />
           <label for="datenschutz" data-i18n="f_ds">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden.</label>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" data-i18n="f_submit">Meine Vorschau bauen →</button>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" data-i18n="f_submit">Anfrage senden →</button>
       </div>
       <div class="done hide" id="done">
         <div class="big">✓</div>
@@ -723,16 +736,16 @@
         <p style="margin-top:10px;max-width:34ch;font-size:.9rem" data-i18n="foot_tag">Moderne Webseiten & Online-Shops für kleine Betriebe. Persönlich aus Graz.</p>
       </div>
       <div class="foot-links">
-        <a href="#leistung" data-i18n="nav_leistung">Leistung</a>
-        <a href="#preis" data-i18n="nav_preis">Preis</a>
-        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="leistungen/index.html" data-i18n="nav_leistung">Leistungen</a>
+        <a href="case-studies/index.html" data-i18n="nav_cases">Case Studies</a>
+        <a href="ueber-uns/index.html" data-i18n="nav_ueber">Über uns</a>
         <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
         <a href="impressum.html" data-i18n="foot_imp">Impressum</a>
         <a href="datenschutz.html" data-i18n="foot_ds">Datenschutz</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Seitfix · Engelgasse 54, 8010 Graz</span>
+      <span>© 2026 Seitfix · Graz</span>
       <span data-i18n="foot_made">Persönlich gemacht in Graz</span>
     </div>
   </div>
@@ -744,7 +757,7 @@
 const I18N = {
   de:{}, // German is in the HTML by default
   en:{
-    nav_leistung:"Services",nav_ablauf:"Process",nav_preis:"Pricing",nav_faq:"FAQ",nav_kontakt:"Contact",nav_cta:"Get a free preview",
+    nav_start:"Start",nav_leistung:"Services",nav_cases:"Case Studies",nav_ueber:"About us",nav_ref:"References",nav_ablauf:"Process",nav_preis:"Pricing",nav_faq:"FAQ",nav_kontakt:"Contact",nav_cta:"Get a free quote",home_more_leist:"See all services, process & pricing →",
     hero_badge:"Personal, from Graz · across the DACH region",hero_h1a:"Modern websites &",hero_h1b:"online shops",hero_h1c:"for small businesses",
     hero_lead:"Seitfix builds you a clear, professional online presence – from a simple one-pager to a full online shop. Great on mobile, built to turn visitors into enquiries.",
     hero_price:"from € 599",hero_fix:"Fixed price, agreed in advance",hero_signed:"Personally built in Graz",
@@ -765,7 +778,7 @@ const I18N = {
     s4h:"One revision round",s4p:"You give feedback, we adjust – one round is included.",
     s5h:"Go live",s5p:"We publish the site & set up your domain – or hand over all files.",
     eb_preis:"Pricing",preis_h:"One clear price. No <em>agency process</em>.",preis_p:"Transparent costs from the start – no surprises, no agency budget needed.",
-    preis_card:"Fixed price",preis_big:"from € 599",pm1:"Design, copy & concept from one hand",pm2:"Mobile optimised for all devices",pm3:"Clear contact area for enquiries",pm4:"One revision round included",preis_cta:"→ Enquire now",
+    preis_card:"Fixed price",preis_big:"from € 599",tier1n:"One-pager website",tier1p:"from € 599",tier2n:"Online shop",tier2p:"from € 2,000",pm1:"Design, copy & concept from one hand",pm2:"Mobile optimised for all devices",pm3:"Clear contact area for enquiries",pm4:"One revision round included",preis_cta:"→ Enquire now",
     range_h:"From one-pager to online shop",range_p:"Whether a simple one-pager, a multi-page website or an online shop – you get exactly what you need, at a fixed price agreed in advance.",
     pay_h:"Payment plan",pay1:"Deposit on order",pay2:"Balance before handover",host_h:"Hosting & care (optional)",host_m:"/ month",host_p:"Hosting, domain, care & small changes. Cancel monthly.",
     ust:"Under § 6 (1) 27 Austrian VAT Act no VAT is charged. All prices are final.",
@@ -779,7 +792,7 @@ const I18N = {
     eb_kontakt:"Contact",kontakt_h:"Ready for your <em>one-pager</em>?",kontakt_p:"Three quick answers – and we build you a free first preview. No long briefing needed.",
     who:"Graz, Austria · hallo@seitfix.at",
     f_email:"Your email address",f_haswebsite:"Do you already have a website?",f_yes:"Yes",f_no:"No",f_url:"Address of your existing website",f_gewerbe:"What do you need?",
-    f_firma:"Your company name",f_ds:"I have read the <a href=\"datenschutz.html\">privacy policy</a> and agree that my details are used to process my enquiry.",f_anmerk:"Notes (optional) – what do you need?",f_sonst:"What exactly do you need?",g_wahl:"Please choose …",g_onepager:"Onepager (one page)",g_website:"Website (multiple pages)",g_shop:"Online shop",g_foodrescue:"Food rescue shop (food)",g_sonstiges:"Other",f_submit:"Build my preview →",
+    f_firma:"Your company name",f_ds:"I have read the <a href=\"datenschutz.html\">privacy policy</a> and agree that my details are used to process my enquiry.",f_anmerk:"Notes (optional) – what do you need?",f_sonst:"What exactly do you need?",g_wahl:"Please choose …",g_onepager:"Onepager (one page)",g_website:"Website (multiple pages)",g_shop:"Online shop",g_seo:"SEO / visibility",g_webapp:"Web app",g_brand:"Brand identity / CI guide",g_expansion:"Expansion support (beyond DACH)",g_foodrescue:"Food rescue shop (food)",g_sonstiges:"Other",f_submit:"Send enquiry →",
     done_h:"Thanks! Your enquiry is in.",done_p:"I'll get back to you shortly with your first preview.",
     foot_tag:"Modern websites & online shops for small businesses. Personal, from Graz.",foot_imp:"Imprint",foot_ds:"Privacy",foot_made:"Personally made in Graz",ref_lab:"Companies we\u0027ve worked with",preis_note:"The final price depends on the scope. You get a fixed quote up front – no surprises.",pm5:"Paid in full on order",
     frs_eyebrow:"Against food waste",frs_h:"Good food ends up in the bin every night. <em>It doesn’t have to.</em>",frs_p:"With their own food rescue shop, restaurants sell leftover meals at a reduced price instead of throwing them away. Good for the planet, good for the till. Unlike resale apps they keep their margin and their guests, because only the payment fee applies. That's exactly what we built for Himalaya Masala.",frs_cta:"Calculate your savings →",frs_note:"Free calculator · under a minute · no strings attached",frs_c1lab:"Resale app",frs_c1d:"commission per box, no customer data of your own",frs_c2lab:"Your own shop",frs_c2d:"only the payment fee, brand and customers are yours",

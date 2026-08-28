@@ -7,10 +7,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://seitfix.at/"/>
   </url>
   <url>
+    <loc>https://seitfix.at/leistungen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/leistungen/"/>
+  </url>
+  <url>
+    <loc>https://seitfix.at/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/case-studies/"/>
+  </url>
+  <url>
+    <loc>https://seitfix.at/ueber-uns/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/ueber-uns/"/>
+  </url>
+  <url>
+    <loc>https://seitfix.at/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/kontakt/"/>
+  </url>
+  <url>
     <loc>https://seitfix.at/en/</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/"/>
   </url>
+  <url><loc>https://seitfix.at/en/leistungen/</loc></url>
+  <url><loc>https://seitfix.at/en/case-studies/</loc></url>
+  <url><loc>https://seitfix.at/en/ueber-uns/</loc></url>
+  <url><loc>https://seitfix.at/en/kontakt/</loc></url>
   <url><loc>https://seitfix.at/impressum.html</loc></url>
   <url><loc>https://seitfix.at/datenschutz.html</loc></url>
 </urlset>
