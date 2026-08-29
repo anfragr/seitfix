@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Seite nicht gefunden (404) | Seitfix</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" href="/style.css" />
+<style>
+  .err{min-height:calc(100vh - var(--nav-h) - 200px);display:flex;align-items:center;padding:calc(var(--nav-h) + 40px) 0 60px}
+  .err-num{font-family:var(--font-head);font-size:clamp(5rem,18vw,11rem);line-height:.9;color:var(--accent);letter-spacing:-.03em}
+  .err h1{font-size:clamp(1.8rem,4vw,2.8rem);margin:6px 0 14px}
+  .err .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 30px}
+  .err .quick{display:flex;gap:10px;flex-wrap:wrap}
+  .err .quick a{border:1px solid var(--border);background:#fff;border-radius:999px;padding:8px 16px;font-size:.9rem;font-weight:600;color:var(--muted);transition:.3s var(--ease)}
+  .err .quick a:hover{border-color:var(--accent);color:var(--accent)}
+  .err .en{margin-top:34px;color:var(--muted);font-size:.92rem;max-width:52ch}
+  .err .en a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="nav scrolled" id="nav">
+  <div class="nav-in">
+    <a href="/" class="brand"><b>Seit</b><span class="fix">fix</span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="/">Start</a>
+      <a href="/leistungen/">Leistungen</a>
+      <a href="/case-studies/">Case Studies</a>
+      <a href="/ueber-uns/">Über uns</a>
+      <a href="/kontakt/">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Sprache"><span class="on">DE</span><a href="/en/">EN</a></div>
+      <a href="/kontakt/" class="btn btn-primary" style="padding:10px 20px">Kostenlos anfragen</a>
+      <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="mobile" id="mobile">
+  <a href="/">Start</a>
+  <a href="/leistungen/">Leistungen</a>
+  <a href="/case-studies/">Case Studies</a>
+  <a href="/ueber-uns/">Über uns</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/kontakt/" class="btn btn-primary">Kostenlos anfragen</a>
+</aside>
+
+<section class="err">
+  <div class="wrap">
+    <div class="err-num">404</div>
+    <span class="eyebrow">Fehler 404</span>
+    <h1>Diese Seite gibt es <em>nicht</em></h1>
+    <p class="lead">Die Seite, die Sie suchen, existiert nicht (mehr) oder wurde verschoben. Kein Problem – über die Startseite finden Sie alles Weitere.</p>
+    <div class="cta-row">
+      <a href="/" class="btn btn-primary">→ Zur Startseite</a>
+      <a href="/kontakt/" class="btn btn-ghost">Kontakt aufnehmen</a>
+    </div>
+    <div class="quick">
+      <a href="/leistungen/">Leistungen</a>
+      <a href="/case-studies/">Case Studies</a>
+      <a href="/ueber-uns/">Über uns</a>
+    </div>
+    <p class="en">This page doesn't exist. Head back to the <a href="/">homepage</a> or switch to the <a href="/en/">English site</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><b>Seit</b><span class="fix" style="color:var(--accent)">fix</span></div>
+        <p style="margin-top:10px;max-width:34ch;font-size:.9rem">Moderne Webseiten &amp; Online-Shops für kleine Betriebe. Persönlich aus Graz.</p>
+      </div>
+      <div class="foot-links">
+        <a href="/leistungen/">Leistungen</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/ueber-uns/">Über uns</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Seitfix · Graz</span>
+      <span>Persönlich gemacht in Graz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),scrim=document.getElementById('scrim');
+function toggleMenu(open){burger.classList.toggle('x',open);mobile.classList.toggle('open',open);scrim.classList.toggle('on',open);document.body.style.overflow=open?'hidden':''}
+burger.addEventListener('click',()=>toggleMenu(!mobile.classList.contains('open')));
+scrim.addEventListener('click',()=>toggleMenu(false));
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+</script>
+</body>
+</html>
