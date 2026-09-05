@@ -116,6 +116,7 @@
           <input type="checkbox" id="datenschutz" name="datenschutz" value="ja" required />
           <label for="datenschutz">I have read the <a href="../datenschutz.html">privacy policy</a> and agree that my details are used to process my enquiry.</label>
         </div>
+        <p class="form-error hide" id="formerror" role="alert" aria-live="assertive"></p>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px">Send enquiry →</button>
       </div>
       <div class="done hide" id="done">
@@ -170,10 +171,17 @@ document.querySelectorAll('#haswebsite button').forEach(b=>b.addEventListener('c
 document.getElementById('gewerbe').addEventListener('change',e=>{
   document.getElementById('sonstfield').classList.toggle('hide',e.target.value!=='sonstiges');
 });
+document.getElementById('datenschutz').addEventListener('change',function(){if(this.checked){document.getElementById('formerror').classList.add('hide');this.closest('.ds-check').classList.remove('err');}});
 document.getElementById('form').addEventListener('submit',async e=>{
   e.preventDefault();
-  const dsBox=document.getElementById('datenschutz');
-  if(!dsBox.checked){dsBox.focus();dsBox.closest('.ds-check').style.color='#dc2626';return;}
+  const err=document.getElementById('formerror');
+  const email=document.getElementById('email'),firma=document.getElementById('firma'),dsBox=document.getElementById('datenschutz');
+  const dsWrap=dsBox.closest('.ds-check');
+  const show=(m,el)=>{err.textContent=m;err.classList.remove('hide');if(el&&el.focus)el.focus();};
+  err.classList.add('hide');dsWrap.classList.remove('err');
+  if(!email.value.trim()||!email.checkValidity())return show('Please enter a valid email address.',email);
+  if(!firma.value.trim())return show('Please enter your company name.',firma);
+  if(!dsBox.checked){dsWrap.classList.add('err');return show('Please accept the privacy policy first to send your enquiry.',dsBox);}
   const payload={email:document.getElementById('email').value,firma:document.getElementById('firma').value,hat_website:hasWebsite,
     url:hasWebsite==='ja'?document.getElementById('url').value:'',gewerbe:document.getElementById('gewerbe').value,
     gewerbe_sonstiges:document.getElementById('gewerbe').value==='sonstiges'?document.getElementById('gewerbe_sonstiges').value:'',
