@@ -239,11 +239,17 @@
   .refs-word .dot{color:var(--accent)}
   /* STIMMEN / Bewertungen */
   .stimmen .sec-head{text-align:center;margin:0 auto 44px}
-  .rev-grid{display:flex;gap:24px;max-width:1140px;margin:0 auto;overflow-x:auto;scroll-snap-type:x proximity;padding:6px 2px 20px;cursor:grab;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+  .rev-grid{display:flex;gap:24px;max-width:1140px;margin:0 auto;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 6px;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
   .rev-grid.dragging{cursor:grabbing}
-  .rev-grid::-webkit-scrollbar{height:8px}
-  .rev-grid::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px}
-  .rev-grid::-webkit-scrollbar-track{background:transparent}
+  .rev-grid::-webkit-scrollbar{display:none}
+  .rev-ctrls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:28px}
+  .rev-arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--text);display:grid;place-items:center;cursor:pointer;transition:border-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease),opacity .2s var(--ease);box-shadow:0 8px 20px -14px rgba(0,0,0,.35)}
+  .rev-arrow:hover:not(:disabled){border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .rev-arrow:disabled{opacity:.3;cursor:default}
+  .rev-arrow svg{width:18px;height:18px}
+  .rev-dots{display:inline-flex;align-items:center;gap:9px}
+  .rev-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:0;padding:0;cursor:pointer;transition:width .25s var(--ease),background .25s var(--ease)}
+  .rev-dot.active{width:26px;border-radius:6px;background:var(--accent)}
   .rev-card{background:var(--white);border:1px solid var(--border);border-radius:18px;
     padding:32px 30px;display:flex;flex-direction:column;box-shadow:0 14px 34px -20px rgba(0,0,0,.22);flex:0 0 340px;scroll-snap-align:start}
   .rev-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
@@ -257,7 +263,7 @@
   .rev-role{font-size:.85rem;color:var(--muted);margin-top:2px}
   .rev-role a{color:var(--accent);text-decoration:none}
   .rev-role a:hover{text-decoration:underline}
-  @media(max-width:940px){.rev-grid{max-width:100%}.rev-card{flex-basis:82%}}
+  @media(max-width:940px){.rev-grid{max-width:100%}.rev-card{flex-basis:84%}.rev-arrow{width:42px;height:42px}}
   @keyframes refs-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){.refs-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}.refs-set:last-child{display:none}.refs-set{flex-wrap:wrap;justify-content:center;gap:44px;padding-right:0}}
   /* generic section */
@@ -612,7 +618,7 @@
       <span class="eyebrow" data-i18n="rev_eyebrow">Kundenstimmen</span>
       <h2 data-i18n="rev_h">Was Kunden über die <em>Zusammenarbeit</em> sagen</h2>
     </div>
-    <div class="rev-grid">
+    <div class="rev-grid" id="revGrid">
       <figure class="rev-card" data-reveal>
         <div class="rev-top">
           <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
@@ -657,6 +663,11 @@
           <div class="rev-role"><a href="https://eli-da.at" target="_blank" rel="noopener">eli-da.at</a></div>
         </figcaption>
       </figure>
+    </div>
+    <div class="rev-ctrls">
+      <button class="rev-arrow" id="revPrev" type="button" aria-label="Vorherige Bewertungen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rev-dots" id="revDots"></div>
+      <button class="rev-arrow" id="revNext" type="button" aria-label="Nächste Bewertungen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
 </section>
@@ -890,7 +901,28 @@ document.getElementById('form').addEventListener('submit',async e=>{
 
 </script>
 <script>
-(function(){var g=document.querySelector(".rev-grid");if(!g)return;var down=false,moved=false,sx=0,sl=0;g.addEventListener("pointerdown",function(e){if(e.pointerType&&e.pointerType!=="mouse")return;down=true;moved=false;sx=e.clientX;sl=g.scrollLeft;});g.addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>5){moved=true;g.classList.add("dragging");}g.scrollLeft=sl-dx;});function up(){down=false;g.classList.remove("dragging");}window.addEventListener("pointerup",up);g.addEventListener("pointerleave",up);g.addEventListener("click",function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);})();
+(function(){
+  var g=document.getElementById("revGrid");if(!g)return;
+  var cards=g.querySelectorAll(".rev-card");if(!cards.length)return;
+  var prev=document.getElementById("revPrev"),next=document.getElementById("revNext"),dw=document.getElementById("revDots");
+  function gap(){var cs=getComputedStyle(g);return parseFloat(cs.columnGap||cs.gap)||24;}
+  function step(){return cards[0].getBoundingClientRect().width+gap();}
+  function maxS(){return g.scrollWidth-g.clientWidth-1;}
+  var dots=[];
+  if(dw){for(var i=0;i<cards.length;i++){(function(i){var d=document.createElement("button");d.className="rev-dot";d.type="button";d.setAttribute("aria-label","Bewertung "+(i+1)+" anzeigen");d.addEventListener("click",function(){g.scrollTo({left:i*step(),behavior:"smooth"});});dw.appendChild(d);dots.push(d);})(i);}}
+  function update(){var s=g.scrollLeft,st=step(),idx=Math.round(s/st);if(idx<0)idx=0;if(idx>cards.length-1)idx=cards.length-1;if(s>=maxS())idx=cards.length-1;dots.forEach(function(d,i){d.classList.toggle("active",i===idx);});if(prev)prev.disabled=s<=2;if(next)next.disabled=s>=maxS();}
+  if(prev)prev.addEventListener("click",function(){g.scrollBy({left:-step(),behavior:"smooth"});});
+  if(next)next.addEventListener("click",function(){g.scrollBy({left:step(),behavior:"smooth"});});
+  var t;g.addEventListener("scroll",function(){clearTimeout(t);t=setTimeout(update,60);},{passive:true});
+  window.addEventListener("resize",update);
+  var down=false,moved=false,sx=0,sl=0;
+  g.addEventListener("pointerdown",function(e){if(e.pointerType&&e.pointerType!=="mouse")return;down=true;moved=false;sx=e.clientX;sl=g.scrollLeft;g.classList.add("dragging");});
+  g.addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>5)moved=true;g.scrollLeft=sl-dx;});
+  function up(){down=false;g.classList.remove("dragging");}
+  window.addEventListener("pointerup",up);g.addEventListener("pointerleave",up);
+  g.addEventListener("click",function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);
+  update();
+})();
 </script>
 </body>
 </html>
