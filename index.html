@@ -239,9 +239,13 @@
   .refs-word .dot{color:var(--accent)}
   /* STIMMEN / Bewertungen */
   .stimmen .sec-head{text-align:center;margin:0 auto 44px}
-  .rev-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:1140px;margin:0 auto}
+  .rev-grid{display:flex;gap:24px;max-width:1140px;margin:0 auto;overflow-x:auto;scroll-snap-type:x proximity;padding:6px 2px 20px;cursor:grab;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+  .rev-grid.dragging{cursor:grabbing}
+  .rev-grid::-webkit-scrollbar{height:8px}
+  .rev-grid::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px}
+  .rev-grid::-webkit-scrollbar-track{background:transparent}
   .rev-card{background:var(--white);border:1px solid var(--border);border-radius:18px;
-    padding:32px 30px;display:flex;flex-direction:column;box-shadow:0 14px 34px -20px rgba(0,0,0,.22)}
+    padding:32px 30px;display:flex;flex-direction:column;box-shadow:0 14px 34px -20px rgba(0,0,0,.22);flex:0 0 340px;scroll-snap-align:start}
   .rev-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
   .stars{display:inline-flex;gap:1px;color:#fbbf24;font-size:1.05rem;letter-spacing:1px;line-height:1}
   .rev-src{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;
@@ -253,7 +257,7 @@
   .rev-role{font-size:.85rem;color:var(--muted);margin-top:2px}
   .rev-role a{color:var(--accent);text-decoration:none}
   .rev-role a:hover{text-decoration:underline}
-  @media(max-width:940px){.rev-grid{grid-template-columns:1fr;max-width:560px}}
+  @media(max-width:940px){.rev-grid{max-width:100%}.rev-card{flex-basis:82%}}
   @keyframes refs-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){.refs-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}.refs-set:last-child{display:none}.refs-set{flex-wrap:wrap;justify-content:center;gap:44px;padding-right:0}}
   /* generic section */
@@ -642,6 +646,17 @@
           <div class="rev-role"><a href="https://tiatec.com" target="_blank" rel="noopener">TIATEC Automation &amp; Control</a></div>
         </figcaption>
       </figure>
+      <figure class="rev-card" data-reveal data-d="3">
+        <div class="rev-top">
+          <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+          <span class="rev-src"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.7v3h3.9c2.3-2.1 3.6-5.2 3.6-8.9z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 12 0 12 12 0 0 0 1.3 6.6l4 3.1C6.2 6.9 8.9 4.8 12 4.8z"/></svg><span data-i18n="rev_src">Google Rezension</span></span>
+        </div>
+        <blockquote class="rev-text" data-i18n="rev4_t">„Durch Seitfix habe ich jetzt eine zeitgemäße Website erhalten, die meinen Vorstellungen zur Gänze entspricht. Mit äußerster Geduld hat er alle meine ständigen Änderungswünsche berücksichtigt. Danke für die Geduld!“</blockquote>
+        <figcaption class="rev-foot">
+          <div class="rev-name">Mag. Elisabeth Daniel</div>
+          <div class="rev-role"><a href="https://eli-da.at" target="_blank" rel="noopener">eli-da.at</a></div>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -804,7 +819,7 @@ const I18N = {
     foot_tag:"Modern websites & online shops for small businesses. Personal, from Graz.",foot_imp:"Imprint",foot_ds:"Privacy",foot_made:"Personally made in Graz",ref_lab:"Companies we\u0027ve worked with",preis_note:"The final price depends on the scope. You get a fixed quote up front – no surprises.",pm5:"Paid in full on order",
     frs_eyebrow:"Against food waste",frs_h:"Good food ends up in the bin every night. <em>It doesn’t have to.</em>",frs_p:"With their own food rescue shop, restaurants sell leftover meals at a reduced price instead of throwing them away. Good for the planet, good for the till. Unlike resale apps they keep their margin and their guests, because only the payment fee applies. That's exactly what we built for Himalaya Masala.",frs_cta:"Calculate your savings →",frs_note:"Free calculator · under a minute · no strings attached",frs_c1lab:"Resale app",frs_c1d:"commission per box, no customer data of your own",frs_c2lab:"Your own shop",frs_c2d:"only the payment fee, brand and customers are yours",
     xp_eyebrow:"From the same maker",xp_h:"And when the enquiries come in?",xp_h2:"pre-sorts them automatically.",xp_p:"Your new website brings enquiries. anfragr helps small teams pre-sort, assign and document incoming emails with AI support.",xp_cta:"Discover anfragr →",xp_demo:"Automatically pre-sorted",xp_k1:"Type",xp_v1:"New enquiry",xp_k2:"Priority",xp_v2:"High",xp_k3:"Assigned to",xp_v3:"Sales",
-    rev_eyebrow:"Testimonials",rev_h:"What clients say about <em>working together</em>",rev_src:"Google review",rev1_t:"“I enquired about a website at Seitfix in mid-July. The process was super professional and pleasant. After one day I had already received around 10 mock-ups from Mr Hrovath. I chose one, and the site was built on it. The finished website was online a week after the enquiry. To my complete satisfaction.”",rev2_t:"“The value for money is outstanding. A lot of time was taken to understand our project and our concerns, and even after delivery our special requests were still accommodated. We will be back and are happy to recommend them!”",rev2_r:"Managing Director · Baron Filou &amp; Textilpartner",rev3_t:"“Ivo implemented my B2B business homepage brilliantly! I briefly explained what I had in mind and he clearly exceeded my expectations! Very clean work, great design ideas, everything looks high-quality and modern. 5/5 stars!”"
+    rev_eyebrow:"Testimonials",rev_h:"What clients say about <em>working together</em>",rev_src:"Google review",rev1_t:"“I enquired about a website at Seitfix in mid-July. The process was super professional and pleasant. After one day I had already received around 10 mock-ups from Mr Hrovath. I chose one, and the site was built on it. The finished website was online a week after the enquiry. To my complete satisfaction.”",rev2_t:"“The value for money is outstanding. A lot of time was taken to understand our project and our concerns, and even after delivery our special requests were still accommodated. We will be back and are happy to recommend them!”",rev2_r:"Managing Director · Baron Filou &amp; Textilpartner",rev4_t:"“Thanks to Seitfix I now have a modern website that completely matches my expectations. With the utmost patience, every one of my constant change requests was taken into account. Thank you for your patience!”",rev3_t:"“Ivo implemented my B2B business homepage brilliantly! I briefly explained what I had in mind and he clearly exceeded my expectations! Very clean work, great design ideas, everything looks high-quality and modern. 5/5 stars!”"
   }
 };
 // capture German defaults
@@ -873,6 +888,9 @@ document.getElementById('form').addEventListener('submit',async e=>{
   document.getElementById('done').classList.remove('hide');
 });
 
+</script>
+<script>
+(function(){var g=document.querySelector(".rev-grid");if(!g)return;var down=false,moved=false,sx=0,sl=0;g.addEventListener("pointerdown",function(e){if(e.pointerType&&e.pointerType!=="mouse")return;down=true;moved=false;sx=e.clientX;sl=g.scrollLeft;});g.addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>5){moved=true;g.classList.add("dragging");}g.scrollLeft=sl-dx;});function up(){down=false;g.classList.remove("dragging");}window.addEventListener("pointerup",up);g.addEventListener("pointerleave",up);g.addEventListener("click",function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);})();
 </script>
 </body>
 </html>
