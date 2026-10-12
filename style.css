@@ -149,9 +149,11 @@
   .refs-word .dot{color:var(--accent)}
   /* STIMMEN / Bewertungen */
   .stimmen .sec-head{text-align:center;margin:0 auto 44px}
-  .rev-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;max-width:1140px;margin:0 auto}
+  .rev-grid{display:flex;gap:24px;max-width:1140px;margin:0 auto;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-x:contain;touch-action:pan-x pan-y;padding:6px 2px 36px;margin-bottom:-30px;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+  .rev-grid::-webkit-scrollbar{display:none}
+  .rev-grid.dragging{cursor:grabbing}
   .rev-card{background:var(--white);border:1px solid var(--border);border-radius:18px;
-    padding:32px 30px;display:flex;flex-direction:column;box-shadow:0 14px 34px -20px rgba(0,0,0,.22)}
+    padding:32px 30px;display:flex;flex-direction:column;box-shadow:0 14px 34px -20px rgba(0,0,0,.22);flex:0 0 340px;scroll-snap-align:start}
   .rev-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
   .stars{display:inline-flex;gap:1px;color:#fbbf24;font-size:1.05rem;letter-spacing:1px;line-height:1}
   .rev-src{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;
@@ -163,7 +165,7 @@
   .rev-role{font-size:.85rem;color:var(--muted);margin-top:2px}
   .rev-role a{color:var(--accent);text-decoration:none}
   .rev-role a:hover{text-decoration:underline}
-  @media(max-width:940px){.rev-grid{grid-template-columns:1fr;max-width:560px}}
+  @media(max-width:940px){.rev-grid{max-width:100%}.rev-card{flex-basis:84%}}
   @keyframes refs-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){.refs-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}.refs-set:last-child{display:none}.refs-set{flex-wrap:wrap;justify-content:center;gap:44px;padding-right:0}}
   /* generic section */
@@ -240,6 +242,9 @@
   .tile.on{background:var(--accent-lt);border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-lt2)}
   .tile .e{font-size:1.5rem}.tile .t{font-size:.86rem;font-weight:600;margin-top:6px;display:block}
   .hide{display:none!important}
+  .form-error{background:#fef2f2;border:1px solid #fecaca;color:#dc2626;font-size:.9rem;font-weight:600;padding:12px 15px;border-radius:12px;margin:0 0 14px}
+  .ds-check.err input{border-color:#dc2626;box-shadow:0 0 0 3px rgba(220,38,38,.18)}
+  .ds-check.err label{color:#dc2626}
   .ds-check{display:flex;align-items:flex-start;gap:10px;margin-top:16px}
   .ds-check input{appearance:none;-webkit-appearance:none;width:19px;height:19px;min-width:19px;border:1.5px solid var(--border);
     border-radius:5px;background:var(--white);cursor:pointer;position:relative;margin-top:2px;transition:background .2s,border-color .2s}
