@@ -4,12 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Websites & Online Shops from Graz | Seitfix from €599</title>
 <meta name="description" content="Modern websites and online shops for small businesses in Graz and Styria, Austria – from a simple one-pager to a full online shop. Fixed price from €599. Get in touch.">
-<meta name="author" content="Seitfix – Ivo Hrovat">
+<meta name="author" content="Seitfix">
 <meta name="google-site-verification" content="1C_eYPrbw4_f4q3RAzIR45KcvmoDJuhCPemchEtZaAA">
+<meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://seitfix.at/en/">
-<link rel="alternate" hreflang="de" href="https://seitfix.at/">
-<link rel="alternate" hreflang="en" href="https://seitfix.at/en/">
-<link rel="alternate" hreflang="x-default" href="https://seitfix.at/">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Websites & Online Shops from Graz | Seitfix from €599">
@@ -30,6 +28,7 @@
 @font-face{font-family:'DM Sans';font-style:italic;font-weight:100 1000;font-display:swap;src:url('../fonts/dm-sans-var-italic.woff2') format('woff2')}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/dm-serif-display.woff2') format('woff2')}
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('../fonts/dm-serif-display-italic.woff2') format('woff2')}
+
 </style>
 <style>
   :root{
@@ -146,7 +145,7 @@
   .mock-hero{padding:30px 26px;background:linear-gradient(160deg,#f0f5ff,#fff)}
   .mock-hero .mh-badge{display:inline-block;background:var(--accent-lt2);color:var(--accent-dk);font-size:.62rem;font-weight:700;
     padding:4px 9px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
-  .mock-hero h4{font-family:var(--font-head);font-size:1.5rem;margin:12px 0 8px;line-height:1.1}
+  .mock-hero .mh-title{font-family:var(--font-head);font-size:1.5rem;margin:12px 0 8px;line-height:1.1;color:var(--text);font-weight:600}
   .mock-hero p{font-size:.8rem;color:var(--muted);margin-bottom:14px}
   .mock-hero .mh-btn{display:inline-block;background:var(--accent);color:#fff;font-size:.72rem;font-weight:600;padding:8px 16px;border-radius:999px}
   .mock-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:16px 26px 26px}
@@ -186,9 +185,10 @@
   .rev-arrow:hover:not(:disabled){border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
   .rev-arrow:disabled{opacity:.3;cursor:default}
   .rev-arrow svg{width:18px;height:18px}
-  .rev-dots{display:inline-flex;align-items:center;gap:9px}
-  .rev-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:0;padding:0;cursor:pointer;transition:width .25s var(--ease),background .25s var(--ease)}
-  .rev-dot.active{width:26px;border-radius:6px;background:var(--accent)}
+  .rev-dots{display:inline-flex;align-items:center;gap:4px}
+  .rev-dot{width:24px;height:24px;border-radius:50%;background:transparent;border:0;padding:0;cursor:pointer;position:relative}
+  .rev-dot::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:var(--border);transition:width .25s var(--ease),background .25s var(--ease)}
+  .rev-dot.active::before{width:26px;border-radius:6px;background:var(--accent)}
   .rev-card{background:var(--white);border:1px solid var(--border);border-radius:18px;
     padding:32px 30px;display:flex;flex-direction:column;box-shadow:0 14px 34px -20px rgba(0,0,0,.22);flex:0 0 340px;scroll-snap-align:start}
   .rev-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
@@ -237,7 +237,7 @@
   .price-main li::before{content:"✓";color:var(--green);font-weight:700}
   .price-side{display:flex;flex-direction:column;gap:16px}
   .paybox{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
-  .paybox h4{font-family:var(--font-body);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}
+  .paybox .paybox-title{font-family:var(--font-body);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}
   .payrow{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--border)}
   .payrow:last-child{border:0}.payrow b{font-family:var(--font-head);font-size:1.3rem}
   .payrow span{color:var(--muted);font-size:.82rem;max-width:60%}
@@ -366,37 +366,98 @@
     [data-reveal]{opacity:1;transform:none;transition:none}
     .mock{animation:none}
   }
+  /* ===== Navbar (Stil Too Good To Go: links Menü, Logo mittig, rechts Sprache + Button) ===== */
+  header.nav{height:65px;background:transparent;border:0;box-shadow:none;backdrop-filter:none;display:block}
+  header.nav.scrolled{height:65px;background:rgba(247,247,245,.94);backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--border);box-shadow:none}
+  .tg-nav{position:relative;height:65px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;max-width:none}
+  .tg-left,.tg-right{display:flex;align-items:center;gap:26px}
+  .tg-right{gap:18px}
+  .tg-left a,.tg-lang{font-family:var(--font-body);font-size:14px;font-weight:400;color:var(--text);line-height:1.5;transition:opacity .2s;text-decoration:none}
+  .tg-left a:hover,.tg-lang:hover{opacity:.6}
+  .tg-left a.active{font-weight:600}
+  .tg-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+  .tg-btn{display:inline-flex;align-items:center;justify-content:center;height:41px;padding:0 18px;border-radius:120px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;line-height:1;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s var(--ease)}
+  .tg-btn:hover{background:#1d4fd8;color:#fff;transform:translateY(-1px)}
+  header.nav .burger{display:none}
+  @media(max-width:960px){
+    .tg-nav{padding:0 16px 0 20px}
+    .tg-left,.tg-lang{display:none}
+    .tg-logo{position:static;transform:none}
+    .tg-right{gap:6px}
+    .tg-btn{height:36px;padding:0 14px;font-size:13px}
+    header.nav .burger{display:flex}
+  }
+  @media(max-width:360px){.tg-btn{font-size:12px;padding:0 11px}}
+
+  /* Sprachwahl wie DE | EN (aktive Sprache unterstrichen) */
+  .tg-langs{display:flex;gap:12px;list-style:none;margin:0;padding:0;font-size:13px;letter-spacing:.06em;font-weight:500}
+  .tg-langs a{color:var(--text);opacity:.55;text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:opacity .2s}
+  .tg-langs a[aria-current="true"]{opacity:1;border-bottom-color:var(--accent)}
+  .tg-langs a:hover{opacity:1}
+  .mobile .tg-langs{font-size:1rem;gap:20px;padding:14px 0 4px}
+  .mobile .tg-langs a{font-family:var(--font-body);border-bottom-width:2px;padding:0 0 3px}
+  @media(max-width:960px){header.nav .tg-langs{display:none}}
+
+  /* ===== Ablauf: von oben nach unten, rechts Ansprechpartner (sticky) ===== */
+  .ablauf-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px 64px;align-items:start}
+  .steps.steps-v{display:block;counter-reset:s;position:relative;padding-left:0}
+  .steps-v .step{position:relative;padding:0 0 32px 68px;margin:0}
+  .steps-v .step::before{top:0;left:0}
+  .steps-v .step::after{content:"";position:absolute;left:19px;top:44px;bottom:4px;width:2px;background:var(--border)}
+  .steps-v .step:last-child{padding-bottom:0}
+  .steps-v .step:last-child::after{display:none}
+  .steps-v .step h3{font-size:1.25rem;margin:7px 0 6px}
+  .steps-v .step p{font-size:.98rem;max-width:52ch}
+  .ansprech{position:sticky;top:96px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow)}
+  .ansprech .eb{font-family:var(--font-head);font-style:italic;color:var(--accent);font-size:1.05rem;margin:0 0 14px}
+  .ansprech .who{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .ansprech .mono{width:52px;height:52px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--font-head);font-size:1.25rem;flex:none}
+  .ansprech .name{font-family:var(--font-head);font-size:1.3rem;line-height:1.1;margin:0}
+  .ansprech .role{color:var(--muted);font-size:.86rem;margin:3px 0 0}
+  .ansprech p.txt{color:var(--muted);font-size:.93rem;line-height:1.55;margin:0 0 18px}
+  .ansprech .btn{width:100%;justify-content:center}
+  .ansprech .mail{display:block;text-align:center;margin-top:12px;font-size:.9rem;color:var(--text);text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:900px){.ablauf-grid{grid-template-columns:1fr;gap:32px}.ansprech{position:static}.steps-v .step{padding-left:58px}.steps-v .step::after{left:19px}}
+
+  /* KI-Teaser + btn-lg */
+  .btn-lg{padding:15px 28px;font-size:1rem}
+  .ki-teaser{background:linear-gradient(120deg,var(--accent),#1d4fd8);color:#fff;border-radius:var(--radius);padding:clamp(28px,4vw,46px);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;box-shadow:var(--shadow-lg)}
+  .ki-teaser .eyebrow{color:#cfe0ff}
+  .ki-teaser h2{color:#fff;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.12;margin:8px 0 10px;max-width:24ch}
+  .ki-teaser p{color:#eaf1ff;max-width:54ch;margin:0;font-size:1rem;line-height:1.6}
+  .ki-teaser .ki-teaser-text{min-width:0}
+  .ki-teaser .btn{background:#fff;color:var(--accent);flex:none}
+  .ki-teaser .btn:hover{background:#eef3ff;color:var(--accent);transform:translateY(-1px)}
+  @media(max-width:760px){.ki-teaser{flex-direction:column;align-items:flex-start;gap:22px}}
 </style>
 </head>
 <body>
 
 <header class="nav" id="nav">
-  <div class="nav-in">
-    <a href="#top" class="brand" aria-current="page"><b>Seit</b><span class="fix">fix</span></a>
-    <nav class="nav-links" id="navlinks">
-      <a href="#top">Start</a>
+  <nav class="tg-nav" aria-label="Main navigation">
+    <div class="tg-left">
       <a href="leistungen/index.html">Services</a>
+      <a href="ki/index.html">AI</a>
       <a href="case-studies/index.html">Case Studies</a>
       <a href="ueber-uns/index.html">About us</a>
-      <a href="#kontakt">Contact</a>
-    </nav>
-    <div class="nav-right">
-      <div class="lang" role="group" aria-label="Language">
-        <a href="../index.html" title="Deutsche Version">DE</a><span class="on">EN</span>
-      </div>
-      <a href="#kontakt" class="btn btn-primary" style="padding:10px 20px" data-i18n="nav_cta">Get a free quote</a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-  </div>
+    <a href="#top" class="brand tg-logo" aria-current="page"><b>Seit</b><span class="fix">fix</span></a>
+    <div class="tg-right">
+      <ul class="tg-langs" aria-label="Language"><li><a href="../index.html" hreflang="de" lang="de">DE</a></li><li><a href="index.html" hreflang="en" lang="en" aria-current="true">EN</a></li></ul>
+      <a href="#kontakt" class="tg-btn">Get a free quote</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 </header>
 
 <div class="scrim" id="scrim"></div>
 <aside class="mobile" id="mobile">
-  <a href="#top">Start</a>
+  <a href="#top">Home</a>
   <a href="leistungen/index.html">Services</a>
+  <a href="ki/index.html">AI</a>
   <a href="case-studies/index.html">Case Studies</a>
   <a href="ueber-uns/index.html">About us</a>
-  <a href="#kontakt">Contact</a>
+  <ul class="tg-langs" aria-label="Language"><li><a href="../index.html" hreflang="de" lang="de">DE</a></li><li><a href="index.html" hreflang="en" lang="en" aria-current="true">EN</a></li></ul>
   <a href="#kontakt" class="btn btn-primary">Get a free quote</a>
 </aside>
 
@@ -429,7 +490,7 @@
         <div class="mock-body">
           <div class="mock-hero">
             <span class="mh-badge">Onepager</span>
-            <h4 data-i18n="mock_h">Your business. Clear. Online.</h4>
+            <p class="mh-title" data-i18n="mock_h">Your business. Clear. Online.</p>
             <p data-i18n="mock_p">This is how your finished one-pager looks – optimised for mobile.</p>
             <span class="mh-btn" data-i18n="mock_btn">Enquire now</span>
           </div>
@@ -449,14 +510,14 @@
       <div class="refs-track">
         <div class="refs-set">
           <a href="https://dkovacs.at" target="_blank" rel="noopener"><img src="../images/referenzen/kovacs.png" alt="Ing. Domokos Kovács" /></a>
-          <a class="ref-brand" href="https://baronfilou.com" target="_blank" rel="noopener"><img src="../images/referenzen/baron-filou.png" alt="Baron Filou" /><small>Baron Filou</small></a>
+          <a class="ref-brand" href="https://baronfilou.com" target="_blank" rel="noopener"><img src="../images/referenzen/baron-filou.png" alt="" /><small>Baron Filou</small></a>
           <a href="https://dietextilpartner.de" target="_blank" rel="noopener"><img class="ref-wide" src="../images/referenzen/textilpartner.png" alt="Textilpartner" /></a>
           <a href="https://www.azimutconsulting.at" target="_blank" rel="noopener"><img class="ref-wide" src="../images/referenzen/azimut-consulting.png" alt="Azimut Consulting" /></a>
           <a href="https://foodrescue-himalayamasala.com" target="_blank" rel="noopener"><img class="ref-wide" src="../images/referenzen/himalaya-masala.png" alt="Himalaya Masala" /></a>
           <a href="https://tiatec.com" target="_blank" rel="noopener"><img class="ref-wide" src="../images/referenzen/tiatec.png" alt="TIATEC Automation & Control" /></a>
-          <a class="ref-brand" href="https://nepal-personal.at" target="_blank" rel="noopener"><img src="../images/referenzen/daimond-rai.png" alt="Daimond Rai" /><small>Daimond Rai</small></a>
-          <a class="ref-brand" href="https://eli-da.at" target="_blank" rel="noopener"><img src="../images/referenzen/eli-da.png" alt="ELI-DA" /><small>ELI-DA</small></a>
-          <a class="ref-brand" href="https://retteria.at" target="_blank" rel="noopener"><img src="../images/referenzen/retteria.png" alt="Retteria" /><small>Retteria</small></a>
+          <a class="ref-brand" href="https://nepal-personal.at" target="_blank" rel="noopener"><img src="../images/referenzen/daimond-rai.png" alt="" /><small>Daimond Rai</small></a>
+          <a class="ref-brand" href="https://eli-da.at" target="_blank" rel="noopener"><img src="../images/referenzen/eli-da.png" alt="" /><small>ELI-DA</small></a>
+          <a class="ref-brand" href="https://retteria.at" target="_blank" rel="noopener"><img src="../images/referenzen/retteria.png" alt="" /><small>Retteria</small></a>
         </div>
         <div class="refs-set" aria-hidden="true">
           <a href="https://dkovacs.at" target="_blank" rel="noopener" tabindex="-1"><img src="../images/referenzen/kovacs.png" alt="" /></a>
@@ -501,17 +562,40 @@
       <h2 data-i18n="ablauf_h">It's this <em>simple</em></h2>
       <p class="lead" data-i18n="ablauf_p">From enquiry to finished website – clear, easy and in about 7 days.</p>
     </div>
-    <div class="steps">
+    <div class="ablauf-grid">
+      <div class="steps steps-v">
       <div class="step" data-reveal=""><h3 data-i18n="s1h">Send enquiry</h3><p data-i18n="s1p">Fill in the form or drop a short message. No long briefing needed.</p></div>
       <div class="step" data-reveal="" data-d="1"><h3 data-i18n="s2h">Send your info</h3><p data-i18n="s2p">We ask specifically for services, audience and contact. About 15 minutes.</p></div>
       <div class="step" data-reveal="" data-d="2"><h3 data-i18n="s3h">Get your draft</h3><p data-i18n="s3p">We build your one-pager and send you the finished draft to review.</p></div>
       <div class="step" data-reveal="" data-d="3"><h3 data-i18n="s4h">One revision round</h3><p data-i18n="s4p">You give feedback, we adjust – one round is included.</p></div>
       <div class="step" data-reveal="" data-d="4"><h3 data-i18n="s5h">Go live</h3><p data-i18n="s5p">We publish the site &amp; set up your domain – or hand over all files.</p></div>
+      </div>
+      <aside class="ansprech" data-reveal data-d="1" aria-label="Your contact">
+        <p class="eb">One point of contact</p>
+        <div class="who"><span class="mono" aria-hidden="true">S</span><div><p class="name">Seitfix</p><p class="role">Web design &amp; development from Graz</p></div></div>
+        <p class="txt">From the first enquiry to launch you have one fixed point of contact – no project manager, no waiting loop. Short paths, clear answers.</p>
+        <a href="#kontakt" class="btn btn-primary">Get a free quote</a>
+        <a class="mail" href="mailto:hallo@seitfix.at">hallo@seitfix.at</a>
+      </aside>
     </div>
   </div>
 </section>
 
 <!-- PREIS -->
+
+<section class="sec">
+  <div class="wrap">
+    <div class="ki-teaser" data-reveal>
+      <div class="ki-teaser-text">
+        <span class="eyebrow">New at Seitfix</span>
+        <h2>Not just websites – we also fix what eats up time in your business</h2>
+        <p>From automation to chatbots and AI: we find what can be improved and build the solution. Start with a free check.</p>
+      </div>
+      <a href="ki/index.html" class="btn btn-primary btn-lg">Explore AI &amp; automation →</a>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="preis">
   <div class="wrap">
     <div class="sec-head" data-reveal="">
@@ -536,7 +620,7 @@
       </div>
       <div class="price-side">
         <div class="paybox" data-reveal="" data-d="2">
-          <h4 data-i18n="range_h">From one-pager to online shop</h4>
+          <p class="paybox-title" data-i18n="range_h">From one-pager to online shop</p>
           <p style="color:var(--muted);font-size:.95rem;margin-top:10px" data-i18n="range_p">Whether a simple one-pager, a multi-page website or an online shop – you get exactly what you need, at a fixed price agreed in advance.</p>
         </div>
         <div class="ust" data-reveal="" data-d="3">ℹ️ <span data-i18n="ust">Under § 6 (1) 27 Austrian VAT Act no VAT is charged. All prices are final.</span></div>
@@ -606,25 +690,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="sec" id="faq" style="background:var(--light)">
-  <div class="wrap">
-    <div class="sec-head" data-reveal="" style="text-align:center;margin:0 auto 48px">
-      <span class="eyebrow" data-i18n="eb_faq">FAQ</span>
-      <h2 data-i18n="faq_h">Questions &amp; <em>answers</em></h2>
-    </div>
-    <div class="faq">
-      <details class="qa" data-reveal=""><summary><span data-i18n="q1">What's not included in the € 599 price?</span><span class="pl">+</span></summary><div class="a" data-i18n="a1">The price covers a simple one-pager with a clear scope. Not included: multi-page sites, online shops, special features (booking, calendars, member areas), logo/graphic design and extensive SEO. Those are available separately on request.</div></details>
-      <details class="qa" data-reveal=""><summary><span data-i18n="q2">What is a one-pager?</span><span class="pl">+</span></summary><div class="a" data-i18n="a2">A website on a single page. All key info – services, benefits, contact – built compactly. Visitors scroll instead of clicking. Ideal to convince quickly and clearly.</div></details>
-      <details class="qa" data-reveal=""><summary><span data-i18n="q3">Who is Seitfix for?</span><span class="pl">+</span></summary><div class="a" data-i18n="a3">For tradespeople, service providers and small businesses that want a simple, professional website without a big agency process and want to win new customers.</div></details>
-      <details class="qa" data-reveal=""><summary><span data-i18n="q4">Is hosting mandatory?</span><span class="pl">+</span></summary><div class="a" data-i18n="a4">No. An optional hosting plan is available. With it we handle domain, maintenance and small changes. Without it, you get all files to publish yourself.</div></details>
-      <details class="qa" data-reveal=""><summary><span data-i18n="q5">Who owns the finished website?</span><span class="pl">+</span></summary><div class="a" data-i18n="a5">The finished website is yours. You get all files. Cancel hosting and you can host anywhere, anytime.</div></details>
-      <details class="qa" data-reveal=""><summary><span data-i18n="q6">Is VAT charged?</span><span class="pl">+</span></summary><div class="a" data-i18n="a6">No. Under § 6 (1) 27 Austrian VAT Act (small-business rule) no VAT is charged. All prices are final.</div></details>
-    </div>
-  </div>
-</section>
-
-
 <!-- KONTAKT -->
 <section class="sec" id="kontakt">
   <div class="wrap contact-grid">
@@ -659,7 +724,7 @@
           <input type="url" id="url" name="url" placeholder="https://your-site.com">
         </div>
         <div class="field">
-          <label data-i18n="f_gewerbe">What do you need?</label>
+          <label for="gewerbe" data-i18n="f_gewerbe">What do you need?</label>
           <select id="gewerbe" name="gewerbe">
             <option value="" disabled selected>Please choose …</option>
             <option value="onepager">Onepager (one page)</option>
@@ -696,6 +761,24 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:var(--light)">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="" style="text-align:center;margin:0 auto 48px">
+      <span class="eyebrow" data-i18n="eb_faq">FAQ</span>
+      <h2 data-i18n="faq_h">Questions &amp; <em>answers</em></h2>
+    </div>
+    <div class="faq">
+      <details class="qa" data-reveal=""><summary><span data-i18n="q1">What's not included in the € 599 price?</span><span class="pl">+</span></summary><div class="a" data-i18n="a1">The price covers a simple one-pager with a clear scope. Not included: multi-page sites, online shops, special features (booking, calendars, member areas), logo/graphic design and extensive SEO. Those are available separately on request.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q2">What is a one-pager?</span><span class="pl">+</span></summary><div class="a" data-i18n="a2">A website on a single page. All key info – services, benefits, contact – built compactly. Visitors scroll instead of clicking. Ideal to convince quickly and clearly.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q3">Who is Seitfix for?</span><span class="pl">+</span></summary><div class="a" data-i18n="a3">For tradespeople, service providers and small businesses that want a simple, professional website without a big agency process and want to win new customers.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q4">Is hosting mandatory?</span><span class="pl">+</span></summary><div class="a" data-i18n="a4">No. An optional hosting plan is available. With it we handle domain, maintenance and small changes. Without it, you get all files to publish yourself.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q5">Who owns the finished website?</span><span class="pl">+</span></summary><div class="a" data-i18n="a5">The finished website is yours. You get all files. Cancel hosting and you can host anywhere, anytime.</div></details>
+      <details class="qa" data-reveal=""><summary><span data-i18n="q6">Is VAT charged?</span><span class="pl">+</span></summary><div class="a" data-i18n="a6">No. Under § 6 (1) 27 Austrian VAT Act (small-business rule) no VAT is charged. All prices are final.</div></details>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -707,13 +790,12 @@
         <a href="leistungen/index.html">Services</a>
         <a href="case-studies/index.html">Case Studies</a>
         <a href="ueber-uns/index.html">About us</a>
-        <a href="#kontakt">Contact</a>
         <a href="impressum.html" data-i18n="foot_imp">Imprint</a>
         <a href="datenschutz.html" data-i18n="foot_ds">Privacy</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Seitfix · Graz</span>
+      <span>© 2026 Seitfix e.U. · Graz</span>
       <span data-i18n="foot_made">Personally made in Graz</span>
     </div>
   </div>
