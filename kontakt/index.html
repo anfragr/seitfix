@@ -14,29 +14,25 @@
 <meta property="og:url" content="https://seitfix.at/kontakt/" />
 <meta property="og:image" content="https://seitfix.at/images/og-seitfix.png" />
 <link rel="canonical" href="https://seitfix.at/kontakt/" />
-<link rel="alternate" hreflang="de" href="https://seitfix.at/kontakt/" />
-<link rel="alternate" hreflang="en" href="https://seitfix.at/en/kontakt/" />
-<link rel="alternate" hreflang="x-default" href="https://seitfix.at/kontakt/" />
 <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
 <header class="nav" id="nav">
-  <div class="nav-in">
-    <a href="../index.html" class="brand"><b>Seit</b><span class="fix">fix</span></a>
-    <nav class="nav-links" id="navlinks">
-      <a href="../index.html">Start</a>
+  <nav class="tg-nav" aria-label="Hauptnavigation">
+    <div class="tg-left">
       <a href="../leistungen/index.html">Leistungen</a>
+      <a href="../ki/index.html">KI</a>
       <a href="../case-studies/index.html">Case Studies</a>
       <a href="../ueber-uns/index.html">Über uns</a>
-      <a href="index.html" class="active" aria-current="page">Kontakt</a>
-    </nav>
-    <div class="nav-right">
-      <div class="lang" role="group" aria-label="Sprache"><span class="on">DE</span><a href="../en/kontakt/index.html">EN</a></div>
-      <a href="index.html" class="btn btn-primary" style="padding:10px 20px">Kostenlos anfragen</a>
-      <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
-  </div>
+    <a href="../index.html" class="brand tg-logo"><b>Seit</b><span class="fix">fix</span></a>
+    <div class="tg-right">
+      <ul class="tg-langs" aria-label="Sprache"><li><a href="index.html" hreflang="de" lang="de" aria-current="true">DE</a></li><li><a href="../en/kontakt/index.html" hreflang="en" lang="en">EN</a></li></ul>
+      <a href="../kontakt/index.html" class="tg-btn">Kostenlos anfragen</a>
+      <button class="burger" id="burger" aria-label="Menü" aria-expanded="false" aria-controls="mobile"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 </header>
 
 <div class="scrim" id="scrim"></div>
@@ -46,6 +42,7 @@
   <a href="../case-studies/index.html">Case Studies</a>
   <a href="../ueber-uns/index.html">Über uns</a>
   <a href="index.html">Kontakt</a>
+  <ul class="tg-langs" aria-label="Sprache"><li><a href="index.html" hreflang="de" lang="de" aria-current="true">DE</a></li><li><a href="../en/kontakt/index.html" hreflang="en" lang="en">EN</a></li></ul>
   <a href="index.html" class="btn btn-primary">Kostenlos anfragen</a>
 </aside>
 
@@ -116,6 +113,7 @@
           <input type="checkbox" id="datenschutz" name="datenschutz" value="ja" required />
           <label for="datenschutz">Ich habe die <a href="../datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden.</label>
         </div>
+        <p class="form-error hide" id="formerror" role="alert" aria-live="assertive"></p>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px">Anfrage senden →</button>
       </div>
       <div class="done hide" id="done">
@@ -144,7 +142,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Seitfix · Graz</span>
+      <span>© 2026 Seitfix e.U. · Graz</span>
       <span>Persönlich gemacht in Graz</span>
     </div>
   </div>
@@ -170,10 +168,17 @@ document.querySelectorAll('#haswebsite button').forEach(b=>b.addEventListener('c
 document.getElementById('gewerbe').addEventListener('change',e=>{
   document.getElementById('sonstfield').classList.toggle('hide',e.target.value!=='sonstiges');
 });
+document.getElementById('datenschutz').addEventListener('change',function(){if(this.checked){document.getElementById('formerror').classList.add('hide');this.closest('.ds-check').classList.remove('err');}});
 document.getElementById('form').addEventListener('submit',async e=>{
   e.preventDefault();
-  const dsBox=document.getElementById('datenschutz');
-  if(!dsBox.checked){dsBox.focus();dsBox.closest('.ds-check').style.color='#dc2626';return;}
+  const err=document.getElementById('formerror');
+  const email=document.getElementById('email'),firma=document.getElementById('firma'),dsBox=document.getElementById('datenschutz');
+  const dsWrap=dsBox.closest('.ds-check');
+  const show=(m,el)=>{err.textContent=m;err.classList.remove('hide');if(el&&el.focus)el.focus();};
+  err.classList.add('hide');dsWrap.classList.remove('err');
+  if(!email.value.trim()||!email.checkValidity())return show('Bitte geben Sie eine gültige E-Mail-Adresse an.',email);
+  if(!firma.value.trim())return show('Bitte geben Sie den Namen Ihrer Firma an.',firma);
+  if(!dsBox.checked){dsWrap.classList.add('err');return show('Bitte akzeptieren Sie zuerst die Datenschutzerklärung, um Ihre Anfrage zu senden.',dsBox);}
   const payload={email:document.getElementById('email').value,firma:document.getElementById('firma').value,hat_website:hasWebsite,
     url:hasWebsite==='ja'?document.getElementById('url').value:'',gewerbe:document.getElementById('gewerbe').value,
     gewerbe_sonstiges:document.getElementById('gewerbe').value==='sonstiges'?document.getElementById('gewerbe_sonstiges').value:'',

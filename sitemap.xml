@@ -1,40 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://seitfix.at/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://seitfix.at/"/>
-  </url>
-  <url>
-    <loc>https://seitfix.at/leistungen/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/leistungen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/leistungen/"/>
-  </url>
-  <url>
-    <loc>https://seitfix.at/case-studies/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/case-studies/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/case-studies/"/>
-  </url>
-  <url>
-    <loc>https://seitfix.at/ueber-uns/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/ueber-uns/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/ueber-uns/"/>
-  </url>
-  <url>
-    <loc>https://seitfix.at/kontakt/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/kontakt/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/kontakt/"/>
-  </url>
-  <url>
-    <loc>https://seitfix.at/en/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://seitfix.at/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seitfix.at/en/"/>
-  </url>
-  <url><loc>https://seitfix.at/en/leistungen/</loc></url>
-  <url><loc>https://seitfix.at/en/case-studies/</loc></url>
-  <url><loc>https://seitfix.at/en/ueber-uns/</loc></url>
-  <url><loc>https://seitfix.at/en/kontakt/</loc></url>
-  <url><loc>https://seitfix.at/impressum.html</loc></url>
-  <url><loc>https://seitfix.at/datenschutz.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://seitfix.at/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://seitfix.at/leistungen/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://seitfix.at/ki/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://seitfix.at/case-studies/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://seitfix.at/ueber-uns/</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://seitfix.at/kontakt/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://seitfix.at/impressum.html</loc><changefreq>yearly</changefreq><priority>0.1</priority></url>
+  <url><loc>https://seitfix.at/datenschutz.html</loc><changefreq>yearly</changefreq><priority>0.1</priority></url>
 </urlset>

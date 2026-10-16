@@ -496,3 +496,107 @@ ol.flow li b{display:block;color:var(--text);font-weight:600;font-family:var(--f
   .about-split{grid-template-columns:1fr;gap:44px}
   .phone-wrap{order:-1}
 }
+
+
+  /* ===== Navbar (Stil Too Good To Go: links Menü, Logo mittig, rechts Sprache + Button) ===== */
+  header.nav{height:65px;background:transparent;border:0;box-shadow:none;backdrop-filter:none;display:block}
+  header.nav.scrolled{height:65px;background:rgba(247,247,245,.94);backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--border);box-shadow:none}
+  .tg-nav{position:relative;height:65px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;max-width:none}
+  .tg-left,.tg-right{display:flex;align-items:center;gap:26px}
+  .tg-right{gap:18px}
+  .tg-left a,.tg-lang{font-family:var(--font-body);font-size:14px;font-weight:400;color:var(--text);line-height:1.5;transition:opacity .2s;text-decoration:none}
+  .tg-left a:hover,.tg-lang:hover{opacity:.6}
+  .tg-left a.active{font-weight:600}
+  .tg-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+  .tg-btn{display:inline-flex;align-items:center;justify-content:center;height:41px;padding:0 18px;border-radius:120px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;line-height:1;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s var(--ease)}
+  .tg-btn:hover{background:#1d4fd8;color:#fff;transform:translateY(-1px)}
+  header.nav .burger{display:none}
+  @media(max-width:960px){
+    .tg-nav{padding:0 16px 0 20px}
+    .tg-left,.tg-lang{display:none}
+    .tg-logo{position:static;transform:none}
+    .tg-right{gap:6px}
+    .tg-btn{height:36px;padding:0 14px;font-size:13px}
+    header.nav .burger{display:flex}
+  }
+  @media(max-width:360px){.tg-btn{font-size:12px;padding:0 11px}}
+
+  /* Sprachwahl wie DE | EN (aktive Sprache unterstrichen) */
+  .tg-langs{display:flex;gap:12px;list-style:none;margin:0;padding:0;font-size:13px;letter-spacing:.06em;font-weight:500}
+  .tg-langs a{color:var(--text);opacity:.55;text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:opacity .2s}
+  .tg-langs a[aria-current="true"]{opacity:1;border-bottom-color:var(--accent)}
+  .tg-langs a:hover{opacity:1}
+  .mobile .tg-langs{font-size:1rem;gap:20px;padding:14px 0 4px}
+  .mobile .tg-langs a{font-family:var(--font-body);border-bottom-width:2px;padding:0 0 3px}
+  @media(max-width:960px){header.nav .tg-langs{display:none}}
+
+  /* ===== Ablauf: von oben nach unten, rechts Ansprechpartner (sticky) ===== */
+  .ablauf-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px 64px;align-items:start}
+  .steps.steps-v{display:block;counter-reset:s;position:relative;padding-left:0}
+  .steps-v .step{position:relative;padding:0 0 32px 68px;margin:0}
+  .steps-v .step::before{top:0;left:0}
+  .steps-v .step::after{content:"";position:absolute;left:19px;top:44px;bottom:4px;width:2px;background:var(--border)}
+  .steps-v .step:last-child{padding-bottom:0}
+  .steps-v .step:last-child::after{display:none}
+  .steps-v .step h3{font-size:1.25rem;margin:7px 0 6px}
+  .steps-v .step p{font-size:.98rem;max-width:52ch}
+  .ansprech{position:sticky;top:96px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow)}
+  .ansprech .eb{font-family:var(--font-head);font-style:italic;color:var(--accent);font-size:1.05rem;margin:0 0 14px}
+  .ansprech .who{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .ansprech .mono{width:52px;height:52px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--font-head);font-size:1.25rem;flex:none}
+  .ansprech .name{font-family:var(--font-head);font-size:1.3rem;line-height:1.1;margin:0}
+  .ansprech .role{color:var(--muted);font-size:.86rem;margin:3px 0 0}
+  .ansprech p.txt{color:var(--muted);font-size:.93rem;line-height:1.55;margin:0 0 18px}
+  .ansprech .btn{width:100%;justify-content:center}
+  .ansprech .mail{display:block;text-align:center;margin-top:12px;font-size:.9rem;color:var(--text);text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:900px){.ablauf-grid{grid-template-columns:1fr;gap:32px}.ansprech{position:static}.steps-v .step{padding-left:58px}.steps-v .step::after{left:19px}}
+
+/* ===== KI-Seite ===== */
+.wrap.narrow{max-width:680px}
+.btn-lg{padding:15px 28px;font-size:1rem}
+.ki-probs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.ki-prob{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
+.ki-prob:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent)}
+.ki-prob h3{font-family:var(--font-head);font-size:1.18rem;line-height:1.2;margin:0 0 8px}
+.ki-prob p{color:var(--muted);font-size:.95rem;line-height:1.55;margin:0}
+@media(max-width:860px){.ki-probs{grid-template-columns:1fr 1fr;gap:14px}}
+@media(max-width:560px){.ki-probs{grid-template-columns:1fr}}
+
+/* ===== KI-Teaser auf der Startseite ===== */
+.ki-teaser{background:linear-gradient(120deg,var(--accent),#1d4fd8);color:#fff;border-radius:var(--radius);padding:clamp(28px,4vw,46px);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;box-shadow:var(--shadow-lg)}
+.ki-teaser .eyebrow{color:#cfe0ff}
+.ki-teaser h2{color:#fff;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.12;margin:8px 0 10px;max-width:24ch}
+.ki-teaser p{color:#eaf1ff;max-width:54ch;margin:0;font-size:1rem;line-height:1.6}
+.ki-teaser .ki-teaser-text{min-width:0}
+.ki-teaser .btn{background:#fff;color:var(--accent);flex:none}
+.ki-teaser .btn:hover{background:#eef3ff;color:var(--accent);transform:translateY(-1px)}
+@media(max-width:760px){.ki-teaser{flex-direction:column;align-items:flex-start;gap:22px}}
+
+
+/* ===== KI: Werkzeuge + DSGVO neben dem Ablauf ===== */
+.ki-tools{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow);position:sticky;top:96px}
+.ki-tools .eb{font-family:var(--font-head);font-style:italic;color:var(--accent);font-size:1.05rem;margin:0 0 16px}
+.tool-grid{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
+.tool-grid li{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:500;color:var(--text)}
+.tool-grid svg{width:22px;height:22px;flex:none;transition:transform .2s}
+.tool-grid li:hover svg{transform:scale(1.12)}
+.tool-grid .t-n8n svg{fill:#EA4B71}
+.tool-grid .t-supabase svg{fill:#3FCF8E}
+.tool-grid .t-netlify svg{fill:#00C7B7}
+.tool-grid .t-stripe svg{fill:#635BFF}
+.tool-grid .t-claude svg{fill:#D97757}
+.dsgvo{display:flex;gap:12px;align-items:flex-start;background:var(--light);border-radius:10px;padding:15px 15px}
+.dsgvo>svg{width:26px;height:26px;flex:none;fill:none;stroke:var(--accent);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.dsgvo strong{display:block;font-size:.95rem;margin-bottom:4px}
+.dsgvo p{margin:0;font-size:.86rem;color:var(--muted);line-height:1.5}
+@media(max-width:900px){.ki-tools{position:static}}
+
+
+/* KI: Hero zentriert + Tool-Monogramm */
+.page-head-center .sec-head{margin-left:auto;margin-right:auto;text-align:center}
+.page-head-center .sec-head .lead{margin-left:auto;margin-right:auto}
+.tool-mono{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:500;color:var(--text)}
+.tool-mono .tm{width:22px;height:22px;flex:none;border-radius:6px;background:#111;color:#fff;display:grid;place-items:center;font-family:var(--font-head);font-size:.8rem;line-height:1;transition:transform .2s}
+.tool-mono:hover .tm{transform:scale(1.12)}
+
+.btn-xl{padding:18px 36px;font-size:1.14rem;font-weight:600}

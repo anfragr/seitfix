@@ -1,14 +1,14 @@
 # Seitfix
 
-> Seitfix baut moderne Webseiten und Online-Shops für kleine Betriebe in Graz und der Steiermark, vom einfachen Onepager bis zum Online-Shop. Fixpreis ab 599 Euro, persönlich umgesetzt, keine Agentur.
+> Seitfix ist Webdesign aus Graz: Ivo Hrovat erstellt Websites, Onepager und Online-Shops für kleine Betriebe in Graz, der Steiermark und im DACH-Raum zum Fixpreis. Onepager ab 599 Euro, mehrseitige Website ab 1.200 Euro, Online-Shop (Shopify) ab 2.000 Euro. Handgeschriebener Code statt WordPress, fertig in rund 7 Tagen, 5,0 Sterne auf Google.
 
 ## Über
 Seitfix ist das Einzelunternehmen von Ivo Hrovat in Graz, Österreich. Zielgruppe sind kleine und lokale Betriebe in Graz und der Steiermark: Handwerk, Einzelhandel und Gastronomie. Positionierung: hochwertig, aber sehr günstig. Einstieg für Betriebe ohne großes Budget.
 
 ## Leistungen
 - Onepager-Website für kleine Betriebe. Fixpreis ab 599 Euro, fertig in rund 7 Tagen. Enthält Struktur, Text, Design, mobile Optimierung und Kontaktbereich. Eine Korrekturrunde inklusive.
-- Mehrseitige Website für kleine Unternehmen, Umfang individuell.
-- Online-Shop für kleine Betriebe, Fixpreis ab 2000 Euro, individuell nach Umfang.
+- Mehrseitige Website für kleine Unternehmen, ab 1.200 Euro, bis zu 6 Unterseiten, SEO-Grundlagen inklusive, zweisprachig möglich.
+- Online-Shop auf Shopify für kleine Betriebe, Fixpreis ab 2000 Euro, inklusive Einrichtung von Zahlung, Versand und Einschulung.
 - Optional: Veröffentlichung, Hosting, Domain und Wartung auf Wunsch.
 
 ## Preis-Logik
@@ -22,3 +22,9 @@ Website: https://seitfix.at
 E-Mail: hallo@seitfix.at
 Standort: Graz, Österreich
 Englische Version: https://seitfix.at/en/
+
+## Referenzen
+TIATEC Automation & Control (mehrsprachige Firmenwebsite), Himalaya Masala (Online-Shop), Ing. Domokos Kovács (Onepager), Baron Filou & Textilpartner, Azimut Consulting, Daimond Rai, ELI-DA, Retteria, Restaurant Brandhof Graz. Google-Bewertung 5,0 von 5 (4 Rezensionen).
+
+## Technik
+Kein WordPress, kein Baukasten. Websites als statischer, handgeschriebener Code auf Netlify, Online-Shops auf Shopify. Ladezeit unter einer Sekunde, DSGVO-konform, Schriften lokal.
