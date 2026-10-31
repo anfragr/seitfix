@@ -1,0 +1,77 @@
+{
+  "aktualisiert": "2026-10-30T09:30:00+01:00",
+  "tageskarte": {
+    "datei": "karten/tageskarte.pdf",
+    "stand": "Dienstag, 13. Oktober 2026"
+  },
+  "wochenplan": {
+    "datei": "karten/wochenplan.pdf"
+  },
+  "speisekarte": {
+    "datei": "karten/speisekarte.pdf"
+  },
+  "saisonkarte": {
+    "datei": "karten/saisonkarte.pdf",
+    "titel": "Wildkarte",
+    "untertitel": "Wildgerichte 2026 · Herbst"
+  },
+  "international": {
+    "datei": "karten/international.pdf"
+  },
+  "einstellungen": {
+    "gastgarten": true
+  },
+  "popup": {
+    "aktiv": false,
+    "titel": "",
+    "text": "",
+    "bis": ""
+  },
+  "oeffnungszeiten": {
+    "tage": {
+      "mo": {
+        "offen": false,
+        "von": "",
+        "bis": "",
+        "kueche": ""
+      },
+      "di": {
+        "offen": true,
+        "von": "11:00",
+        "bis": "23:00",
+        "kueche": "22:00"
+      },
+      "mi": {
+        "offen": true,
+        "von": "11:00",
+        "bis": "24:00",
+        "kueche": "23:00"
+      },
+      "do": {
+        "offen": true,
+        "von": "11:00",
+        "bis": "24:00",
+        "kueche": "23:00"
+      },
+      "fr": {
+        "offen": true,
+        "von": "11:00",
+        "bis": "24:00",
+        "kueche": "23:00"
+      },
+      "sa": {
+        "offen": true,
+        "von": "11:00",
+        "bis": "24:00",
+        "kueche": "23:00"
+      },
+      "so": {
+        "offen": false,
+        "von": "",
+        "bis": "",
+        "kueche": ""
+      }
+    },
+    "feiertage_geschlossen": true
+  }
+}

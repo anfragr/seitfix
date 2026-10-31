@@ -1,0 +1,101 @@
+# Brandhof · Netlify-Konfiguration
+[build]
+  publish = "."
+  command = ""
+  functions = "netlify/functions"
+
+# PDFs und karten.json: immer frisch prüfen, damit neue Karten sofort sichtbar sind
+[[headers]]
+  for = "/karten/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Bilder (WebP) lange cachen
+[[headers]]
+  for = "/bilder/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Alte Adressen der LearnConsult-Seite auf die neuen Seiten umleiten
+[[redirects]]
+  from = "/downloads/TAGESKARTE.pdf"
+  to = "/karten/tageskarte.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00925/*"
+  to = "/speisekarte.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00923/*"
+  to = "/speisekarte.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00929/*"
+  to = "/speisekarte.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00908/*"
+  to = "/speisekarte.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00926/*"
+  to = "/speisekarte.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00893/*"
+  to = "/reservierung.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00891/*"
+  to = "/reservierung.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00892/*"
+  to = "/impressum.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/_00913/*"
+  to = "/datenschutz.html"
+  status = 301
+
+[[redirects]]
+  from = "/_lccms_/*"
+  to = "/ueber-uns.html"
+  status = 301
+
+[[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200

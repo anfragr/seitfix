@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://seitfix.at/sitemap.xml
+Disallow: /admin/
+Sitemap: https://www.brandhof.co.at/sitemap.xml
