@@ -589,15 +589,15 @@ body { padding-top: var(--announce-h); }
       <input type="hidden" name="form-name" value="reservierung">
       <!-- Für die Mail an den Brandhof: Die Angaben werden beim Absenden in wenige Zeilen zusammengefasst -->
       <input type="hidden" name="subject" value="Neue Reservierungsanfrage">
-      <input type="hidden" name="Name:" data-mk="name">
-      <input type="hidden" name="Telefon:" data-mk="telefon">
-      <input type="hidden" name="Email:" data-mk="email">
-      <input type="hidden" name="Datum:" data-mk="datum">
-      <input type="hidden" name="Uhrzeit:" data-mk="uhrzeit">
-      <input type="hidden" name="Personen:" data-mk="personen">
-      <input type="hidden" name="Dauer:" data-mk="dauer">
-      <input type="hidden" name="Gastgarten:" data-mk="gastgarten">
-      <input type="hidden" name="Anmerkungen:" data-mk="anmerkungen">
+      <input type="hidden" name="name" data-mk="name">
+      <input type="hidden" name="telefon" data-mk="telefon">
+      <input type="hidden" name="email" data-mk="email">
+      <input type="hidden" name="datum" data-mk="datum">
+      <input type="hidden" name="uhrzeit" data-mk="uhrzeit">
+      <input type="hidden" name="personen" data-mk="personen">
+      <input type="hidden" name="dauer" data-mk="dauer">
+      <input type="hidden" name="gastgarten" data-mk="gastgarten">
+      <input type="hidden" name="anmerkungen" data-mk="anmerkungen">
       <noscript><p class="note" style="color:#a3302a">Bitte JavaScript aktivieren oder telefonisch reservieren: +43 316 82 42 55</p></noscript>
       <p style="margin:0 0 .4rem;font-size:.82rem;color:var(--ink-2)">* = Pflichtfeld</p>
       <p class="sr-only" aria-hidden="true"><label>Bitte leer lassen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -607,7 +607,7 @@ body { padding-top: var(--announce-h); }
       <div class="row-2"><div class="field"><label for="p">Personen *</label><input id="p" data-n="personen" type="number" min="1" max="60" value="2" required></div><div class="field"><label for="h">Geschätzte Aufenthaltsdauer *</label><select id="h" data-n="dauer"><option>1 Stunde</option><option>1,5 Stunden</option><option selected>2 Stunden</option><option>2,5 Stunden</option><option>3 Stunden</option><option>3,5 Stunden</option><option>4 Stunden</option><option>länger</option></select></div></div>
       <div class="row-2" data-gastgarten-row><div class="field" id="gastgarten-feld"><label for="s">Bei Schönwetter im Gastgarten?</label><select id="s" data-n="gastgarten"><option>Egal</option><option>Ja, gerne</option><option>Nein, lieber innen</option></select></div><div class="field"><label for="an">Anlass</label><input id="an" data-n="anlass" type="text" placeholder="z. B. vor der Oper, Geburtstag …"></div></div>
       <div class="field"><label for="a">Anmerkung</label><textarea id="a" data-n="anmerkung" rows="3" placeholder="Allergien, Kinderstuhl, Rollstuhl, Kinderwagen, besondere Wünsche …"></textarea></div>
-      <label class="check"><input type="checkbox" name="Datenschutz:" value="zugestimmt" required><span>Ich stimme zu, dass meine Angaben zur Bearbeitung der Reservierung gespeichert werden. Details in der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>. *</span></label>
+      <label class="check"><input type="checkbox" name="datenschutz" value="zugestimmt" required><span>Ich stimme zu, dass meine Angaben zur Bearbeitung der Reservierung gespeichert werden. Details in der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>. *</span></label>
       <button class="btn btn--primary btn--block" type="submit">Reservierung anfragen <span class="arrow">→</span></button>
       <p class="note">Reservierungen bitte bis zum Vortag, unser Büro ist vormittags besetzt. Kurzfristig erreichen Sie uns <span data-oz="tel-satz">während der Öffnungszeiten</span> telefonisch.</p>
     </form>
