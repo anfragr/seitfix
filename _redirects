@@ -1,0 +1,17 @@
+# Saubere URLs: alte .html-Adressen dauerhaft weiterleiten
+/impressum.html        /impressum        301!
+/datenschutz.html      /datenschutz      301!
+/danke.html            /danke            301!
+/en/impressum.html     /en/impressum     301!
+/en/datenschutz.html   /en/datenschutz   301!
+/en/danke.html         /en/danke         301!
+/index.html            /                 301!
+/en/index.html         /en/              301!
+/leistungen/index.html    /leistungen/    301!
+/case-studies/index.html  /case-studies/  301!
+/ueber-uns/index.html     /ueber-uns/     301!
+/kontakt/index.html       /kontakt/       301!
+/en/leistungen/index.html    /en/leistungen/    301!
+/en/case-studies/index.html  /en/case-studies/  301!
+/en/ueber-uns/index.html     /en/ueber-uns/     301!
+/en/kontakt/index.html       /en/kontakt/       301!
