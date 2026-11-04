@@ -7,11 +7,21 @@
 /en/danke.html         /en/danke         301!
 /index.html            /                 301!
 /en/index.html         /en/              301!
-/leistungen/index.html    /leistungen/    301!
-/case-studies/index.html  /case-studies/  301!
+/kunden/index.html        /kunden/        301!
 /ueber-uns/index.html     /ueber-uns/     301!
 /kontakt/index.html       /kontakt/       301!
-/en/leistungen/index.html    /en/leistungen/    301!
-/en/case-studies/index.html  /en/case-studies/  301!
+/en/kunden/index.html        /en/kunden/        301!
 /en/ueber-uns/index.html     /en/ueber-uns/     301!
 /en/kontakt/index.html       /en/kontakt/       301!
+
+# Case Studies wurde zu Kunden
+/case-studies              /kunden/        301!
+/case-studies/*            /kunden/        301!
+/en/case-studies           /en/kunden/     301!
+/en/case-studies/*         /en/kunden/     301!
+
+# Leistungen heißt jetzt Kunden
+/leistungen                /kunden/        301!
+/leistungen/*              /kunden/        301!
+/en/leistungen             /en/kunden/     301!
+/en/leistungen/*           /en/kunden/     301!

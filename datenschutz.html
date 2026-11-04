@@ -21,18 +21,6 @@
     body{font-family:var(--font-body);color:var(--text);background:var(--white);font-size:16px;line-height:1.65}
     a{color:var(--accent-dk);text-decoration:underline}
     a:hover{color:var(--text)}
-    .nav{position:sticky;top:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100}
-    .nav-inner{max-width:var(--max);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{font-family:var(--font-head);font-size:22px;color:var(--text);text-decoration:none}
-    .nav-logo span{color:var(--accent)}
-    .nav-back{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;text-decoration:none;transition:color .15s}
-    .nav-back:hover{color:var(--text)}
-    .nav-back svg{width:15px;height:15px}
-    .nav-right{display:flex;align-items:center;gap:18px}
-    .lang-switch{display:flex;align-items:center;gap:4px}
-    .lang-switch a{font-size:13px;font-weight:600;color:var(--muted);padding:4px 9px;border-radius:6px;text-decoration:none;transition:all .15s}
-    .lang-switch a:hover{color:var(--text);background:var(--off-white)}
-    .lang-switch a.lang-active{color:var(--accent);background:var(--accent-lt)}
     .main{max-width:720px;margin:0 auto;padding:72px 24px 100px}
     .eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
     h1{font-family:var(--font-head);font-size:clamp(28px,4vw,40px);font-weight:normal;line-height:1.15;margin-bottom:10px}
@@ -55,24 +43,75 @@
     .footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
     @media(max-width:640px){.main{padding:48px 20px 80px}.footer-inner{flex-direction:column;text-align:center}}
   </style>
+
+<style>
+/* Einheitliche Navigation (aus style.css) */
+:root{--nav-h:65px;--ease:cubic-bezier(.22,.61,.36,1);--shadow-lg:0 20px 60px -12px rgba(20,30,60,.22);--off:#f7f7f5}
+body{padding-top:65px}
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:65px;display:block;background:rgba(247,247,245,.94);backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--border)}
+.tg-nav{position:relative;height:65px;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.tg-left,.tg-right{display:flex;align-items:center;gap:26px}
+.tg-right{gap:18px}
+.tg-left a{font-family:var(--font-body);font-size:14px;font-weight:400;color:var(--text);line-height:1.5;transition:opacity .2s;text-decoration:none}
+.tg-left a:hover{opacity:.6;color:var(--text)}
+.tg-left a.active{font-weight:600}
+.brand{font-family:var(--font-head);font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:center;gap:2px;color:var(--text);text-decoration:none}
+.brand b{font-weight:400}
+.brand .fix{color:var(--accent);font-style:italic}
+.tg-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.tg-btn{display:inline-flex;align-items:center;justify-content:center;height:41px;padding:0 18px;border-radius:120px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;line-height:1;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s var(--ease)}
+.tg-btn:hover{background:#1d4fd8;color:#fff;transform:translateY(-1px)}
+.tg-langs{display:flex;gap:12px;list-style:none;margin:0;padding:0;font-size:13px;letter-spacing:.06em;font-weight:500}
+.tg-langs a{color:var(--text);opacity:.55;text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:opacity .2s}
+.tg-langs a[aria-current="true"]{opacity:1;border-bottom-color:var(--accent)}
+.tg-langs a:hover{opacity:1;color:var(--text)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile{position:fixed;inset:0 0 0 auto;width:min(84vw,360px);background:#fff;z-index:99;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;padding:96px 30px 30px;gap:6px}
+.mobile.open{transform:translateX(0)}
+.mobile a{font-family:var(--font-head);font-size:1.5rem;padding:12px 0;border-bottom:1px solid var(--border);color:var(--text);text-decoration:none;transition:color .2s,padding-left .2s}
+.mobile a:hover{color:var(--accent);padding-left:8px}
+.mobile .tg-langs{font-size:1rem;gap:20px;padding:14px 0 4px}
+.mobile .tg-langs a{font-family:var(--font-body);font-size:1rem;border-bottom-width:2px;padding:0 0 3px}
+.mobile .btn{margin-top:18px;display:inline-flex;justify-content:center;align-items:center;padding:14px 22px;border-radius:120px;background:var(--accent);color:#fff;font-family:var(--font-body);font-size:1rem;border:0}
+.mobile .btn:hover{color:#fff;padding-left:22px}
+.scrim{position:fixed;inset:0;background:rgba(15,20,35,.4);opacity:0;pointer-events:none;transition:opacity .3s;z-index:98}
+.scrim.on{opacity:1;pointer-events:auto}
+@media(max-width:960px){.tg-nav{padding:0 16px 0 20px}.tg-left{display:none}.tg-logo{position:static;transform:none}.tg-right{gap:6px}.tg-btn{height:36px;padding:0 14px;font-size:13px}.burger{display:flex}header.nav .tg-langs{display:none}}
+@media(max-width:360px){.tg-btn{font-size:12px;padding:0 11px}}
+</style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Seit<span>fix</span></a>
-    <div class="nav-right">
-      <div class="lang-switch">
-        <a href="datenschutz.html" class="lang-active">DE</a>
-        <a href="en/datenschutz.html">EN</a>
-      </div>
-      <a href="index.html" class="nav-back">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Zurück zur Startseite
-      </a>
+<header class="nav" id="nav">
+  <nav class="tg-nav" aria-label="Hauptnavigation">
+    <div class="tg-left">
+      <a href="kunden/index.html">Kunden</a>
+      <a href="ki/index.html">KI</a>
+      <a href="ueber-uns/index.html">Über uns</a>
     </div>
-  </div>
-</nav>
+    <a href="index.html" class="brand tg-logo"><b>Seit</b><span class="fix">fix</span></a>
+    <div class="tg-right">
+      <ul class="tg-langs" aria-label="Sprache"><li><a href="datenschutz.html" hreflang="de" lang="de" aria-current="true">DE</a></li><li><a href="en/datenschutz.html" hreflang="en" lang="en">EN</a></li></ul>
+      <a href="kontakt/index.html" class="tg-btn">Kostenlos anfragen</a>
+      <button class="burger" id="burger" aria-label="Menü" aria-expanded="false" aria-controls="mobile"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="mobile" id="mobile">
+  <a href="index.html">Start</a>
+  <a href="kunden/index.html">Kunden</a>
+  <a href="ki/index.html">KI</a>
+  <a href="ueber-uns/index.html">Über uns</a>
+  <a href="kontakt/index.html">Kontakt</a>
+  <ul class="tg-langs" aria-label="Sprache"><li><a href="datenschutz.html" hreflang="de" lang="de" aria-current="true">DE</a></li><li><a href="en/datenschutz.html" hreflang="en" lang="en">EN</a></li></ul>
+  <a href="kontakt/index.html" class="btn btn-primary">Kostenlos anfragen</a>
+</aside>
 
 <main class="main">
   <span class="eyebrow">Rechtliches</span>
@@ -228,5 +267,11 @@
   </div>
 </footer>
 
+<script>
+(function(){var b=document.getElementById('burger'),m=document.getElementById('mobile'),s=document.getElementById('scrim');
+function t(o){b.classList.toggle('x',o);m.classList.toggle('open',o);s.classList.toggle('on',o);b.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+b.addEventListener('click',function(){t(!m.classList.contains('open'))});s.addEventListener('click',function(){t(false)});
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){t(false)})});})();
+</script>
 </body>
 </html>
